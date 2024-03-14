@@ -1,0 +1,398 @@
+code	station_name	type	geo_lat	geo_lng	municipality
+HT	's-Hertogenbosch	interchange_intercity_station	51.69048	5.29362	's-Hertogenbosch
+HTO	's-Hertogenbosch Oost	local_train_station	51.700553894043	5.3183331489563	's-Hertogenbosch
+HDE	't Harde	local_train_station	52.4091682	5.893611	Elburg
+ATN	Aalten	local_train_station	51.921326524551	6.5786272287369	Aalten
+AC	Abcoude	local_train_station	52.2785	4.977	De Ronde Venen
+AKM	Akkrum	local_train_station	53.046390533447	5.843611240387	Heerenveen
+AMR	Alkmaar	interchange_intercity_station	52.63777923584	4.7397222518921	Alkmaar
+AMRN	Alkmaar Noord	local_train_station	52.643890380859	4.7641668319702	Alkmaar
+AML	Almelo	interchange_intercity_station	52.358055114746	6.6538887023926	Almelo
+AMRI	Almelo de Riet	local_train_station	52.341945648193	6.6666665077209	Almelo
+ALMB	Almere Buiten	local_train_station	52.394165039062	5.2780556678772	Almere
+ALM	Almere Centrum	interchange_intercity_station	52.37503	5.21764	Almere
+ALMM	Almere Muziekwijk	local_train_station	52.367500305176	5.1902775764465	Almere
+ALMO	Almere Oostvaarders	local_train_station	52.403331756592	5.3005557060242	Almere
+ALMP	Almere Parkwijk	local_train_station	52.376667022705	5.244722366333	Almere
+AMPO	Almere Poort	local_train_station	52.342778	5.151944	Almere
+APN	Alphen a/d Rijn	interchange_intercity_station	52.124443054199	4.6577777862549	Alphen aan den Rijn
+AMF	Amersfoort Centraal	interchange_intercity_station	52.153888702393	5.3705554008484	Amersfoort
+AMFS	Amersfoort Schothorst	local_train_station	52.174822137451	5.4038887023926	Amersfoort
+AVAT	Amersfoort Vathorst	local_train_station	52.192779541016	5.4338889122009	Amersfoort
+ASA	Amsterdam Amstel	intercity_station	52.346668243408	4.9177780151367	Amsterdam
+ASB	Amsterdam Bijlmer ArenA	interchange_local_train_station	52.3122215271	4.9469442367554	Amsterdam
+ASD	Amsterdam Centraal	mega_station	52.378887176514	4.9002776145935	Amsterdam
+ASHD	Amsterdam Holendrecht	local_train_station	52.29844	4.95972	Amsterdam
+ASDL	Amsterdam Lelylaan	local_train_station	52.357776641846	4.8338890075684	Amsterdam
+ASDM	Amsterdam Muiderpoort	local_train_station	52.360553741455	4.9311113357544	Amsterdam
+RAI	Amsterdam RAI	local_train_station	52.337223052979	4.8902778625488	Amsterdam
+ASSP	Amsterdam Science Park	local_train_station	52.35526	4.94651	Amsterdam
+ASS	Amsterdam Sloterdijk	interchange_intercity_station	52.388889312744	4.8377776145935	Amsterdam
+ASDZ	Amsterdam Zuid	intercity_station	52.338889	4.872356	Amsterdam
+ANA	Anna Paulowna	local_train_station	52.867221832275	4.8111109733581	Hollands Kroon
+APD	Apeldoorn	interchange_intercity_station	52.209167480469	5.9702777862549	Apeldoorn
+APDM	Apeldoorn De Maten	local_train_station	52.205276489258	6.0005555152893	Apeldoorn
+APDO	Apeldoorn Osseveld	local_train_station	52.215278625488	6.0044445991516	Apeldoorn
+APG	Appingedam	local_train_station	53.3258135	6.8619577	Eemsdelta
+AKL	Arkel	local_train_station	51.87194442749	4.9927778244019	Molenlanden
+ARN	Arnemuiden	local_train_station	51.501667022705	3.6691665649414	Middelburg
+AH	Arnhem Centraal	interchange_intercity_station	51.985000610352	5.8991665840149	Arnhem
+AHPR	Arnhem Presikhaaf	local_train_station	51.988056182861	5.9438886642456	Arnhem
+AHP	Arnhem Velperpoort	local_train_station	51.985279083252	5.9194445610046	Arnhem
+AHZ	Arnhem Zuid	local_train_station	51.955001831055	5.8519444465637	Arnhem
+ASN	Assen	interchange_intercity_station	52.991664886475	6.5708332061768	Assen
+BRN	Baarn	interchange_local_train_station	52.208332061768	5.2808332443237	Baarn
+NSCH	Bad Nieuweschans	interchange_local_train_station	53.1844	7.19937	Oldambt
+BF	Baflo	local_train_station	53.3608969	6.5185581	Het Hogeland
+BRD	Barendrecht	local_train_station	51.854721069336	4.5533332824707	Barendrecht
+BNC	Barneveld Centrum	local_train_station	52.139999389648	5.590277671814	Barneveld
+BNN	Barneveld Noord	local_train_station	52.161388397217	5.5980553627014	Barneveld
+BNZ	Barneveld Zuid	local_train_station	52.128853	5.60246	Barneveld
+BDM	Bedum	local_train_station	53.3068857	6.593054	Het Hogeland
+BK	Beek-Elsloo	local_train_station	50.947498321533	5.7866668701172	Stein
+BSD	Beesd	local_train_station	51.899444580078	5.1944446563721	West Betuwe
+BL	Beilen	local_train_station	52.854721069336	6.5211110115051	Midden-Drenthe
+BGN	Bergen op Zoom	local_train_station	51.49388885498	4.2961111068726	Bergen op Zoom
+BET	Best	local_train_station	51.509998321533	5.3891668319702	Best
+BV	Beverwijk	local_train_station	52.478332519531	4.6566667556763	Beverwijk
+BHV	Bilthoven	local_train_station	52.130001068115	5.2038888931274	De Bilt
+BR	Blerick	local_train_station	51.372501373291	6.1550002098083	Venlo
+BLL	Bloemendaal	local_train_station	52.404167175293	4.6275000572205	Bloemendaal
+BDG	Bodegraven	local_train_station	52.081390380859	4.7461109161377	Bodegraven-Reeuwijk
+BN	Borne	local_train_station	52.298889160156	6.7480554580689	Borne
+BSK	Boskoop	local_train_station	52.077777862549	4.6469445228577	Alphen aan den Rijn
+BSKS	Boskoop Snijdelwijk	local_train_station	52.067658	4.646186	Waddinxveen
+BHDV	Boven-Hardinxveld	local_train_station	51.832222	4.878056	Hardinxveld-Giessendam
+BKF	Bovenkarspel Flora	local_train_station	52.696109771729	5.2527775764465	Stede Broec
+BKG	Bovenkarspel-Grootebroek	local_train_station	52.694999694824	5.2377777099609	Stede Broec
+BMR	Boxmeer	interchange_local_train_station	51.644521767653	5.9390330314636	Land van Cuijk
+BTL	Boxtel	interchange_local_train_station	51.58433	5.31912	Boxtel
+BD	Breda	interchange_intercity_station	51.595554351807	4.7800002098083	Breda
+BDPB	Breda-Prinsenbeek	local_train_station	51.606388092041	4.7208333015442	Breda
+BKL	Breukelen	interchange_local_train_station	52.17149	4.9906	Stichtse Vecht
+BMN	Brummen	local_train_station	52.091110229492	6.1469445228577	Brummen
+BP	Buitenpost		53.2564547	6.1446496	Achtkarspelen
+BDE	Bunde	local_train_station	50.896945953369	5.7366666793823	Meerssen
+BNK	Bunnik	local_train_station	52.063056945801	5.1944446563721	Bunnik
+BSMZ	Bussum Zuid	local_train_station	52.26583480835	5.1630554199219	Gooise Meren
+CPS	Capelle Schollevaar	local_train_station	51.954166412354	4.5841665267944	Capelle aan den IJssel
+CAS	Castricum	intercity_station	52.545833587646	4.6586112976074	Castricum
+CVM	Chevremont	local_train_station	50.876110076904	6.0597224235535	Kerkrade
+CO	Coevorden		52.663612365723	6.7355556488037	Coevorden
+CK	Cuijk	local_train_station	51.726682587905	5.8742952346802	Land van Cuijk
+CL	Culemborg	local_train_station	51.946666717529	5.2269444465637	Culemborg
+DA	Daarlerveen	local_train_station	52.4407702	6.5759947	Hellendoorn
+DLN	Dalen	local_train_station	52.69416809082	6.7580556869507	Coevorden
+DL	Dalfsen	express_train_station	52.498332977295	6.25861120224	Dalfsen
+DVNK	De Vink	local_train_station	52.147220611572	4.4563889503479	Voorschoten
+DWE	De Westereen	local_train_station	53.24817	6.03463	Dantumadiel
+DEI	Deinum	local_train_station	53.1888115	5.7281572	Waadhoeke
+DDN	Delden	local_train_station	52.259998321533	6.7161111831665	Hof van Twente
+DT	Delft	interchange_intercity_station	52.00666809082	4.3563890457153	Delft
+DTCP	Delft Campus	local_train_station	51.990833282471	4.3647222518921	Delft
+DZ	Delfzijl	local_train_station	53.3336625	6.9240797	Eemsdelta
+DZW	Delfzijl West	local_train_station	53.3320834	6.9069092	Eemsdelta
+DLD	Den Dolder	interchange_local_train_station	52.140277862549	5.2427778244019	Zeist
+GVC	Den Haag Centraal	mega_station	52.080276489258	4.3249998092651	's-Gravenhage
+GV	Den Haag HS	interchange_intercity_station	52.069721221924	4.3225002288818	's-Gravenhage
+LAA	Den Haag Laan v NOI	interchange_local_train_station	52.078609466553	4.3427777290344	Leidschendam-Voorburg
+GVM	Den Haag Mariahoeve	local_train_station	52.090557098389	4.3694443702698	Leidschendam-Voorburg
+GVMW	Den Haag Moerwijk	local_train_station	52.053890228271	4.3086109161377	's-Gravenhage
+YPB	Den Haag Ypenburg	local_train_station	52.055278778076	4.39222240448	's-Gravenhage
+HDR	Den Helder	intercity_station	52.955276489258	4.7611112594605	Den Helder
+HDRZ	Den Helder Zuid	local_train_station	52.932498931885	4.7641668319702	Den Helder
+DN	Deurne	local_train_station	51.455833435059	5.7888889312744	Deurne
+DV	Deventer	interchange_intercity_station	52.257499694824	6.1605553627014	Deventer
+DVC	Deventer Colmschate	local_train_station	52.2502784729	6.2144446372986	Deventer
+DID	Didam	local_train_station	51.933502	6.1324106	Montferland
+DMN	Diemen	local_train_station	52.34515	4.967566	Diemen
+DMNZ	Diemen Zuid	local_train_station	52.330276489258	4.9558334350586	Diemen
+DR	Dieren	intercity_station	52.044998168945	6.1030554771423	Rheden
+DTC	Doetinchem	interchange_local_train_station	51.9585962	6.2962148	Doetinchem
+DTCH	Doetinchem De Huet	local_train_station	51.9591413	6.2598521	Doetinchem
+DDR	Dordrecht	interchange_intercity_station	51.807220458984	4.668333530426	Dordrecht
+DDRS	Dordrecht Stadspolders	local_train_station	51.801944732666	4.7166666984558	Dordrecht
+DDZD	Dordrecht Zuid	local_train_station	51.790000915527	4.6713891029358	Dordrecht
+DB	Driebergen-Zeist	interchange_local_train_station	52.065277099609	5.25861120224	Utrechtse Heuvelrug
+DRH	Driehuis	local_train_station	52.442501068115	4.6380553245544	Velsen
+DRP	Dronryp	local_train_station	53.1778086	5.6347411	Waadhoeke
+DRON	Dronten	local_train_station	52.5344	5.72089	Dronten
+DVN	Duiven	local_train_station	51.943332672119	6.0147223472595	Duiven
+DVD	Duivendrecht	interchange_local_train_station	52.323333740234	4.9363889694214	Ouder-Amstel
+EC	Echt	local_train_station	51.100555419922	5.8788890838623	Echt-Susteren
+EDC	Ede Centrum	local_train_station	52.043609619141	5.668333530426	Ede
+ED	Ede-Wageningen	interchange_intercity_station	52.027778625488	5.6730556488037	Ede
+EEM	Eemshaven	local_train_station	53.458419	6.832	Het Hogeland
+EDN	Eijsden	local_train_station	50.771945953369	5.710000038147	Eijsden-Margraten
+EHV	Eindhoven Centraal	mega_station	51.443332672119	5.4813890457153	Eindhoven
+EHS	Eindhoven Strijp-S	local_train_station	51.451110839844	5.4558334350586	Eindhoven
+EST	Elst	interchange_local_train_station	51.916942596435	5.8550000190735	Overbetuwe
+EMN	Emmen	express_train_station	52.790000915527	6.8994445800781	Emmen
+EMNZ	Emmen Zuid	express_train_station	52.748866374691	6.8747806549072	Emmen
+EKZ	Enkhuizen	local_train_station	52.699165344238	5.286388874054	Enkhuizen
+ES	Enschede	interchange_intercity_station	52.222499847412	6.8899998664856	Enschede
+ESE	Enschede De Eschmarke	local_train_station	52.221389770508	6.9511113166809	Enschede
+ESK	Enschede Kennispark	local_train_station	52.23749923706	6.8388891220093	Enschede
+EML	Ermelo	local_train_station	52.301666259766	5.6147222518921	Ermelo
+ETN	Etten-Leur	intercity_station	51.57500076294	4.6358332633972	Etten-Leur
+EGH	Eygelshoven	local_train_station	50.890556335449	6.0450000762939	Kerkrade
+EGHM	Eygelshoven Markt	local_train_station	50.896049819644	6.0602474212646	Kerkrade
+FWD	Feanwâlden	local_train_station	53.2351834	5.9886615	Dantumadiel
+FN	Franeker	local_train_station	53.1824488	5.5483094	Waadhoeke
+GDR	Gaanderen	local_train_station	51.93074	6.3486	Doetinchem
+GDM	Geldermalsen	interchange_local_train_station	51.88301	5.27127	West Betuwe
+GP	Geldrop	interchange_local_train_station	51.419723510742	5.5505557060242	Geldrop-Mierlo
+GLN	Geleen Oost	local_train_station	50.966945648193	5.8430557250977	Sittard-Geleen
+LUT	Geleen-Lutterade	local_train_station	50.975555419922	5.8247222900391	Sittard-Geleen
+GZ	Gilze-Rijen	local_train_station	51.583610534668	4.9261112213135	Gilze en Rijen
+GBR	Glanerbrug	local_train_station	52.218612670898	6.9744443893433	Enschede
+GS	Goes	local_train_station	51.498054504395	3.8905556201935	Goes
+GO	Goor	local_train_station	52.230278015137	6.5844445228577	Hof van Twente
+GR	Gorinchem	interchange_local_train_station	51.833889007568	4.9683332443237	Gorinchem
+GD	Gouda	interchange_intercity_station	52.017501831055	4.7044444084167	Gouda
+GDG	Gouda Goverwelle	local_train_station	52.014999389648	4.7408332824707	Gouda
+GBG	Gramsbergen	local_train_station	52.60916519165	6.6758332252502	Hardenberg
+GK	Grijpskerk	local_train_station	53.255740325573	6.3097786903381	Westerkwartier
+GN	Groningen	interchange_intercity_station	53.210556030273	6.5647220611572	Groningen
+GERP	Groningen Europapark	local_train_station	53.20480027	6.5854178	Groningen
+GNN	Groningen Noord	local_train_station	53.2301469	6.5563172	Groningen
+GW	Grou-Jirnsum	local_train_station	53.088890075684	5.8225002288818	Leeuwarden
+HLM	Haarlem	interchange_intercity_station	52.38777923584	4.6383333206177	Haarlem
+HLMS	Haarlem Spaarnwoude	local_train_station	52.382778167725	4.6730556488037	Haarlem
+HWZB	Halfweg-Zwanenburg	local_train_station	52.385935	4.747165	Haarlemmermeer
+HDB	Hardenberg	express_train_station	52.572776794434	6.6286110877991	Hardenberg
+HD	Harderwijk	interchange_local_train_station	52.337501525879	5.619722366333	Harderwijk
+HBZM	Hardinxveld Blauwe Zoom	local_train_station	51.82944	4.81556	Hardinxveld-Giessendam
+GND	Hardinxveld-Giessendam	local_train_station	51.830554962158	4.8358335494995	Hardinxveld-Giessendam
+HRN	Haren	local_train_station	53.176109313965	6.6172223091125	Groningen
+HLG	Harlingen	local_train_station	53.1704205	5.4251932	Harlingen
+HLGH	Harlingen Haven	local_train_station	53.174917	5.4112885	Harlingen
+HK	Heemskerk	local_train_station	52.495277404785	4.6869444847107	Heemskerk
+HAD	Heemstede-Aerdenhout	intercity_station	52.35916519165	4.6066665649414	Heemstede
+HR	Heerenveen	intercity_station	52.961387634277	5.9141664505005	Heerenveen
+HRY	Heerenveen IJsstadion		52.935276031494	5.9438886642456	Heerenveen
+HWD	Heerhugowaard	interchange_local_train_station	52.669723510742	4.8227777481079	Dijk en Waard
+HRL	Heerlen	interchange_intercity_station	50.89083480835	5.9749999046326	Heerlen
+HRLW	Heerlen Woonboulevard	local_train_station	50.896667	5.952222	Heerlen
+HZE	Heeze	local_train_station	51.384998321533	5.5694446563721	Heeze-Leende
+HLO	Heiloo	local_train_station	52.599445343018	4.7005553245544	Heiloo
+HNO	Heino	local_train_station	52.427223205566	6.2211112976074	Raalte
+HM	Helmond	interchange_intercity_station	51.475555419922	5.6619443893433	Helmond
+HMH	Helmond 't Hout	local_train_station	51.46794	5.63085	Helmond
+HMBV	Helmond Brandevoort	local_train_station	51.462223052979	5.6072220802307	Helmond
+HMBH	Helmond Brouwhuis	local_train_station	51.47068	5.70177	Helmond
+HMN	Hemmen-Dodewaard	local_train_station	51.9222129	5.6737254	Neder-Betuwe
+HGL	Hengelo	interchange_intercity_station	52.261665344238	6.7938890457153	Hengelo
+HGLG	Hengelo Gezondheidspark	local_train_station	52.261667	6.767778	Hengelo
+HGLO	Hengelo Oost	local_train_station	52.268890380859	6.8194446563721	Hengelo
+HIL	Hillegom	local_train_station	52.302501678467	4.5655555725098	Hillegom
+HVS	Hilversum	interchange_intercity_station	52.225833892822	5.1819443702698	Hilversum
+HVSM	Hilversum Media Park	local_train_station	52.238056182861	5.1738886833191	Hilversum
+HVSP	Hilversum Sportpark	local_train_station	52.216110229492	5.1872220039368	Hilversum
+HNP	Hindeloopen	local_train_station	52.9464903	5.423063	Súdwest-Fryslân
+HB	Hoensbroek	local_train_station	50.905555725098	5.9305553436279	Heerlen
+HVL	Hoevelaken	local_train_station	52.16652	5.45718	Amersfoort
+HOR	Hollandsche Rading	local_train_station	52.17777633667	5.1791667938232	De Bilt
+HON	Holten	local_train_station	52.283889770508	6.42027759552	Rijssen-Holten
+HFD	Hoofddorp	local_train_station	52.293334960938	4.7005553245544	Haarlemmermeer
+HGV	Hoogeveen	local_train_station	52.733890533447	6.4736108779907	Hoogeveen
+HGZ	Hoogezand-Sappemeer	interchange_local_train_station	53.159818131676	6.7707538604736	Midden-Groningen
+HKS	Hoogkarspel	local_train_station	52.69055557251	5.1838889122009	Drechterland
+HN	Hoorn	interchange_intercity_station	52.644721984863	5.0555553436279	Hoorn
+HNK	Hoorn Kersenboogerd	local_train_station	52.653610229492	5.0855555534363	Hoorn
+HRT	Horst-Sevenum	local_train_station	51.426387786865	6.0422220230103	Horst aan de Maas
+HTN	Houten	interchange_local_train_station	52.03402	5.16821	Houten
+HTNC	Houten Castellum	local_train_station	52.01701	5.17949	Houten
+SGL	Houthem-St. Gerlach	local_train_station	50.873332977295	5.7972221374512	Valkenburg aan de Geul
+HDG	Hurdegaryp	local_train_station	53.2187783	5.934543	Tytsjerksteradiel
+IJT	IJlst	local_train_station	53.0146614	5.6160801	Súdwest-Fryslân
+KPN	Kampen	local_train_station	52.559722900391	5.9216666221619	Kampen
+KPNZ	Kampen Zuid	local_train_station	52.5331	5.91309	Kampen
+BZL	Kapelle-Biezelinge	local_train_station	51.480834960938	3.9561111927033	Kapelle
+KRD	Kerkrade Centrum	interchange_local_train_station	50.861667633057	6.0574998855591	Kerkrade
+KTR	Kesteren	local_train_station	51.9313869	5.5833465	Neder-Betuwe
+KBK	Klarenbeek	local_train_station	52.17805480957	6.0836110115051	Voorst
+KMR	Klimmen-Ransdaal	local_train_station	50.866390228271	5.8905553817749	Voerendaal
+KZ	Koog aan de Zaan	local_train_station	52.458610534668	4.8055553436279	Zaanstad
+KMW	Koudum-Molkwerum	local_train_station	52.9028197	5.4106913	Súdwest-Fryslân
+KBD	Krabbendijke	local_train_station	51.433334350586	4.1169443130493	Reimerswaal
+KMA	Krommenie-Assendelft	local_train_station	52.49511	4.75417	Zaanstad
+KW	Kropswolde	local_train_station	53.1617362	6.7220882	Midden-Groningen
+KRG	Kruiningen-Yerseke	local_train_station	51.465000152588	4.0372223854065	Reimerswaal
+ZLW	Lage Zwaluwe	interchange_local_train_station	51.69111251831	4.6630554199219	Moerdijk
+LG	Landgraaf	interchange_local_train_station	50.896389007568	6.019166469574	Landgraaf
+LLZM	Lansingerland-Zoetermeer	local_train_station	52.042222	4.517222	Zoetermeer
+LDM	Leerdam	local_train_station	51.894721984863	5.0913887023926	Vijfheerenlanden
+LW	Leeuwarden	interchange_intercity_station	53.195835113525	5.7922220230103	Leeuwarden
+LWC	Leeuwarden Camminghaburen	local_train_station	53.2021808	5.8422968	Leeuwarden
+LEDN	Leiden Centraal	interchange_intercity_station	52.166110992432	4.4816665649414	Leiden
+LDL	Leiden Lammenschans	local_train_station	52.146945953369	4.4924998283386	Leiden
+LLS	Lelystad Centrum	interchange_intercity_station	52.507778167725	5.4727778434753	Lelystad
+LTV	Lichtenvoorde-Groenlo	local_train_station	52.01188	6.59641	Oost Gelre
+LC	Lochem	local_train_station	52.166667938232	6.4263887405395	Lochem
+LP	Loppersum	local_train_station	53.3347145	6.7472625	Eemsdelta
+LTN	Lunteren	local_train_station	52.085277557373	5.6244444847107	Ede
+MZ	Maarheeze	local_train_station	51.304986	5.629796	Cranendonck
+MRN	Maarn	interchange_local_train_station	52.064167022705	5.3699998855591	Utrechtse Heuvelrug
+MAS	Maarssen	local_train_station	52.135276794434	5.0336112976074	Stichtse Vecht
+MT	Maastricht	interchange_intercity_station	50.850276947021	5.7055554389954	Maastricht
+MTN	Maastricht Noord	local_train_station	50.87087	5.71774	Maastricht
+MTR	Maastricht Randwyck	interchange_local_train_station	50.838611602783	5.7172222137451	Maastricht
+MG	Mantgum	local_train_station	53.1296368	5.7131996	Leeuwarden
+MRB	Mariënberg		52.50944519043	6.5752778053284	Hardenberg
+MTH	Martenshoek	local_train_station	53.1607232	6.7402989	Midden-Groningen
+MES	Meerssen	express_train_station	50.882879392551	5.7509994506836	Meerssen
+MP	Meppel	interchange_local_train_station	52.69083404541	6.1975002288818	Meppel
+MDB	Middelburg	local_train_station	51.494720458984	3.6172223091126	Middelburg
+MMLH	Mook-Molenhoek	local_train_station	51.766262	5.879133	Mook en Middelaar
+NDB	Naarden-Bussum	interchange_local_train_station	52.280277252197	5.1569442749023	Gooise Meren
+	Nieuw Amsterdam	express_train_station	52.718612670898	6.8486108779907	Emmen
+NVP	Nieuw Vennep	local_train_station	52.258888244629	4.6455554962158	Haarlemmermeer
+NWK	Nieuwerkerk a/d IJssel	local_train_station	51.965278625488	4.6169443130493	Zuidplas
+NKK	Nijkerk	local_train_station	52.222221374512	5.4938888549805	Nijkerk
+NM	Nijmegen	interchange_intercity_station	51.843612670898	5.8522224426269	Nijmegen
+NMD	Nijmegen Dukenburg	local_train_station	51.824165344238	5.7955555915833	Nijmegen
+NMGO	Nijmegen Goffert	local_train_station	51.8273	5.822722	Nijmegen
+NMH	Nijmegen Heyendaal	local_train_station	51.826946258545	5.8674998283386	Nijmegen
+NML	Nijmegen Lent	local_train_station	51.863154	5.859625	Nijmegen
+NVD	Nijverdal	local_train_station	52.366111	6.462	Hellendoorn
+NS	Nunspeet	local_train_station	52.370834350586	5.7852778434753	Nunspeet
+NH	Nuth	local_train_station	50.919445037842	5.8927779197693	Beekdaelen
+OBD	Obdam	local_train_station	52.67805480957	4.9072222709656	Koggenland
+OT	Oisterwijk	local_train_station	51.582221984863	5.1941666603088	Oisterwijk
+ODZ	Oldenzaal	local_train_station	52.30638885498	6.9347224235535	Oldenzaal
+OST	Olst	intercity_station	52.334720611572	6.1130557060242	Olst-Wijhe
+OMN	Ommen		52.50944519043	6.4158334732056	Ommen
+OTB	Oosterbeek	local_train_station	51.994998931885	5.8400001525879	Renkum
+OP	Opheusden	local_train_station	51.9261615	5.6371145	Neder-Betuwe
+O	Oss	interchange_intercity_station	51.765556335449	5.5322222709656	Oss
+OW	Oss West	local_train_station	51.758056640625	5.5055556297302	Oss
+ODB	Oudenbosch	local_train_station	51.587776184082	4.5333333015442	Halderberge
+OVN	Overveen	local_train_station	52.391109466553	4.6061110496521	Bloemendaal
+PMR	Purmerend	interchange_local_train_station	52.50305557251	4.9536108970642	Purmerend
+PMO	Purmerend Overwhere	local_train_station	52.511390686035	4.9683332443237	Purmerend
+PMW	Purmerend Weidevenne	local_train_station	52.496590632542	4.9356293678284	Purmerend
+PT	Putten	local_train_station	52.264999389648	5.5752778053284	Putten
+RAT	Raalte	local_train_station	52.391666412354	6.2775001525879	Raalte
+RVS	Ravenstein	local_train_station	51.794166564941	5.6358332633972	Oss
+RV	Reuver	local_train_station	51.28321916653	6.0789585113525	Beesel
+RH	Rheden	local_train_station	52.0101	6.0314	Rheden
+RHN	Rhenen	interchange_local_train_station	51.958610534668	5.5783333778381	Rhenen
+RSN	Rijssen	local_train_station	52.3122215271	6.5202779769897	Rijssen-Holten
+RSW	Rijswijk	local_train_station	52.039722442627	4.3191666603088	Rijswijk
+RB	Rilland-Bath	local_train_station	51.422779083252	4.1611108779907	Reimerswaal
+RM	Roermond	interchange_intercity_station	51.193054199219	5.9941668510437	Roermond
+RD	Roodeschool	local_train_station	53.421262	6.7587	Het Hogeland
+RSD	Roosendaal	interchange_intercity_station	51.540279388428	4.4583334922791	Roosendaal
+RS	Rosmalen	local_train_station	51.714721679688	5.3680553436279	's-Hertogenbosch
+RTA	Rotterdam Alexander	intercity_station	51.951946258545	4.5536112785339	Rotterdam
+RTB	Rotterdam Blaak	local_train_station	51.920276641846	4.4888887405395	Rotterdam
+RTD	Rotterdam Centraal	mega_station	51.92499923706	4.468888759613	Rotterdam
+RLB	Rotterdam Lombardijen	local_train_station	51.880001068115	4.531388759613	Rotterdam
+RTN	Rotterdam Noord	local_train_station	51.942222595215	4.4816665649414	Rotterdam
+RTST	Rotterdam Stadion		51.893890380859	4.5197219848633	Rotterdam
+RTZ	Rotterdam Zuid	local_train_station	51.904445648193	4.5102777481079	Rotterdam
+RL	Ruurlo	local_train_station	52.0810888	6.4492656	Berkelland
+SPTN	Santpoort Noord	local_train_station	52.43388748169	4.6325001716614	Velsen
+SPTZ	Santpoort Zuid	local_train_station	52.419723510742	4.6313886642456	Velsen
+SSH	Sassenheim	local_train_station	52.215278	4.517222	Teylingen
+SWD	Sauwerd	local_train_station	53.29113	6.5404	Het Hogeland
+SGN	Schagen	local_train_station	52.784442901611	4.8052778244019	Schagen
+SDA	Scheemda	local_train_station	53.1655362	6.9777775	Oldambt
+SDM	Schiedam Centrum	local_train_station	51.921243812803	4.4089937210083	Schiedam
+SOG	Schin op Geul	local_train_station	50.856388092041	5.8722224235535	Voerendaal
+SN	Schinnen	local_train_station	50.939167022705	5.8744444847107	Beekdaelen
+SHL	Schiphol Airport	mega_station	52.30944442749	4.7619442939758	Haarlemmermeer
+STD	Sittard	interchange_intercity_station	51.001667022705	5.8586111068726	Sittard-Geleen
+SDT	Sliedrecht	local_train_station	51.829723358154	4.7783331871033	Sliedrecht
+SDTB	Sliedrecht Baanhoek	local_train_station	51.829722	4.743333	Sliedrecht
+SK	Sneek	interchange_local_train_station	53.0328688	5.6523969	Súdwest-Fryslân
+SKND	Sneek Noord	local_train_station	53.0409319	5.6631808	Súdwest-Fryslân
+ST	Soest	interchange_local_train_station	52.173332214355	5.3099999427795	Soest
+STZ	Soest Zuid	local_train_station	52.165279388428	5.3030557632446	Soest
+SD	Soestdijk	local_train_station	52.183612823486	5.3000001907349	Soest
+SBK	Spaubeek	local_train_station	50.94327	5.850529	Beek
+STV	Stavoren	local_train_station	52.8865535	5.3600212	Súdwest-Fryslân
+STM	Stedum	local_train_station	53.3262092	6.6875551	Eemsdelta
+SWK	Steenwijk	intercity_station	52.791510992432	6.1145557632446	Steenwijkerland
+SRN	Susteren	local_train_station	51.061389923096	5.8630557060242	Echt-Susteren
+SM	Swalmen	local_train_station	51.23582	6.03228	Roermond
+TG	Tegelen	local_train_station	51.33894	6.14253	Venlo
+TBG	Terborg	local_train_station	51.9224549	6.3642466	Oude IJsselstreek
+TL	Tiel	interchange_local_train_station	51.889446258545	5.4222221374512	Tiel
+TPSW	Tiel Passewaaij	local_train_station	51.873889923096	5.39222240448	Tiel
+TB	Tilburg	interchange_intercity_station	51.560554504395	5.0836110115051	Tilburg
+TBR	Tilburg Reeshof	local_train_station	51.573612213135	4.9944443702698	Tilburg
+TBU	Tilburg Universiteit	local_train_station	51.564985	5.051778	Tilburg
+TWL	Twello	local_train_station	52.237777709961	6.0986108779907	Voorst
+UTG	Uitgeest	interchange_local_train_station	52.521667480469	4.7016668319702	Uitgeest
+UHZ	Uithuizen	local_train_station	53.4099568	6.6748869	Het Hogeland
+UHM	Uithuizermeeden	local_train_station	53.4145845	6.7202975	Het Hogeland
+UST	Usquert	local_train_station	53.4014742	6.6093776	Het Hogeland
+UT	Utrecht Centraal	mega_station	52.088890075684	5.1102776527405	Utrecht
+UTLR	Utrecht Leidsche Rijn	local_train_station	52.09896	5.06523	Utrecht
+UTLN	Utrecht Lunetten	local_train_station	52.06555557251	5.144166469574	Utrecht
+UTM	Utrecht Maliebaan	local_train_station	52.087776184082	5.1313886642456	Utrecht
+UTO	Utrecht Overvecht	interchange_local_train_station	52.110000610352	5.1247220039368	Utrecht
+UTT	Utrecht Terwijde	local_train_station	52.1000753	5.0439547	Utrecht
+UTVR	Utrecht Vaartsche Rijn	interchange_local_train_station	52.078889	5.121667	Utrecht
+UTZL	Utrecht Zuilen	local_train_station	52.103055	5.09	Utrecht
+VK	Valkenburg		50.869720458984	5.8322219848633	Valkenburg aan de Geul
+VSV	Varsseveld	local_train_station	51.937257	6.458839	Oude IJsselstreek
+VDM	Veendam	interchange_local_train_station	53.10324	6.88475	Veendam
+VNDC	Veenendaal Centrum	interchange_local_train_station	52.020000457764	5.548611164093	Veenendaal
+VNDW	Veenendaal West	local_train_station	52.028057098389	5.531388759613	Veenendaal
+KLP	Veenendaal-De Klomp	local_train_station	52.045833587646	5.5738887786865	Ede
+VP	Velp	local_train_station	51.994720458984	5.9802780151367	Rheden
+VL	Venlo	interchange_intercity_station	51.363609313965	6.1727776527405	Venlo
+VRY	Venray	interchange_local_train_station	51.526568099007	6.0141777992248	Venray
+VLB	Vierlingsbeek	local_train_station	51.59193	5.99714	Land van Cuijk
+VTN	Vleuten	local_train_station	52.103056	5.007404	Utrecht
+VS	Vlissingen	interchange_intercity_station	51.445835113525	3.5952777862549	Vlissingen
+VSS	Vlissingen Souburg	local_train_station	51.464721679688	3.5952777862549	Vlissingen
+VDL	Voerendaal	local_train_station	50.887222290039	5.9302778244019	Voerendaal
+VB	Voorburg	local_train_station	52.066665649414	4.3594446182251	Leidschendam-Voorburg
+VH	Voorhout	local_train_station	52.224445343018	4.4844446182251	Teylingen
+VST	Voorschoten	local_train_station	52.1252784729	4.4324998855591	Voorschoten
+VEM	Voorst-Empe	local_train_station	52.157501220703	6.1436109542847	Brummen
+VD	Vorden	local_train_station	52.1071949	6.3170457	Bronckhorst
+VZ	Vriezenveen	local_train_station	52.40203	6.60041	Twenterand
+VHP	Vroomshoop	local_train_station	52.4571921	6.5696679	Twenterand
+VG	Vught	local_train_station	51.655555725098	5.2919445037842	Vught
+WAD	Waddinxveen	local_train_station	52.044166564941	4.6497220993042	Waddinxveen
+WADN	Waddinxveen Noord	local_train_station	52.055000305176	4.6483335494995	Waddinxveen
+WADT	Waddinxveen Triangel	local_train_station	52.02725	4.6491	Waddinxveen
+WFM	Warffum	local_train_station	53.3908431	6.5671364	Het Hogeland
+WT	Weert	intercity_station	51.248611450195	5.7036108970642	Weert
+WP	Weesp	interchange_local_train_station	52.3127784729	5.0430555343628	Amsterdam
+WL	Wehl	local_train_station	51.9578065	6.213844	Doetinchem
+WTV	Westervoort	local_train_station	51.96286	5.9695	Westervoort
+WZ	Wezep	local_train_station	52.454166412354	6.0025000572205	Oldebroek
+WDN	Wierden	interchange_local_train_station	52.361389160156	6.5916666984558	Wierden
+WC	Wijchen	local_train_station	51.811668395996	5.730833530426	Wijchen
+WH	Wijhe	intercity_station	52.390277862549	6.1405553817749	Olst-Wijhe
+WS	Winschoten	interchange_local_train_station	53.1392377	7.035101	Oldambt
+WSM	Winsum	local_train_station	53.3300994	6.5202905	Het Hogeland
+WW	Winterswijk	interchange_local_train_station	51.9677307	6.7155181	Winterswijk
+WWW	Winterswijk West	local_train_station	51.97453	6.70417	Winterswijk
+WD	Woerden	interchange_local_train_station	52.084999084473	4.8936109542847	Woerden
+WF	Wolfheze	local_train_station	52.005554199219	5.7936110496521	Renkum
+WV	Wolvega	local_train_station	52.880832672119	6.0036110877991	Weststellingwerf
+WK	Workum	local_train_station	52.9724864	5.4564285	Súdwest-Fryslân
+WM	Wormerveer	local_train_station	52.489166259766	4.7922220230103	Zaanstad
+ZD	Zaandam	interchange_intercity_station	52.438888549805	4.8136110305786	Zaanstad
+ZDK	Zaandam Kogerveld	local_train_station	52.456665039062	4.8202776908875	Zaanstad
+ZZS	Zaandijk Zaanse Schans	interchange_local_train_station	52.469165802002	4.8049998283386	Zaanstad
+ZBM	Zaltbommel	local_train_station	51.80888748169	5.2633333206177	Zaltbommel
+ZVT	Zandvoort aan Zee	local_train_station	52.3752784729	4.5327777862549	Zandvoort
+ZA	Zetten-Andelst	local_train_station	51.920056	5.7228408	Overbetuwe
+ZV	Zevenaar	interchange_local_train_station	51.923053741455	6.0719442367554	Zevenaar
+ZVB	Zevenbergen	local_train_station	51.64042	4.60904	Moerdijk
+ZTM	Zoetermeer	interchange_local_train_station	52.047500610352	4.4772224426269	Zoetermeer
+ZTMO	Zoetermeer Oost	local_train_station	52.046390533447	4.4927778244019	Zoetermeer
+ZB	Zuidbroek	interchange_local_train_station	53.159612280006	6.8679141998291	Midden-Groningen
+ZH	Zuidhorn	local_train_station	53.2486292	6.4062361	Westerkwartier
+ZP	Zutphen	interchange_intercity_station	52.145278930664	6.1941666603088	Zutphen
+ZWD	Zwijndrecht	local_train_station	51.814998626709	4.6416668891907	Zwijndrecht
+ZL	Zwolle	interchange_intercity_station	52.504722595215	6.0919442176819	Zwolle
+ZLSH	Zwolle Stadshagen	local_train_station	52.52764	6.05146	Zwolle
