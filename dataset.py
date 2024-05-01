@@ -1,10 +1,9 @@
 import pandas as pd
 import geopandas as gpd
 import json
-from shapely.geometry import shape, Point
+from shapely.geometry import shape
 from pyproj import Transformer
 import math
-import numpy as np
 
 # Mapping for municipality name corrections and encoding issues between the geojson and the NBS datasets
 municipality_name_mapping = {
@@ -69,6 +68,35 @@ def clean_surface_data(file_path):
     data.reset_index(drop=True, inplace=True)
     data['avg_surface'] = pd.to_numeric(data['avg_surface'], errors='coerce')
 
+    return data
+
+def clean_municipality_data(file_path):
+    """
+    Cleans the data related to municipality size, population density, and total population.
+
+    Parameters:
+        file_path (str): The path to the CSV file containing the relevant data.
+
+    Returns:
+        pd.DataFrame: A cleaned DataFrame with columns for municipality, size, population density, and total population.
+    """
+    data = pd.read_csv(file_path, delimiter=';', skiprows=4)
+
+    data.columns = ['municipality', 'year', 'population', 'pop_density', 'size']
+
+    data = data.drop(columns=['year'])
+
+    # Strip whitespace and potential non-numeric characters
+    for col in data.columns[1:]:
+        data[col] = data[col].replace({',': '', ' km²': '', ' aantal': '', r'\s+': ''}, regex=True)
+
+    data['population'] = pd.to_numeric(data['population'], errors='coerce')
+    data['pop_density'] = pd.to_numeric(data['pop_density'], errors='coerce')
+    data['size'] = pd.to_numeric(data['size'], errors='coerce')
+
+    data.dropna(subset=['population', 'pop_density', 'size'], inplace=True)
+    data.reset_index(drop=True, inplace=True)
+    
     return data
 
 def clean_station_data(file_path):
@@ -194,8 +222,6 @@ def find_municipalities_for_stations(station_df, geojson_path):
     
     return station_df
 
-import pandas as pd
-
 def count_stations_per_municipality(station_df, municipalities_df):
     """
     Counts the number of stations in each municipality, including municipalities with 0 stations.
@@ -284,6 +310,7 @@ def process_merged_data(data):
 # Define paths to the data files
 prices_path = './data/unprocessed/prices.csv'
 surface_path = './data/unprocessed/surface.csv'
+mun_size_path = './data/unprocessed/mun_size.csv'
 geojson_path = './data/unprocessed/gemeente.geojson'
 stations_path = './data/unprocessed/stations.csv'
 
@@ -294,16 +321,17 @@ data_stations = apply_name_mapping(data_stations, 'municipality', municipality_n
 
 data_prices = clean_price_data(prices_path)
 data_surface = clean_surface_data(surface_path)
+data_mun_size = clean_municipality_data(mun_size_path)
 data_schiphol = load_and_process_geojson(geojson_path)
 
 data_stations_count = count_stations_per_municipality(data_stations, data_prices[['municipality']])
 
 # Merge data
-final_data = merge_datasets(data_prices, data_surface, data_schiphol, data_stations_count)
+final_data = merge_datasets(data_prices, data_surface, data_mun_size, data_schiphol, data_stations_count)
 
 # Process the merged data
 final_data = process_merged_data(final_data)
 
 # Save the final data to a CSV file
-final_data.to_csv('./data/main.csv', sep='\t', index=False)
-data_stations.to_csv('./data/stations.csv', sep='\t', index=False)
+final_data.to_csv('./data/main.csv', index=False)
+data_stations.to_csv('./data/stations.csv', index=False)
