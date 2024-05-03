@@ -32,6 +32,15 @@ station_type_translation = {
     'facultatief station': 'optional_station', 
 }
 
+# Missing income data - values are from 2021
+missing_incomes = {
+    'Ameland': 47.5,
+    'Renswoude': 59.4,
+    'Rozendaal': 81.4,
+    'Schiermonnikoog': 42.4,
+    'Vlieland': 42.7
+}
+
 def clean_price_data(file_path):
     """
     Cleans the price data and creates a Pandas DataFrame from the CSV file.
@@ -118,6 +127,32 @@ def clean_station_data(file_path):
     data = data_nl[['code', 'name_long', 'type', 'geo_lat', 'geo_lng']].copy()
     data['type'] = data['type'].map(station_type_translation)
     data.rename(columns={'name_long': 'station_name'}, inplace=True)
+
+    return data
+
+def clean_income_data(file_path):
+    """
+    Cleans the income data and creates a Pandas DataFrame from the CSV file.
+
+    Parameters:
+        file_path (str): The path to the CSV file containing income data.
+
+    Returns:
+        pd.DataFrame: A cleaned DataFrame with income data.
+    """
+    data = pd.read_csv(file_path, delimiter=';', skiprows=6)
+    data.columns = ['municipality', 'avg_income']
+    data.reset_index(drop=True, inplace=True)
+
+    for col in data.columns[1:]:
+        data[col] = data[col].replace({',': '.', r'\s+': ''}, regex=True)
+
+    data['avg_income'] = pd.to_numeric(data['avg_income'], errors='coerce')
+
+    # Fill missing income data
+    data['avg_income'] = data['avg_income'].fillna(data['municipality'].map(missing_incomes))
+
+    data.dropna(subset=['avg_income'], inplace=True)
 
     return data
 
@@ -311,6 +346,7 @@ def process_merged_data(data):
 prices_path = './data/unprocessed/prices.csv'
 surface_path = './data/unprocessed/surface.csv'
 mun_size_path = './data/unprocessed/mun_size.csv'
+incomes_path = './data/unprocessed/incomes.csv'
 geojson_path = './data/unprocessed/gemeente.geojson'
 stations_path = './data/unprocessed/stations.csv'
 
@@ -322,12 +358,13 @@ data_stations = apply_name_mapping(data_stations, 'municipality', municipality_n
 data_prices = clean_price_data(prices_path)
 data_surface = clean_surface_data(surface_path)
 data_mun_size = clean_municipality_data(mun_size_path)
+data_incomes = clean_income_data(incomes_path)
 data_schiphol = load_and_process_geojson(geojson_path)
 
 data_stations_count = count_stations_per_municipality(data_stations, data_prices[['municipality']])
 
 # Merge data
-final_data = merge_datasets(data_prices, data_surface, data_mun_size, data_schiphol, data_stations_count)
+final_data = merge_datasets(data_prices, data_surface, data_mun_size, data_incomes, data_schiphol, data_stations_count)
 
 # Process the merged data
 final_data = process_merged_data(final_data)
