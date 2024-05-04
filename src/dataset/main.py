@@ -193,7 +193,7 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
     return data
 
 # Define paths to the data files
-base_path = os.path.join(dir_path, '../../data/unprocessed/')
+base_path = os.path.join(dir_path, '../../unprocessed/')
 
 prices_path = os.path.join(base_path, 'cbs/prices.csv')
 surface_path = os.path.join(base_path, 'cbs/surface.csv')
@@ -202,9 +202,9 @@ incomes_path = os.path.join(base_path, 'cbs/incomes.csv')
 labor_path = os.path.join(base_path, 'cbs/labor.csv')
 geojson_path = os.path.join(base_path, 'gemeente.geojson')
 
-stations_path = os.path.join(dir_path, '../../data/output/stations.csv')
+stations_path = os.path.join(dir_path, '../../output/data/stations.csv')
 
-main_output = os.path.join(dir_path, '../../data/output/main.csv')
+main_output = os.path.join(dir_path, '../../output/data/main.csv')
 
 def create_main_dataset():
     """

@@ -2,9 +2,6 @@ import pandas as pd
 import os
 from src.analysis.utils import dir_path
 
-# Load the data
-df = pd.read_csv(os.path.join(dir_path, '../../data/output/main.csv'))
-
 def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
     """
     Create a LaTeX table with summary statistics for all numeric columns.
@@ -47,7 +44,7 @@ def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
 
 output_path = os.path.join(dir_path, '../../output/tables/')
 
-def create_tables():
+def create_tables(df: pd.DataFrame) -> None:
     """
     Create tables for the summary statistics of the main dataset.
 

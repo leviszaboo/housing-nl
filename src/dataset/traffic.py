@@ -4,7 +4,7 @@ from src.dataset.utils import dir_path
 
 # Base path and file template
 
-base_path = os.path.join(dir_path, '../../data/unprocessed/rdt/traffic/')
+base_path = os.path.join(dir_path, '../../unprocessed/rdt/traffic/')
 file_template = 'services-2023-{month}.csv.gz'
 
 def load_traffic_data(month: int) -> pd.DataFrame:

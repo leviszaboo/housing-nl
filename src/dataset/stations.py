@@ -83,12 +83,12 @@ def merge_traffic_data(stations_df: pd.DataFrame) -> pd.DataFrame:
     return merged_df
 
 # Define paths to the data files
-base_path = os.path.join(dir_path, '../../data/unprocessed/')
+base_path = os.path.join(dir_path, '../../unprocessed/')
 
 stations_path = os.path.join(base_path, 'rdt/stations.csv')
 geojson_path = os.path.join(base_path, 'gemeente.geojson')
 
-stations_output = os.path.join(dir_path, '../../data/output/stations.csv')
+stations_output = os.path.join(dir_path, '../../output/data/stations.csv')
 
 def create_stations_data():
     """
