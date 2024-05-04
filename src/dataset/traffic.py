@@ -4,7 +4,7 @@ import os
 # Base path and file template
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-base_path = os.path.join(dir_path, '../data/unprocessed/traffic')
+base_path = os.path.join(dir_path, '../../data/unprocessed/rdt/traffic/')
 file_template = 'services-2023-{month}.csv.gz'
 
 def load_traffic_data(month: int) -> pd.DataFrame:
@@ -36,33 +36,27 @@ def aggregate_traffic_data(months: iter) -> pd.DataFrame:
         pd.DataFrame: A DataFrame containing the aggregated traffic data, where each row represents a station
                       with its code and the total traffic count across all specified months.
     """
-    total_station_counts = pd.Series(dtype=int)
+    total_traffic_counts = pd.Series(dtype=int)
 
     for month in months:
+        print(f'Processing month {month} of traffic data...')
+
         data = load_traffic_data(month)
 
-        station_counts = data.loc[data['Service:Completely cancelled'] == False, 'Stop:Station code'].value_counts()
+        traffic_counts = data.loc[data['Service:Completely cancelled'] == False, 'Stop:Station code'].value_counts()
         
-        if total_station_counts.empty:
-            total_station_counts = station_counts
+        if total_traffic_counts.empty:
+            total_traffic_counts = traffic_counts
         else:
-            total_station_counts = total_station_counts.add(station_counts, fill_value=0)
+            total_traffic_counts = total_traffic_counts.add(traffic_counts, fill_value=0)
 
-    station_counts_df = total_station_counts.reset_index()
-    station_counts_df.columns = ['station_code', 'traffic_count']
+    traffic_counts_df = total_traffic_counts.reset_index()
+    traffic_counts_df.columns = ['station_code', 'traffic_count']
 
     additional_data = pd.DataFrame({'station_code': ['NA'], 'traffic_count': [27180]})
-    station_counts_df = pd.concat([station_counts_df, additional_data], ignore_index=True)
+    traffic_counts_df = pd.concat([traffic_counts_df, additional_data], ignore_index=True)
     
-    return station_counts_df
-
-output_path = os.path.join(dir_path, '../data/output/traffic_aggregated.csv')
-
-if __name__ == '__main__':
-    months = range(1, 13)
-    data_aggregated = aggregate_traffic_data(months)
-
-    data_aggregated.to_csv(output_path, index=False)
+    return traffic_counts_df
 
 
 

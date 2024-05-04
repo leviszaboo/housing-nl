@@ -1,11 +1,8 @@
 import pandas as pd
-import geopandas as gpd
-import json
-from shapely.geometry import shape
-from pyproj import Transformer
-import math
 import os
-from src.utils import municipality_name_mapping, missing_incomes, apply_name_mapping
+from src.dataset.utils import municipality_name_mapping, \
+    missing_incomes, apply_name_mapping
+from src.dataset.distances import load_and_process_geojson
 
 def clean_price_data(file_path: str) -> pd.DataFrame:
     """
@@ -100,78 +97,28 @@ def clean_income_data(file_path: str) -> pd.DataFrame:
 
     return data
 
-def calculate_centroid_lat_lon(geometry: dict) -> tuple:
+def clean_labor_data(file_path: str) -> pd.DataFrame:
     """
-    Calculates the centroid latitude and longitude from a geometry object.
+    Cleans the labor data and creates a Pandas DataFrame from the CSV file.
 
     Parameters:
-        geometry (dict): The geometry object in GeoJSON format.
+        file_path (str): The path to the CSV file containing labor data.
 
     Returns:
-        tuple: Latitude and longitude of the centroid.
+        pd.DataFrame: A cleaned DataFrame with labor data.
     """
-    shapely_geometry = shape(geometry)
-    transformer_to_3857 = Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True)
-    transformer_to_4326 = Transformer.from_crs("EPSG:3857", "EPSG:4326", always_xy=True)
-    try:
-        centroid_3857 = transformer_to_3857.transform(*shapely_geometry.centroid.coords[0])
-        centroid_4326 = transformer_to_4326.transform(*centroid_3857)
-        return centroid_4326[1], centroid_4326[0]
-    except Exception as e:
-        return None, None
+    data = pd.read_csv(file_path, delimiter=';', skiprows=5)
+    data.columns = ['municipality', 'unemp_rate', 'net_labor_participation']
+    data.reset_index(drop=True, inplace=True)
 
-def haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    """
-    Calculates the distance between two points on the Earth using the Haversine formula.
+    for col in data.columns[1:]:
+        data[col] = data[col].replace({',': '.', r'\s+': ''}, regex=True)
 
-    Parameters:
-        lat1 (float): Latitude of the first point.
-        lon1 (float): Longitude of the first point.
-        lat2 (float): Latitude of the second point.
-        lon2 (float): Longitude of the second point.
+    data['unemp_rate'] = pd.to_numeric(data['unemp_rate'], errors='coerce')
+    data['net_labor_participation'] = pd.to_numeric(data['net_labor_participation'], errors='coerce')
 
-    Returns:
-        float: The distance between the two points in kilometers.
-    """
-    R = 6371.0
-    phi1 = math.radians(lat1)
-    phi2 = math.radians(lat2)
-    delta_phi = math.radians(lat2 - lat1)
-    delta_lambda = math.radians(lon2 - lon1)
-    a = math.sin(delta_phi / 2)**2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2)**2
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-    distance = R * c
-    return distance
 
-def load_and_process_geojson(file_path: str) -> pd.DataFrame:
-    """
-    Loads GeoJSON data and processes it to calculate distances to airports.
-
-    Parameters:
-        file_path (str): The path to the GeoJSON file.
-
-    Returns:
-        pd.DataFrame: A DataFrame containing municipalities and their distances to airports.
-    """
-    with open(file_path, 'r') as geojson_file:
-        geojson_data = json.load(geojson_file)
-    schiphol_coords = (52.3158, 4.7480)
-    list_data = []
-    for feature in geojson_data['features']:
-        original_name = feature['properties']['statnaam']
-        corrected_name = municipality_name_mapping.get(original_name, original_name)
-        geometry = feature['geometry']
-        lat, lon = calculate_centroid_lat_lon(geometry)
-        schiphol_distance = haversine(lat, lon, *schiphol_coords)
-        list_data.append({
-            'municipality': corrected_name,
-            'schiphol_distance': schiphol_distance,
-        })
-    return pd.DataFrame(list_data)
-
-import pandas as pd
-
-import pandas as pd
+    return data
 
 def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -244,29 +191,43 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
 
 # Define paths to the data files
 dir_path = os.path.dirname(os.path.realpath(__file__))
+base_path = os.path.join(dir_path, '../../data/unprocessed/')
 
-prices_path = os.path.join(dir_path, '../data/unprocessed/prices.csv')
-surface_path = os.path.join(dir_path, '../data/unprocessed/surface.csv')
-mun_size_path = os.path.join(dir_path, '../data/unprocessed/mun_size.csv')
-incomes_path = os.path.join(dir_path, '../data/unprocessed/incomes.csv')
-geojson_path = os.path.join(dir_path, '../data/unprocessed/gemeente.geojson')
+prices_path = os.path.join(base_path, 'cbs/prices.csv')
+surface_path = os.path.join(base_path, 'cbs/surface.csv')
+mun_size_path = os.path.join(base_path, 'cbs/mun_size.csv')
+incomes_path = os.path.join(base_path, 'cbs/incomes.csv')
+labor_path = os.path.join(base_path, 'cbs/labor.csv')
+geojson_path = os.path.join(base_path, 'gemeente.geojson')
 
-stations_path = os.path.join(dir_path, '../data/output/stations.csv')
+stations_path = os.path.join(dir_path, '../../data/output/stations.csv')
 
-main_output = os.path.join(dir_path, '../data/output/main.csv')
+main_output = os.path.join(dir_path, '../../data/output/main.csv')
 
-if __name__ == '__main__':
-    # Process each data set
+def create_main_dataset():
+    """
+    Creates the main dataset by processing and merging the individual datasets.
+    """
+    print('Creating main dataset...')
+
+    # Process each dataset
+    print('Processing CBS datasets...')
     data_prices = clean_price_data(prices_path)
     data_surface = clean_surface_data(surface_path)
     data_mun_size = clean_municipality_data(mun_size_path)
     data_incomes = clean_income_data(incomes_path)
-    data_schiphol = load_and_process_geojson(geojson_path)
+    data_labor = clean_labor_data(labor_path)
+
+    print('Processing GeoJSON data...')
+    data_cities = load_and_process_geojson(geojson_path)
 
     data_stations_count = process_stations_data(stations_path, data_prices[['municipality']])
 
     # Merge data
-    final_data = merge_datasets(data_prices, data_surface, data_mun_size, data_incomes, data_schiphol, data_stations_count)
+    print('Merging final datasets...')
+    final_data = merge_datasets(data_prices, data_surface, data_mun_size, 
+                                data_incomes, data_labor, data_cities, 
+                                data_stations_count)
 
     # Process the merged data
     final_data = process_merged_data(final_data)

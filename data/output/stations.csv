@@ -246,7 +246,7 @@ MP,Meppel,interchange_local_train_station,52.69083404541,6.1975002288818,Meppel,
 MDB,Middelburg,local_train_station,51.494720458984,3.6172223091126,Middelburg,MDB,38453.0
 MMLH,Mook-Molenhoek,local_train_station,51.766262,5.879133,Mook en Middelaar,MMLH,33202.0
 NDB,Naarden-Bussum,interchange_local_train_station,52.280277252197,5.1569442749023,Gooise Meren,NDB,65656.0
-NA,Nieuw Amsterdam,express_train_station,52.718612670898,6.8486108779907,Emmen,,27180.0
+NA,Nieuw Amsterdam,express_train_station,52.718612670898,6.8486108779907,Emmen,NA,27180.0
 NVP,Nieuw Vennep,local_train_station,52.258888244629,4.6455554962158,Haarlemmermeer,NVP,41069.0
 NWK,Nieuwerkerk a/d IJssel,local_train_station,51.965278625488,4.6169443130493,Zuidplas,NWK,28932.0
 NKK,Nijkerk,local_train_station,52.222221374512,5.4938888549805,Nijkerk,NKK,26622.0

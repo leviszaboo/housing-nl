@@ -1,7 +1,8 @@
 import pandas as pd
 import geopandas as gpd
 import os
-from src.utils import apply_name_mapping, municipality_name_mapping, station_type_translation
+from src.dataset.traffic import aggregate_traffic_data
+from src.dataset.utils import apply_name_mapping, municipality_name_mapping, station_type_translation
 
 def clean_station_data(file_path: str) -> pd.DataFrame:
     """
@@ -59,7 +60,7 @@ def find_municipalities_for_stations(station_df: pd.DataFrame, geojson_path: str
     
     return station_df
 
-def merge_traffic_data(stations_df: pd.DataFrame, traffic_path: str) -> pd.DataFrame:
+def merge_traffic_data(stations_df: pd.DataFrame) -> pd.DataFrame:
     """
     Merges the station DataFrame with the aggregated traffic data.
 
@@ -70,7 +71,9 @@ def merge_traffic_data(stations_df: pd.DataFrame, traffic_path: str) -> pd.DataF
     Returns:
         pd.DataFrame: The merged DataFrame.
     """
-    traffic_df = pd.read_csv(traffic_path)
+    months = range(1, 13)
+    
+    traffic_df = aggregate_traffic_data(months)
     merged_df = pd.merge(stations_df, traffic_df, left_on='code', right_on='station_code', how='left')
 
     # Add missing traffic data for 'NA' (Nieuw Amsterdam)
@@ -80,17 +83,23 @@ def merge_traffic_data(stations_df: pd.DataFrame, traffic_path: str) -> pd.DataF
 
 # Define paths to the data files
 dir_path = os.path.dirname(os.path.realpath(__file__))
+base_path = os.path.join(dir_path, '../../data/unprocessed/')
 
-stations_path = os.path.join(dir_path, '../data/unprocessed/stations.csv')
-geojson_path = os.path.join(dir_path, '../data/unprocessed/gemeente.geojson')
-traffic_path = os.path.join(dir_path, '../data/output/traffic_aggregated.csv')
-stations_output = os.path.join(dir_path, '../data/output/stations.csv')
+stations_path = os.path.join(base_path, 'rdt/stations.csv')
+geojson_path = os.path.join(base_path, 'gemeente.geojson')
 
-if __name__ == '__main__':
+stations_output = os.path.join(dir_path, '../../data/output/stations.csv')
+
+def create_stations_data():
+    """
+    Creates the stations dataset by processing the station data and merging it with traffic data.
+    """
+    print('Processing stations data...')
+
     data_stations = clean_station_data(stations_path)
     data_stations = find_municipalities_for_stations(data_stations, geojson_path)
     data_stations = apply_name_mapping(data_stations, 'municipality', municipality_name_mapping)
-    data_stations = merge_traffic_data(data_stations, traffic_path)
+    data_stations = merge_traffic_data(data_stations)
     data_stations.to_csv(stations_output, index=False)
 
     print('Stations data processing complete.')
