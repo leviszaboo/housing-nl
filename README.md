@@ -8,10 +8,12 @@ Click [here](data/output/main.csv) to view the main dataset.
 ## Data Sources
 - **House Prices Data and Controls**: Regional indicators on the municipality level.
   - Source: [CBS Statline](https://opendata.cbs.nl/statline/#/CBS/nl/)
+- **Municipalities GeoJSON**: Cartographic data in GeoJSON format on the outline of Dutch municipalities for 2023.
+  - Source: [Cartomap](https://github.com/cartomap/nl)
 - **Netherlands Train Stations**: Data on locations and categories of train stations across the Netherlands.
   - Source: [Rijden de Treinen (station data)](https://www.rijdendetreinen.nl/open-data/treinstations)
 - **Netherlands Train Traffic**: Monthly data on train service across the Netherlands.
-  - Source: [Rijden de Treinen (traffic data)](https://www.rijdendetreinen.nl/open-data/treinstations)
+  - Source: [Rijden de Treinen (traffic data)](https://www.rijdendetreinen.nl/open-data/treinarchief)
 
 ## File Descriptions
 - `src/dataset.py`: Script that constructs the main dataset from the raw data files.
