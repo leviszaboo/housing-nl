@@ -25,6 +25,7 @@ Click [here](data/output/main.csv) to view the main dataset.
 - **Conditions**: Attribution must be provided with proper credit, a link to the license, and indication if changes were made.
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
+
 [![CC BY 4.0][cc-by-image]][cc-by]
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
