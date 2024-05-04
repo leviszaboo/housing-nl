@@ -7,10 +7,10 @@ The study consists of two main phases:
 1. Analysis of the effect of the presence of a train station in a municipality on house prices per square meter, controlling for other factors. 
 2. Analysis of the effect of the volume of train traffic (trains stopped at any station) in municipalities with a train station present on square meter house prices, controlling for other factors.
 
-Click [here](data/output/main.csv) to view the main dataset.
+Click [here](output/data/main.csv) to view the main dataset.
 
 ## Data Sources
-- **House Prices Data and Controls**: Regional indicators on the municipality level, located in the [data/unprocessed/cbs](data/unprocessed/cbs/) folder.
+- **House Prices Data and Controls**: Regional indicators on the municipality level, located in the [unprocessed/cbs](unprocessed/cbs/) folder.
   - Source: [CBS Statline](https://opendata.cbs.nl/statline/#/CBS/nl/)
 - **Municipalities GeoJSON**: Cartographic data in GeoJSON format on the outline of Dutch municipalities for 2023.
   - Source: [Cartomap](https://github.com/cartomap/nl)
@@ -22,7 +22,7 @@ Click [here](data/output/main.csv) to view the main dataset.
 ## Project Stucture and File Descriptions
 - `main.py`: Main entrypoint of the application.
 - `src/dataset`: Directory containing files related to processing the raw data.
-- `src/analysis`: Directory containing files related to the analysis of the [main dataset](data/output/main.csv). Contains two subfolders `phase_1` and `phase_2`
+- `src/analysis`: Directory containing files related to the analysis of the [main dataset](output/data/main.csv). Contains two subfolders `phase_1` and `phase_2`
 - `src/dataset/main.py`: Script that constructs the main dataset from the raw CBS data and the processed station and traffic data.
 - `unprocessed/`: Directory containing raw data files.
 - `output/`: Directory containing processed CSV files and tables and figures resulting from the analysis.
