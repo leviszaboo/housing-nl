@@ -19,13 +19,14 @@ Click [here](data/output/main.csv) to view the main dataset.
 - **Netherlands Train Traffic**: Monthly data on train service across the Netherlands.
   - Source: [Rijden de Treinen (traffic data)](https://www.rijdendetreinen.nl/open-data/treinarchief)
 
-## File Descriptions
+## Project Stucture and File Descriptions
 - `main.py`: Main entrypoint of the application.
 - `src/dataset`: Directory containing files related to processing the raw data.
-- `src/analysis`: Directory containing files related to the analysis of the [main dataset](data/output/main.csv).
+- `src/analysis`: Directory containing files related to the analysis of the [main dataset](data/output/main.csv). Contains two subfolders `phase_1` and `phase_2`
 - `src/dataset/main.py`: Script that constructs the main dataset from the raw CBS data and the processed station and traffic data.
 - `data/unprocessed`: Directory containing raw data files.
 - `data/output`: Directory containing processed CSV files.
+- `output`: Directory containing tables and figures resulting from the analysis.
 
 ## How to Run This Project
 
@@ -60,8 +61,9 @@ Click [here](data/output/main.csv) to view the main dataset.
    ```
    python main.py
    ```
+   * You can also specify the `--analysis_only`, `--dataset_only` or `--skip_station_data` command line arguments to run only a specific part of the main function. 
 5. **Verify the Output**:
-   * Check the generated files in the `data/output` folder for the main dataset and analysis results.
+   * Check the generated files in the `data/output` folder for the main and stations dataset, and the `output` folder for the analysis results.
 
 ## License
 "Effect of Train Traffic and Train Stations on House Prices in the Netherlands" © 2024 by Levente Szabo is licensed under [Creative Commons Attribution 4.0 International License][cc-by]. This means you are free to:
