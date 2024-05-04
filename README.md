@@ -3,14 +3,14 @@
 ## Description
 This project analyzes how the presence of train stations in municipalities and the volume of trains stopping at these stations affect house prices in the Netherlands. This study is part of a bachelor's thesis in Economics at the University of Amsterdam. 
 
-The study consist of two main phases:
+The study consists of two main phases:
 1. Analysis of the effect of the presence of a train station in a municipality on house prices per square meter, controlling for other factors. 
 2. Analysis of the effect of the volume of train traffic (trains stopped at any station) in municipalities with a train station present on square meter house prices, controlling for other factors.
 
 Click [here](data/output/main.csv) to view the main dataset.
 
 ## Data Sources
-- **House Prices Data and Controls**: Regional indicators on the municipality level, located in the [unprocessed/cbs](data/unprocessed/cbs/) folder.
+- **House Prices Data and Controls**: Regional indicators on the municipality level, located in the [data/unprocessed/cbs](data/unprocessed/cbs/) folder.
   - Source: [CBS Statline](https://opendata.cbs.nl/statline/#/CBS/nl/)
 - **Municipalities GeoJSON**: Cartographic data in GeoJSON format on the outline of Dutch municipalities for 2023.
   - Source: [Cartomap](https://github.com/cartomap/nl)
