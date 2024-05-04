@@ -142,14 +142,14 @@ def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -
 
     station_count = station_df.groupby('municipality').size().reset_index(name='station_count')
 
-    station_type_count = station_df.groupby(['municipality', 'type']).size().unstack(fill_value=0).reset_index()
-    station_type_count.columns = ['municipality'] + [f'{col}_count' for col in station_type_count.columns[1:]]
+    # station_type_count = station_df.groupby(['municipality', 'type']).size().unstack(fill_value=0).reset_index()
+    # station_type_count.columns = ['municipality'] + [f'{col}_count' for col in station_type_count.columns[1:]]
 
     traffic_sum = station_df.groupby('municipality')['traffic_count'].sum().reset_index(name='total_traffic')
 
     # Merge counts and traffic data with the complete list of municipalities
     merged_df = pd.merge(municipalities_df, station_count, on='municipality', how='left')
-    merged_df = pd.merge(merged_df, station_type_count, on='municipality', how='left')
+    # merged_df = pd.merge(merged_df, station_type_count, on='municipality', how='left')
     merged_df = pd.merge(merged_df, traffic_sum, on='municipality', how='left')
 
     # Fill NaN values with 0 and convert counts/traffic to integers
@@ -186,7 +186,10 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: The processed data.
     """
-    data['m2_price'] = data['avg_price'] / data['avg_surface']
+    data.insert(1, 'm2_price', data['avg_price'] / data['avg_surface'])
+
+    data.drop(columns=['avg_price', 'avg_surface'], inplace=True)
+
     return data
 
 # Define paths to the data files
