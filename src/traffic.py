@@ -8,14 +8,34 @@ base_path = os.path.join(dir_path, '../data/unprocessed/traffic')
 file_template = 'services-2023-{month}.csv.gz'
 
 def load_traffic_data(month):
-    month_formatted = f'{month:02}' # Format month as zero-padded 2-digit string
+    """
+    Load traffic data for a specific month.
+
+    Args:
+        month (int): The month for which to load the traffic data, represented as an integer (1-12).
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the traffic data for the specified month.
+    """
+    month_formatted = f'{month:02}'  # Format month as a zero-padded 2-digit string
     path = os.path.join(base_path, file_template.format(month=month_formatted))
 
+    # Read the CSV file with gzip compression and return as DataFrame
     data = pd.read_csv(path, compression='gzip', header=0, sep=',', quotechar='"')
     
     return data
 
 def aggregate_traffic_data(months):
+    """
+    Aggregate traffic data across multiple months.
+
+    Args:
+        months (iterable): An iterable (list, range, etc.) containing integers representing the months (1-12).
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the aggregated traffic data, where each row represents a station
+                      with its code and the total traffic count across all specified months.
+    """
     total_station_counts = pd.Series(dtype=int)
 
     for month in months:
@@ -31,10 +51,8 @@ def aggregate_traffic_data(months):
     station_counts_df = total_station_counts.reset_index()
     station_counts_df.columns = ['station_code', 'traffic_count']
 
-    # Manually add missing traffic data for 'NA' (Nieuw Amsterdam)
     additional_data = pd.DataFrame({'station_code': ['NA'], 'traffic_count': [27180]})
     station_counts_df = pd.concat([station_counts_df, additional_data], ignore_index=True)
-    
     
     return station_counts_df
 
@@ -45,5 +63,6 @@ if __name__ == '__main__':
     data_aggregated = aggregate_traffic_data(months)
 
     data_aggregated.to_csv(output_path, index=False)
+
 
 
