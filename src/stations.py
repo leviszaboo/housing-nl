@@ -3,7 +3,7 @@ import geopandas as gpd
 import os
 from src.utils import apply_name_mapping, municipality_name_mapping, station_type_translation
 
-def clean_station_data(file_path):
+def clean_station_data(file_path: str) -> pd.DataFrame:
     """
     Cleans the station data and creates a Pandas DataFrame from the CSV file.
 
@@ -27,7 +27,7 @@ def clean_station_data(file_path):
 
     return data
 
-def find_municipalities_for_stations(station_df, geojson_path):
+def find_municipalities_for_stations(station_df: pd.DataFrame, geojson_path: str) -> pd.DataFrame:
     """
     Enhances station DataFrame with municipality information based on lat/lon columns.
     
@@ -59,7 +59,17 @@ def find_municipalities_for_stations(station_df, geojson_path):
     
     return station_df
 
-def merge_traffic_data(stations_df, traffic_path):
+def merge_traffic_data(stations_df: pd.DataFrame, traffic_path: str) -> pd.DataFrame:
+    """
+    Merges the station DataFrame with the aggregated traffic data.
+
+    Parameters:
+        stations_df (pd.DataFrame): The DataFrame containing the station data.
+        traffic_path (str): The path to the CSV file containing the aggregated traffic data.
+    
+    Returns:
+        pd.DataFrame: The merged DataFrame.
+    """
     traffic_df = pd.read_csv(traffic_path)
     merged_df = pd.merge(stations_df, traffic_df, left_on='code', right_on='station_code', how='left')
 

@@ -7,7 +7,7 @@ import math
 import os
 from src.utils import municipality_name_mapping, missing_incomes, apply_name_mapping
 
-def clean_price_data(file_path):
+def clean_price_data(file_path: str) -> pd.DataFrame:
     """
     Cleans the price data and creates a Pandas DataFrame from the CSV file.
 
@@ -25,7 +25,7 @@ def clean_price_data(file_path):
 
     return data
 
-def clean_surface_data(file_path):
+def clean_surface_data(file_path: str) -> pd.DataFrame:
     """
     Cleans the surface area data and creates a Pandas DataFrame from CSV file.
 
@@ -45,7 +45,7 @@ def clean_surface_data(file_path):
 
     return data
 
-def clean_municipality_data(file_path):
+def clean_municipality_data(file_path: str) -> pd.DataFrame:
     """
     Cleans the data related to municipality size, population density, and total population.
 
@@ -74,7 +74,7 @@ def clean_municipality_data(file_path):
     
     return data
 
-def clean_income_data(file_path):
+def clean_income_data(file_path: str) -> pd.DataFrame:
     """
     Cleans the income data and creates a Pandas DataFrame from the CSV file.
 
@@ -100,7 +100,7 @@ def clean_income_data(file_path):
 
     return data
 
-def calculate_centroid_lat_lon(geometry):
+def calculate_centroid_lat_lon(geometry: dict) -> tuple:
     """
     Calculates the centroid latitude and longitude from a geometry object.
 
@@ -120,7 +120,7 @@ def calculate_centroid_lat_lon(geometry):
     except Exception as e:
         return None, None
 
-def haversine(lat1, lon1, lat2, lon2):
+def haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     """
     Calculates the distance between two points on the Earth using the Haversine formula.
 
@@ -143,7 +143,7 @@ def haversine(lat1, lon1, lat2, lon2):
     distance = R * c
     return distance
 
-def load_and_process_geojson(file_path):
+def load_and_process_geojson(file_path: str) -> pd.DataFrame:
     """
     Loads GeoJSON data and processes it to calculate distances to airports.
 
@@ -173,10 +173,11 @@ import pandas as pd
 
 import pandas as pd
 
-def count_stations_per_municipality(stations_path, municipalities_df):
+def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -> pd.DataFrame:
     """
     Counts the number of stations and sums up the traffic in each municipality, including municipalities with 0 stations.
-    Also counts the number of stations for each category in the 'type' column.
+    Counts the number of stations for each category in the 'type' column.
+    Sums of train traffic in each municipality.
 
     Parameters:
         stations_path (str): Path to the CSV file containing stations data with 'municipality', 'type', and 'traffic' columns.
@@ -185,24 +186,18 @@ def count_stations_per_municipality(stations_path, municipalities_df):
     Returns:
         pd.DataFrame: A DataFrame containing the number of stations and total traffic in each municipality, including those with 0 stations.
     """
-    # Load the stations data
     station_df = pd.read_csv(stations_path)
 
-    # Apply name mapping if available (assuming apply_name_mapping is predefined)
     station_df = apply_name_mapping(station_df, 'municipality', municipality_name_mapping)
     municipalities_df = apply_name_mapping(municipalities_df, 'municipality', municipality_name_mapping)
 
-    # Ensure unique municipality names
     municipalities_df = municipalities_df[['municipality']].drop_duplicates().reset_index(drop=True)
 
-    # Count the number of stations per municipality
     station_count = station_df.groupby('municipality').size().reset_index(name='station_count')
 
-    # Count the number of stations per type per municipality
     station_type_count = station_df.groupby(['municipality', 'type']).size().unstack(fill_value=0).reset_index()
     station_type_count.columns = ['municipality'] + [f'{col}_count' for col in station_type_count.columns[1:]]
 
-    # Sum up the traffic per municipality
     traffic_sum = station_df.groupby('municipality')['traffic_count'].sum().reset_index(name='total_traffic')
 
     # Merge counts and traffic data with the complete list of municipalities
@@ -217,7 +212,7 @@ def count_stations_per_municipality(stations_path, municipalities_df):
 
     return merged_df
 
-def merge_datasets(*datasets):
+def merge_datasets(*datasets: pd.DataFrame) -> pd.DataFrame:
     """
     Merges multiple datasets on the 'municipality' column.
 
@@ -234,7 +229,7 @@ def merge_datasets(*datasets):
         merged_data = pd.merge(merged_data, data, on='municipality', how='inner')
     return merged_data
 
-def process_merged_data(data):
+def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
     """
     Processes the merged data to calculate the price per square meter.
 
@@ -268,7 +263,7 @@ if __name__ == '__main__':
     data_incomes = clean_income_data(incomes_path)
     data_schiphol = load_and_process_geojson(geojson_path)
 
-    data_stations_count = count_stations_per_municipality(stations_path, data_prices[['municipality']])
+    data_stations_count = process_stations_data(stations_path, data_prices[['municipality']])
 
     # Merge data
     final_data = merge_datasets(data_prices, data_surface, data_mun_size, data_incomes, data_schiphol, data_stations_count)

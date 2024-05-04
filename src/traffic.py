@@ -7,7 +7,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 base_path = os.path.join(dir_path, '../data/unprocessed/traffic')
 file_template = 'services-2023-{month}.csv.gz'
 
-def load_traffic_data(month):
+def load_traffic_data(month: int) -> pd.DataFrame:
     """
     Load traffic data for a specific month.
 
@@ -25,7 +25,7 @@ def load_traffic_data(month):
     
     return data
 
-def aggregate_traffic_data(months):
+def aggregate_traffic_data(months: iter) -> pd.DataFrame:
     """
     Aggregate traffic data across multiple months.
 

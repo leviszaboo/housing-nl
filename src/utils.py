@@ -1,3 +1,5 @@
+import pandas as pd
+
 # Mapping for municipality name corrections and encoding issues between the geojson and the NBS datasets
 municipality_name_mapping = {
     'Noardeast-FryslÃ¢n': 'Noardeast-Fryslân',  
@@ -34,7 +36,7 @@ missing_incomes = {
     'Vlieland': 42.7
 }
 
-def apply_name_mapping(data, col, mapping):
+def apply_name_mapping(data: pd.DataFrame, col: str, mapping: dict) -> pd.DataFrame:
     """
     Applies a name mapping to a DataFrame column.
 
