@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from src.dataset.utils import municipality_name_mapping, \
-    missing_incomes, apply_name_mapping
+    missing_incomes, apply_name_mapping, dir_path
 from src.dataset.distances import load_and_process_geojson
 
 def clean_price_data(file_path: str) -> pd.DataFrame:
@@ -190,7 +190,6 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
     return data
 
 # Define paths to the data files
-dir_path = os.path.dirname(os.path.realpath(__file__))
 base_path = os.path.join(dir_path, '../../data/unprocessed/')
 
 prices_path = os.path.join(base_path, 'cbs/prices.csv')

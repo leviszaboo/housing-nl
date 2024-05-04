@@ -4,7 +4,7 @@
 This project analyzes how the presence of train stations in municipalities and the volume of trains stopping at these stations affect house prices in the Netherlands. This study is part of a bachelor's thesis in Economics at the University of Amsterdam. 
 
 The study consist of two main phases:
-1. Analysis of the effect of the presence of a train station in a municipality on house prices per square meter, controlling for other factors.
+1. Analysis of the effect of the presence of a train station in a municipality on house prices per square meter, controlling for other factors. 
 2. Analysis of the effect of the volume of train traffic (trains stopped at any station) in municipalities with a train station present on square meter house prices, controlling for other factors.
 
 Click [here](data/output/main.csv) to view the main dataset.

@@ -1,4 +1,7 @@
 import pandas as pd
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 # Mapping for municipality name corrections and encoding issues between the geojson and the NBS datasets
 municipality_name_mapping = {

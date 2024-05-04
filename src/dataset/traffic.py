@@ -1,8 +1,8 @@
 import pandas as pd
 import os
+from src.dataset.utils import dir_path  
 
 # Base path and file template
-dir_path = os.path.dirname(os.path.realpath(__file__))
 
 base_path = os.path.join(dir_path, '../../data/unprocessed/rdt/traffic/')
 file_template = 'services-2023-{month}.csv.gz'

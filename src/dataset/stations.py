@@ -2,7 +2,8 @@ import pandas as pd
 import geopandas as gpd
 import os
 from src.dataset.traffic import aggregate_traffic_data
-from src.dataset.utils import apply_name_mapping, municipality_name_mapping, station_type_translation
+from src.dataset.utils import apply_name_mapping, municipality_name_mapping, station_type_translation, dir_path
+
 
 def clean_station_data(file_path: str) -> pd.DataFrame:
     """
@@ -82,7 +83,6 @@ def merge_traffic_data(stations_df: pd.DataFrame) -> pd.DataFrame:
     return merged_df
 
 # Define paths to the data files
-dir_path = os.path.dirname(os.path.realpath(__file__))
 base_path = os.path.join(dir_path, '../../data/unprocessed/')
 
 stations_path = os.path.join(base_path, 'rdt/stations.csv')
