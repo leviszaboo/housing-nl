@@ -21,11 +21,12 @@ Click [here](output/data/main.csv) to view the main dataset.
 
 ## Project Stucture and File Descriptions
 - `main.py`: Main entrypoint of the application.
-- `src/dataset`: Directory containing files related to processing the raw data.
-- `src/analysis`: Directory containing files related to the analysis of the [main dataset](output/data/main.csv). Contains two subfolders `phase_1` and `phase_2`
-- `src/dataset/main.py`: Script that constructs the main dataset from the raw CBS data and the processed station and traffic data.
 - `unprocessed/`: Directory containing raw data files.
-- `output/`: Directory containing processed CSV files and tables and figures resulting from the analysis.
+- `output/`: Directory containing processed CSV files, chloropleth maps in HTML format and tables and figures resulting from the analysis.
+- `src/dataset`: Directory containing files related to processing the raw data.
+- `src/dataset/main.py`: Script that constructs the main dataset from the raw CBS data and the processed station and traffic data.
+- `src/analysis`: Directory containing files related to the analysis of the [main dataset](output/data/main.csv). Contains subfolders `phase_1` and `phase_2` and a file called `maps.py` which creates chloropleth maps of different variables by municipality.
+- `src/analysis/main.py`: Sequentially runs Phase 1 and Phase 2 of the analysis.
 
 ## How to Run This Project
 
