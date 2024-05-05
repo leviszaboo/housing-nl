@@ -42,7 +42,7 @@ def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
     with open(output_file, 'w') as file:
         file.write(latex_table)
 
-output_path = os.path.join(dir_path, '../../output/tables/')
+output_path = os.path.join(dir_path, '../../output/tables/phase_1')
 
 def create_tables(df: pd.DataFrame) -> None:
     """
