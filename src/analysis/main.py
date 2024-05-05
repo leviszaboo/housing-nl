@@ -3,6 +3,7 @@ import os
 
 from src.analysis.phase_1.plots import plots_station_no_station
 from src.analysis.phase_1.tables import create_tables
+from src.analysis.phase_1.tests import run_and_save_tests
 from src.analysis.utils import dir_path
 
 def run_phase_1(df: pd.DataFrame) -> None:
@@ -22,6 +23,9 @@ def run_phase_1(df: pd.DataFrame) -> None:
 
     # Create figures for comparison of m² prices by presence of train stations
     plots_station_no_station(df)
+
+    # Run tests and save the results
+    run_and_save_tests(df)
 
     print("Phase 1 analysis complete")
     return 

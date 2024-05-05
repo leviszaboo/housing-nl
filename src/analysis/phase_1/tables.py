@@ -16,7 +16,7 @@ def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
     summary_stats = df.describe().T
 
     latex_table = """
-    \\begin{table}[H] 
+    \\begin{table}
       \\centering 
       \\caption{Summary statistics for all numeric columns} 
       \\vspace{10pt}
@@ -52,3 +52,5 @@ def create_tables(df: pd.DataFrame) -> None:
         None
     """
     create_summary_statistics(df, os.path.join(output_path, 'summary_statistics.tex'))  
+
+    return

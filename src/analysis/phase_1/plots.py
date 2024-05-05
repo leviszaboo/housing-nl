@@ -17,6 +17,8 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     Returns:
         None
     """
+    print("Creating plots...")
+
     # Categorize municipalities by presence of train stations
     df['has_station'] = df['station_count'] > 0
 
