@@ -90,9 +90,12 @@ geojson_path = os.path.join(base_path, 'gemeente.geojson')
 
 stations_output = os.path.join(dir_path, '../../output/data/stations.csv')
 
-def create_stations_data():
+def create_stations_data() -> None:
     """
     Creates the stations dataset by processing the station data and merging it with traffic data.
+
+    Returns:
+        None
     """
     print('Processing stations data...')
 

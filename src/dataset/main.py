@@ -206,9 +206,12 @@ stations_path = os.path.join(dir_path, '../../output/data/stations.csv')
 
 main_output = os.path.join(dir_path, '../../output/data/main.csv')
 
-def create_main_dataset():
+def create_main_dataset() -> None:
     """
     Creates the main dataset by processing and merging the individual datasets.
+
+    Returns:
+        None
     """
     print('Creating main dataset...')
 

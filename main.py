@@ -9,9 +9,12 @@ from src.analysis.main import run_analysis
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
-def main():
+def main() -> None:
     """
     Main entry point of the application.
+
+    Returns:
+        None
     """
     parser = argparse.ArgumentParser(description="Run specific parts of the application or the full pipeline.")
     parser.add_argument(
@@ -57,9 +60,6 @@ def main():
     if analysis_only_tasks:
         logging.info('Starting analysis...')
         start_time = time.time()
-
-        # Wait for dataset to save
-        time.sleep(1)
 
         try:
             run_analysis()
