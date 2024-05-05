@@ -1,4 +1,4 @@
-# Effect of Train Traffic and Train Stations on House Prices in the Netherlands
+# Effect of Municipal Train Station Presence and Volume of Train Traffic on House Prices in the Netherlands
 
 ## Description
 This project analyzes how the presence of train stations in municipalities and the volume of trains stopping at these stations affect house prices in the Netherlands. This study is part of a bachelor's thesis in Economics at the University of Amsterdam. 
@@ -66,7 +66,7 @@ Click [here](output/data/main.csv) to view the main dataset.
    * Check the generated files in the `data/output` folder for the main and stations dataset, and the `output` folder for the analysis results.
 
 ## License
-"Effect of Train Traffic and Train Stations on House Prices in the Netherlands" © 2024 by Levente Szabo is licensed under [Creative Commons Attribution 4.0 International License][cc-by]. This means you are free to:
+"Effect of Municipal Train Station Presence and Volume of Train Traffic on House Prices in the Netherlands" © 2024 by Levente Szabo is licensed under [Creative Commons Attribution 4.0 International License][cc-by]. This means you are free to:
 - **Share**: Copy and redistribute the material in any medium or format.
 - **Adapt**: Remix, transform, and build upon the material for any purpose, even commercially.
 - **Conditions**: Attribution must be provided with proper credit, a link to the license, and indication if changes were made.
