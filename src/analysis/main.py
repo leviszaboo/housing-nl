@@ -1,12 +1,14 @@
+import json
 import pandas as pd
 import os
 
+from src.analysis.maps import create_maps
 from src.analysis.phase_1.plots import plots_station_no_station
 from src.analysis.phase_1.tables import create_tables
 from src.analysis.phase_1.tests import run_and_save_tests
 from src.analysis.utils import dir_path
 
-def run_phase_1(df: pd.DataFrame) -> None:
+def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
     """
     Run the Phase 1 analysis.
 
@@ -20,6 +22,9 @@ def run_phase_1(df: pd.DataFrame) -> None:
 
     # Create tables for the summary statistics of the main dataset
     create_tables(df)
+
+    # Create chloropleth maps
+    create_maps(df, geojson_data)
 
     # Create figures for comparison of m² prices by presence of train stations
     plots_station_no_station(df)
@@ -42,5 +47,8 @@ def run_analysis() -> None:
     # Load the main dataset
     df = pd.read_csv(os.path.join(dir_path, '../../output/data/main.csv'))
     
-    run_phase_1(df)
+    with open(os.path.join(dir_path, '../../unprocessed/gemeente.geojson'), 'r') as geojson_file:
+        geojson_data = json.load(geojson_file)
+    
+    run_phase_1(df, geojson_data)
 
