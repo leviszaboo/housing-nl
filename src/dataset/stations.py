@@ -78,7 +78,7 @@ def merge_traffic_data(stations_df: pd.DataFrame) -> pd.DataFrame:
     merged_df = pd.merge(stations_df, traffic_df, left_on='code', right_on='station_code', how='left')
 
     # Add missing traffic data for 'NA' (Nieuw Amsterdam)
-    merged_df.loc[merged_df['station_name'] == 'Nieuw Amsterdam', 'traffic_count'] = 27180
+    merged_df.loc[merged_df['station_name'] == 'Nieuw Amsterdam', 'traffic_count'] = 27180 / 365
 
     return merged_df
 

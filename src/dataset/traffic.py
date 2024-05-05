@@ -43,7 +43,7 @@ def aggregate_traffic_data(months: iter) -> pd.DataFrame:
 
         data = load_traffic_data(month)
 
-        traffic_counts = data.loc[data['Service:Completely cancelled'] == False, 'Stop:Station code'].value_counts()
+        traffic_counts = data.loc[data['Service:Completely cancelled'] == False, 'Stop:Station code'].value_counts() / 365
         
         if total_traffic_counts.empty:
             total_traffic_counts = traffic_counts
@@ -53,7 +53,7 @@ def aggregate_traffic_data(months: iter) -> pd.DataFrame:
     traffic_counts_df = total_traffic_counts.reset_index()
     traffic_counts_df.columns = ['station_code', 'traffic_count']
 
-    additional_data = pd.DataFrame({'station_code': ['NA'], 'traffic_count': [27180]})
+    additional_data = pd.DataFrame({'station_code': ['NA'], 'traffic_count': [27180 / 365]})
     traffic_counts_df = pd.concat([traffic_counts_df, additional_data], ignore_index=True)
     
     return traffic_counts_df

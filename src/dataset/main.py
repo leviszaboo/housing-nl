@@ -145,7 +145,7 @@ def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -
     # station_type_count = station_df.groupby(['municipality', 'type']).size().unstack(fill_value=0).reset_index()
     # station_type_count.columns = ['municipality'] + [f'{col}_count' for col in station_type_count.columns[1:]]
 
-    traffic_sum = station_df.groupby('municipality')['traffic_count'].sum().reset_index(name='total_traffic')
+    traffic_sum = station_df.groupby('municipality')['traffic_count'].sum().reset_index(name='traffic')
 
     # Merge counts and traffic data with the complete list of municipalities
     merged_df = pd.merge(municipalities_df, station_count, on='municipality', how='left')
@@ -154,8 +154,10 @@ def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -
 
     # Fill NaN values with 0 and convert counts/traffic to integers
     merged_df.fillna(0, inplace=True)
-    count_columns = [col for col in merged_df.columns if '_count' in col] + ['total_traffic']
+    count_columns = [col for col in merged_df.columns if '_count' in col] + ['traffic']
     merged_df[count_columns] = merged_df[count_columns].astype(int)
+
+    merged_df['has_station'] = merged_df['station_count'] > 0
 
     return merged_df
 

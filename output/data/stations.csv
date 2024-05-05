@@ -1,398 +1,398 @@
 code,station_name,type,geo_lat,geo_lng,municipality,station_code,traffic_count
-HT,'s-Hertogenbosch,interchange_intercity_station,51.69048,5.29362,'s-Hertogenbosch,HT,184992.0
-HTO,'s-Hertogenbosch Oost,local_train_station,51.700553894043,5.3183331489563,'s-Hertogenbosch,HTO,24356.0
-HDE,'t Harde,local_train_station,52.4091682,5.893611,Elburg,HDE,27050.0
-ATN,Aalten,local_train_station,51.921326524551,6.5786272287369,Aalten,ATN,24923.0
-AC,Abcoude,local_train_station,52.2785,4.977,De Ronde Venen,AC,36266.0
-AKM,Akkrum,local_train_station,53.046390533447,5.843611240387,Heerenveen,AKM,24214.0
-AMR,Alkmaar,interchange_intercity_station,52.63777923584,4.7397222518921,Alkmaar,AMR,75667.0
-AMRN,Alkmaar Noord,local_train_station,52.643890380859,4.7641668319702,Alkmaar,AMRN,52977.0
-AML,Almelo,interchange_intercity_station,52.358055114746,6.6538887023926,Almelo,AML,102139.0
-AMRI,Almelo de Riet,local_train_station,52.341945648193,6.6666665077209,Almelo,AMRI,29116.0
-ALMB,Almere Buiten,local_train_station,52.394165039062,5.2780556678772,Almere,ALMB,51018.0
-ALM,Almere Centrum,interchange_intercity_station,52.37503,5.21764,Almere,ALM,135010.0
-ALMM,Almere Muziekwijk,local_train_station,52.367500305176,5.1902775764465,Almere,ALMM,77109.0
-ALMO,Almere Oostvaarders,local_train_station,52.403331756592,5.3005557060242,Almere,ALMO,48859.0
-ALMP,Almere Parkwijk,local_train_station,52.376667022705,5.244722366333,Almere,ALMP,45498.0
-AMPO,Almere Poort,local_train_station,52.342778,5.151944,Almere,AMPO,77119.0
-APN,Alphen a/d Rijn,interchange_intercity_station,52.124443054199,4.6577777862549,Alphen aan den Rijn,APN,79296.0
-AMF,Amersfoort Centraal,interchange_intercity_station,52.153888702393,5.3705554008484,Amersfoort,AMF,206480.0
-AMFS,Amersfoort Schothorst,local_train_station,52.174822137451,5.4038887023926,Amersfoort,AMFS,73911.0
-AVAT,Amersfoort Vathorst,local_train_station,52.192779541016,5.4338889122009,Amersfoort,AVAT,48654.0
-ASA,Amsterdam Amstel,intercity_station,52.346668243408,4.9177780151367,Amsterdam,ASA,104276.0
-ASB,Amsterdam Bijlmer ArenA,interchange_local_train_station,52.3122215271,4.9469442367554,Amsterdam,ASB,91457.0
-ASD,Amsterdam Centraal,mega_station,52.378887176514,4.9002776145935,Amsterdam,ASD,381786.0
-ASHD,Amsterdam Holendrecht,local_train_station,52.29844,4.95972,Amsterdam,ASHD,36490.0
-ASDL,Amsterdam Lelylaan,local_train_station,52.357776641846,4.8338890075684,Amsterdam,ASDL,62256.0
-ASDM,Amsterdam Muiderpoort,local_train_station,52.360553741455,4.9311113357544,Amsterdam,ASDM,92074.0
-RAI,Amsterdam RAI,local_train_station,52.337223052979,4.8902778625488,Amsterdam,RAI,42884.0
-ASSP,Amsterdam Science Park,local_train_station,52.35526,4.94651,Amsterdam,ASSP,54477.0
-ASS,Amsterdam Sloterdijk,interchange_intercity_station,52.388889312744,4.8377776145935,Amsterdam,ASS,266236.0
-ASDZ,Amsterdam Zuid,intercity_station,52.338889,4.872356,Amsterdam,ASDZ,143801.0
-ANA,Anna Paulowna,local_train_station,52.867221832275,4.8111109733581,Hollands Kroon,ANA,29773.0
-APD,Apeldoorn,interchange_intercity_station,52.209167480469,5.9702777862549,Apeldoorn,APD,87294.0
-APDM,Apeldoorn De Maten,local_train_station,52.205276489258,6.0005555152893,Apeldoorn,APDM,19795.0
-APDO,Apeldoorn Osseveld,local_train_station,52.215278625488,6.0044445991516,Apeldoorn,APDO,22418.0
-APG,Appingedam,local_train_station,53.3258135,6.8619577,Eemsdelta,APG,22300.0
-AKL,Arkel,local_train_station,51.87194442749,4.9927778244019,Molenlanden,AKL,22930.0
-ARN,Arnemuiden,local_train_station,51.501667022705,3.6691665649414,Middelburg,ARN,28767.0
-AH,Arnhem Centraal,interchange_intercity_station,51.985000610352,5.8991665840149,Arnhem,AH,215654.0
-AHPR,Arnhem Presikhaaf,local_train_station,51.988056182861,5.9438886642456,Arnhem,AHPR,23865.0
-AHP,Arnhem Velperpoort,local_train_station,51.985279083252,5.9194445610046,Arnhem,AHP,62108.0
-AHZ,Arnhem Zuid,local_train_station,51.955001831055,5.8519444465637,Arnhem,AHZ,35018.0
-ASN,Assen,interchange_intercity_station,52.991664886475,6.5708332061768,Assen,ASN,54884.0
-BRN,Baarn,interchange_local_train_station,52.208332061768,5.2808332443237,Baarn,BRN,51068.0
-NSCH,Bad Nieuweschans,interchange_local_train_station,53.1844,7.19937,Oldambt,NSCH,14747.0
-BF,Baflo,local_train_station,53.3608969,6.5185581,Het Hogeland,BF,24858.0
-BRD,Barendrecht,local_train_station,51.854721069336,4.5533332824707,Barendrecht,BRD,44549.0
-BNC,Barneveld Centrum,local_train_station,52.139999389648,5.590277671814,Barneveld,BNC,41725.0
-BNN,Barneveld Noord,local_train_station,52.161388397217,5.5980553627014,Barneveld,BNN,41262.0
-BNZ,Barneveld Zuid,local_train_station,52.128853,5.60246,Barneveld,BNZ,42047.0
-BDM,Bedum,local_train_station,53.3068857,6.593054,Het Hogeland,BDM,22302.0
-BK,Beek-Elsloo,local_train_station,50.947498321533,5.7866668701172,Stein,BK,25644.0
-BSD,Beesd,local_train_station,51.899444580078,5.1944446563721,West Betuwe,BSD,22947.0
-BL,Beilen,local_train_station,52.854721069336,6.5211110115051,Midden-Drenthe,BL,26369.0
-BGN,Bergen op Zoom,local_train_station,51.49388885498,4.2961111068726,Bergen op Zoom,BGN,39980.0
-BET,Best,local_train_station,51.509998321533,5.3891668319702,Best,BET,44503.0
-BV,Beverwijk,local_train_station,52.478332519531,4.6566667556763,Beverwijk,BV,28160.0
-BHV,Bilthoven,local_train_station,52.130001068115,5.2038888931274,De Bilt,BHV,47833.0
-BR,Blerick,local_train_station,51.372501373291,6.1550002098083,Venlo,BR,56687.0
-BLL,Bloemendaal,local_train_station,52.404167175293,4.6275000572205,Bloemendaal,BLL,28239.0
-BDG,Bodegraven,local_train_station,52.081390380859,4.7461109161377,Bodegraven-Reeuwijk,BDG,38517.0
-BN,Borne,local_train_station,52.298889160156,6.7480554580689,Borne,BN,29117.0
-BSK,Boskoop,local_train_station,52.077777862549,4.6469445228577,Alphen aan den Rijn,BSK,40120.0
-BSKS,Boskoop Snijdelwijk,local_train_station,52.067658,4.646186,Waddinxveen,BSKS,40039.0
-BHDV,Boven-Hardinxveld,local_train_station,51.832222,4.878056,Hardinxveld-Giessendam,BHDV,40977.0
-BKF,Bovenkarspel Flora,local_train_station,52.696109771729,5.2527775764465,Stede Broec,BKF,29821.0
-BKG,Bovenkarspel-Grootebroek,local_train_station,52.694999694824,5.2377777099609,Stede Broec,BKG,29822.0
-BMR,Boxmeer,interchange_local_train_station,51.644521767653,5.9390330314636,Land van Cuijk,BMR,33164.0
-BTL,Boxtel,interchange_local_train_station,51.58433,5.31912,Boxtel,BTL,46398.0
-BD,Breda,interchange_intercity_station,51.595554351807,4.7800002098083,Breda,BD,96141.0
-BDPB,Breda-Prinsenbeek,local_train_station,51.606388092041,4.7208333015442,Breda,BDPB,23497.0
-BKL,Breukelen,interchange_local_train_station,52.17149,4.9906,Stichtse Vecht,BKL,62635.0
-BMN,Brummen,local_train_station,52.091110229492,6.1469445228577,Brummen,BMN,23568.0
-BP,Buitenpost,,53.2564547,6.1446496,Achtkarspelen,BP,34838.0
-BDE,Bunde,local_train_station,50.896945953369,5.7366666793823,Meerssen,BDE,25644.0
-BNK,Bunnik,local_train_station,52.063056945801,5.1944446563721,Bunnik,BNK,31729.0
-BSMZ,Bussum Zuid,local_train_station,52.26583480835,5.1630554199219,Gooise Meren,BSMZ,42482.0
-CPS,Capelle Schollevaar,local_train_station,51.954166412354,4.5841665267944,Capelle aan den IJssel,CPS,28803.0
-CAS,Castricum,intercity_station,52.545833587646,4.6586112976074,Castricum,CAS,71303.0
-CVM,Chevremont,local_train_station,50.876110076904,6.0597224235535,Kerkrade,CVM,25770.0
-CO,Coevorden,,52.663612365723,6.7355556488037,Coevorden,CO,30630.0
-CK,Cuijk,local_train_station,51.726682587905,5.8742952346802,Land van Cuijk,CK,33275.0
-CL,Culemborg,local_train_station,51.946666717529,5.2269444465637,Culemborg,CL,61421.0
-DA,Daarlerveen,local_train_station,52.4407702,6.5759947,Hellendoorn,DA,17777.0
-DLN,Dalen,local_train_station,52.69416809082,6.7580556869507,Coevorden,DLN,16054.0
-DL,Dalfsen,express_train_station,52.498332977295,6.25861120224,Dalfsen,DL,29953.0
-DVNK,De Vink,local_train_station,52.147220611572,4.4563889503479,Voorschoten,DVNK,47493.0
-DWE,De Westereen,local_train_station,53.24817,6.03463,Dantumadiel,DWE,22536.0
-DEI,Deinum,local_train_station,53.1888115,5.7281572,Waadhoeke,DEI,19308.0
-DDN,Delden,local_train_station,52.259998321533,6.7161111831665,Hof van Twente,DDN,22955.0
-DT,Delft,interchange_intercity_station,52.00666809082,4.3563890457153,Delft,DT,126062.0
-DTCP,Delft Campus,local_train_station,51.990833282471,4.3647222518921,Delft,DTCP,44927.0
-DZ,Delfzijl,local_train_station,53.3336625,6.9240797,Eemsdelta,DZ,22300.0
-DZW,Delfzijl West,local_train_station,53.3320834,6.9069092,Eemsdelta,DZW,22300.0
-DLD,Den Dolder,interchange_local_train_station,52.140277862549,5.2427778244019,Zeist,DLD,47658.0
-GVC,Den Haag Centraal,mega_station,52.080276489258,4.3249998092651,'s-Gravenhage,GVC,215022.0
-GV,Den Haag HS,interchange_intercity_station,52.069721221924,4.3225002288818,'s-Gravenhage,GV,128721.0
-LAA,Den Haag Laan v NOI,interchange_local_train_station,52.078609466553,4.3427777290344,Leidschendam-Voorburg,LAA,97553.0
-GVM,Den Haag Mariahoeve,local_train_station,52.090557098389,4.3694443702698,Leidschendam-Voorburg,GVM,47520.0
-GVMW,Den Haag Moerwijk,local_train_station,52.053890228271,4.3086109161377,'s-Gravenhage,GVMW,48873.0
-YPB,Den Haag Ypenburg,local_train_station,52.055278778076,4.39222240448,'s-Gravenhage,YPB,36734.0
-HDR,Den Helder,intercity_station,52.955276489258,4.7611112594605,Den Helder,HDR,30729.0
-HDRZ,Den Helder Zuid,local_train_station,52.932498931885,4.7641668319702,Den Helder,HDRZ,29773.0
-DN,Deurne,local_train_station,51.455833435059,5.7888889312744,Deurne,DN,52589.0
-DV,Deventer,interchange_intercity_station,52.257499694824,6.1605553627014,Deventer,DV,95287.0
-DVC,Deventer Colmschate,local_train_station,52.2502784729,6.2144446372986,Deventer,DVC,23328.0
-DID,Didam,local_train_station,51.933502,6.1324106,Montferland,DID,39212.0
-DMN,Diemen,local_train_station,52.34515,4.967566,Diemen,DMN,54610.0
-DMNZ,Diemen Zuid,local_train_station,52.330276489258,4.9558334350586,Diemen,DMNZ,41097.0
-DR,Dieren,intercity_station,52.044998168945,6.1030554771423,Rheden,DR,51861.0
-DTC,Doetinchem,interchange_local_train_station,51.9585962,6.2962148,Doetinchem,DTC,39198.0
-DTCH,Doetinchem De Huet,local_train_station,51.9591413,6.2598521,Doetinchem,DTCH,39189.0
-DDR,Dordrecht,interchange_intercity_station,51.807220458984,4.668333530426,Dordrecht,DDR,175209.0
-DDRS,Dordrecht Stadspolders,local_train_station,51.801944732666,4.7166666984558,Dordrecht,DDRS,41205.0
-DDZD,Dordrecht Zuid,local_train_station,51.790000915527,4.6713891029358,Dordrecht,DDZD,44259.0
-DB,Driebergen-Zeist,interchange_local_train_station,52.065277099609,5.25861120224,Utrechtse Heuvelrug,DB,66760.0
-DRH,Driehuis,local_train_station,52.442501068115,4.6380553245544,Velsen,DRH,27985.0
-DRP,Dronryp,local_train_station,53.1778086,5.6347411,Waadhoeke,DRP,19318.0
-DRON,Dronten,local_train_station,52.5344,5.72089,Dronten,DRON,28409.0
-DVN,Duiven,local_train_station,51.943332672119,6.0147223472595,Duiven,DVN,39226.0
-DVD,Duivendrecht,interchange_local_train_station,52.323333740234,4.9363889694214,Ouder-Amstel,DVD,107230.0
-EC,Echt,local_train_station,51.100555419922,5.8788890838623,Echt-Susteren,EC,25081.0
-EDC,Ede Centrum,local_train_station,52.043609619141,5.668333530426,Ede,EDC,27279.0
-ED,Ede-Wageningen,interchange_intercity_station,52.027778625488,5.6730556488037,Ede,ED,95205.0
-EEM,Eemshaven,local_train_station,53.458419,6.832,Het Hogeland,EEM,4992.0
-EDN,Eijsden,local_train_station,50.771945953369,5.710000038147,Eijsden-Margraten,EDN,12648.0
-EHV,Eindhoven Centraal,mega_station,51.443332672119,5.4813890457153,Eindhoven,EHV,160889.0
-EHS,Eindhoven Strijp-S,local_train_station,51.451110839844,5.4558334350586,Eindhoven,EHS,44489.0
-EST,Elst,interchange_local_train_station,51.916942596435,5.8550000190735,Overbetuwe,EST,55568.0
-EMN,Emmen,express_train_station,52.790000915527,6.8994445800781,Emmen,EMN,28004.0
-EMNZ,Emmen Zuid,express_train_station,52.748866374691,6.8747806549072,Emmen,EMNZ,27300.0
-EKZ,Enkhuizen,local_train_station,52.699165344238,5.286388874054,Enkhuizen,EKZ,29816.0
-ES,Enschede,interchange_intercity_station,52.222499847412,6.8899998664856,Enschede,ES,86522.0
-ESE,Enschede De Eschmarke,local_train_station,52.221389770508,6.9511113166809,Enschede,ESE,25237.0
-ESK,Enschede Kennispark,local_train_station,52.23749923706,6.8388891220093,Enschede,ESK,29487.0
-EML,Ermelo,local_train_station,52.301666259766,5.6147222518921,Ermelo,EML,26243.0
-ETN,Etten-Leur,intercity_station,51.57500076294,4.6358332633972,Etten-Leur,ETN,28193.0
-EGH,Eygelshoven,local_train_station,50.890556335449,6.0450000762939,Kerkrade,EGH,25788.0
-EGHM,Eygelshoven Markt,local_train_station,50.896049819644,6.0602474212646,Kerkrade,EGHM,11982.0
-FWD,Feanwâlden,local_train_station,53.2351834,5.9886615,Dantumadiel,FWD,41613.0
-FN,Franeker,local_train_station,53.1824488,5.5483094,Waadhoeke,FN,23405.0
-GDR,Gaanderen,local_train_station,51.93074,6.3486,Doetinchem,GDR,25480.0
-GDM,Geldermalsen,interchange_local_train_station,51.88301,5.27127,West Betuwe,GDM,88123.0
-GP,Geldrop,interchange_local_train_station,51.419723510742,5.5505557060242,Geldrop-Mierlo,GP,21561.0
-GLN,Geleen Oost,local_train_station,50.966945648193,5.8430557250977,Sittard-Geleen,GLN,18035.0
-LUT,Geleen-Lutterade,local_train_station,50.975555419922,5.8247222900391,Sittard-Geleen,LUT,25642.0
-GZ,Gilze-Rijen,local_train_station,51.583610534668,4.9261112213135,Gilze en Rijen,GZ,23124.0
-GBR,Glanerbrug,local_train_station,52.218612670898,6.9744443893433,Enschede,GBR,25237.0
-GS,Goes,local_train_station,51.498054504395,3.8905556201935,Goes,GS,41799.0
-GO,Goor,local_train_station,52.230278015137,6.5844445228577,Hof van Twente,GO,23096.0
-GR,Gorinchem,interchange_local_train_station,51.833889007568,4.9683332443237,Gorinchem,GR,41254.0
-GD,Gouda,interchange_intercity_station,52.017501831055,4.7044444084167,Gouda,GD,172291.0
-GDG,Gouda Goverwelle,local_train_station,52.014999389648,4.7408332824707,Gouda,GDG,60549.0
-GBG,Gramsbergen,local_train_station,52.60916519165,6.6758332252502,Hardenberg,GBG,16075.0
-GK,Grijpskerk,local_train_station,53.255740325573,6.3097786903381,Westerkwartier,GK,22535.0
-GN,Groningen,interchange_intercity_station,53.210556030273,6.5647220611572,Groningen,GN,199673.0
-GERP,Groningen Europapark,local_train_station,53.20480027,6.5854178,Groningen,GERP,79568.0
-GNN,Groningen Noord,local_train_station,53.2301469,6.5563172,Groningen,GNN,46591.0
-GW,Grou-Jirnsum,local_train_station,53.088890075684,5.8225002288818,Leeuwarden,GW,22367.0
-HLM,Haarlem,interchange_intercity_station,52.38777923584,4.6383333206177,Haarlem,HLM,134082.0
-HLMS,Haarlem Spaarnwoude,local_train_station,52.382778167725,4.6730556488037,Haarlem,HLMS,55618.0
-HWZB,Halfweg-Zwanenburg,local_train_station,52.385935,4.747165,Haarlemmermeer,HWZB,55650.0
-HDB,Hardenberg,express_train_station,52.572776794434,6.6286110877991,Hardenberg,HDB,46261.0
-HD,Harderwijk,interchange_local_train_station,52.337501525879,5.619722366333,Harderwijk,HD,26623.0
-HBZM,Hardinxveld Blauwe Zoom,local_train_station,51.82944,4.81556,Hardinxveld-Giessendam,HBZM,23633.0
-GND,Hardinxveld-Giessendam,local_train_station,51.830554962158,4.8358335494995,Hardinxveld-Giessendam,GND,41199.0
-HRN,Haren,local_train_station,53.176109313965,6.6172223091125,Groningen,HRN,27737.0
-HLG,Harlingen,local_train_station,53.1704205,5.4251932,Harlingen,HLG,23456.0
-HLGH,Harlingen Haven,local_train_station,53.174917,5.4112885,Harlingen,HLGH,23456.0
-HK,Heemskerk,local_train_station,52.495277404785,4.6869444847107,Heemskerk,HK,27986.0
-HAD,Heemstede-Aerdenhout,intercity_station,52.35916519165,4.6066665649414,Heemstede,HAD,65099.0
-HR,Heerenveen,intercity_station,52.961387634277,5.9141664505005,Heerenveen,HR,46497.0
-HRY,Heerenveen IJsstadion,,52.935276031494,5.9438886642456,Heerenveen,HRY,8.0
-HWD,Heerhugowaard,interchange_local_train_station,52.669723510742,4.8227777481079,Dijk en Waard,HWD,58175.0
-HRL,Heerlen,interchange_intercity_station,50.89083480835,5.9749999046326,Heerlen,HRL,101055.0
-HRLW,Heerlen Woonboulevard,local_train_station,50.896667,5.952222,Heerlen,HRLW,26640.0
-HZE,Heeze,local_train_station,51.384998321533,5.5694446563721,Heeze-Leende,HZE,21562.0
-HLO,Heiloo,local_train_station,52.599445343018,4.7005553245544,Heiloo,HLO,58409.0
-HNO,Heino,local_train_station,52.427223205566,6.2211112976074,Raalte,HNO,24523.0
-HM,Helmond,interchange_intercity_station,51.475555419922,5.6619443893433,Helmond,HM,53733.0
-HMH,Helmond 't Hout,local_train_station,51.46794,5.63085,Helmond,HMH,21744.0
-HMBV,Helmond Brandevoort,local_train_station,51.462223052979,5.6072220802307,Helmond,HMBV,21747.0
-HMBH,Helmond Brouwhuis,local_train_station,51.47068,5.70177,Helmond,HMBH,21831.0
-HMN,Hemmen-Dodewaard,local_train_station,51.9222129,5.6737254,Neder-Betuwe,HMN,19325.0
-HGL,Hengelo,interchange_intercity_station,52.261665344238,6.7938890457153,Hengelo,HGL,104953.0
-HGLG,Hengelo Gezondheidspark,local_train_station,52.261667,6.767778,Hengelo,HGLG,22641.0
-HGLO,Hengelo Oost,local_train_station,52.268890380859,6.8194446563721,Hengelo,HGLO,23947.0
-HIL,Hillegom,local_train_station,52.302501678467,4.5655555725098,Hillegom,HIL,29265.0
-HVS,Hilversum,interchange_intercity_station,52.225833892822,5.1819443702698,Hilversum,HVS,122416.0
-HVSM,Hilversum Media Park,local_train_station,52.238056182861,5.1738886833191,Hilversum,HVSM,42497.0
-HVSP,Hilversum Sportpark,local_train_station,52.216110229492,5.1872220039368,Hilversum,HVSP,41563.0
-HNP,Hindeloopen,local_train_station,52.9464903,5.423063,Súdwest-Fryslân,HNP,16215.0
-HB,Hoensbroek,local_train_station,50.905555725098,5.9305553436279,Heerlen,HB,18034.0
-HVL,Hoevelaken,local_train_station,52.16652,5.45718,Amersfoort,HVL,41261.0
-HOR,Hollandsche Rading,local_train_station,52.17777633667,5.1791667938232,De Bilt,HOR,28740.0
-HON,Holten,local_train_station,52.283889770508,6.42027759552,Rijssen-Holten,HON,23326.0
-HFD,Hoofddorp,local_train_station,52.293334960938,4.7005553245544,Haarlemmermeer,HFD,101485.0
-HGV,Hoogeveen,local_train_station,52.733890533447,6.4736108779907,Hoogeveen,HGV,26424.0
-HGZ,Hoogezand-Sappemeer,interchange_local_train_station,53.159818131676,6.7707538604736,Midden-Groningen,HGZ,45937.0
-HKS,Hoogkarspel,local_train_station,52.69055557251,5.1838889122009,Drechterland,HKS,30432.0
-HN,Hoorn,interchange_intercity_station,52.644721984863,5.0555553436279,Hoorn,HN,77481.0
-HNK,Hoorn Kersenboogerd,local_train_station,52.653610229492,5.0855555534363,Hoorn,HNK,44161.0
-HRT,Horst-Sevenum,local_train_station,51.426387786865,6.0422220230103,Horst aan de Maas,HRT,30907.0
-HTN,Houten,interchange_local_train_station,52.03402,5.16821,Houten,HTN,62423.0
-HTNC,Houten Castellum,local_train_station,52.01701,5.17949,Houten,HTNC,60775.0
-SGL,Houthem-St. Gerlach,local_train_station,50.873332977295,5.7972221374512,Valkenburg aan de Geul,SGL,26535.0
-HDG,Hurdegaryp,local_train_station,53.2187783,5.934543,Tytsjerksteradiel,HDG,22642.0
-IJT,IJlst,local_train_station,53.0146614,5.6160801,Súdwest-Fryslân,IJT,15375.0
-KPN,Kampen,local_train_station,52.559722900391,5.9216666221619,Kampen,KPN,25305.0
-KPNZ,Kampen Zuid,local_train_station,52.5331,5.91309,Kampen,KPNZ,27543.0
-BZL,Kapelle-Biezelinge,local_train_station,51.480834960938,3.9561111927033,Kapelle,BZL,29488.0
-KRD,Kerkrade Centrum,interchange_local_train_station,50.861667633057,6.0574998855591,Kerkrade,KRD,25770.0
-KTR,Kesteren,local_train_station,51.9313869,5.5833465,Neder-Betuwe,KTR,19389.0
-KBK,Klarenbeek,local_train_station,52.17805480957,6.0836110115051,Voorst,KBK,18837.0
-KMR,Klimmen-Ransdaal,local_train_station,50.866390228271,5.8905553817749,Voerendaal,KMR,26689.0
-KZ,Koog aan de Zaan,local_train_station,52.458610534668,4.8055553436279,Zaanstad,KZ,36407.0
-KMW,Koudum-Molkwerum,local_train_station,52.9028197,5.4106913,Súdwest-Fryslân,KMW,16215.0
-KBD,Krabbendijke,local_train_station,51.433334350586,4.1169443130493,Reimerswaal,KBD,29058.0
-KMA,Krommenie-Assendelft,local_train_station,52.49511,4.75417,Zaanstad,KMA,36409.0
-KW,Kropswolde,local_train_station,53.1617362,6.7220882,Midden-Groningen,KW,45936.0
-KRG,Kruiningen-Yerseke,local_train_station,51.465000152588,4.0372223854065,Reimerswaal,KRG,29490.0
-ZLW,Lage Zwaluwe,interchange_local_train_station,51.69111251831,4.6630554199219,Moerdijk,ZLW,51175.0
-LG,Landgraaf,interchange_local_train_station,50.896389007568,6.019166469574,Landgraaf,LG,39173.0
-LLZM,Lansingerland-Zoetermeer,local_train_station,52.042222,4.517222,Zoetermeer,LLZM,34133.0
-LDM,Leerdam,local_train_station,51.894721984863,5.0913887023926,Vijfheerenlanden,LDM,22946.0
-LW,Leeuwarden,interchange_intercity_station,53.195835113525,5.7922220230103,Leeuwarden,LW,133999.0
-LWC,Leeuwarden Camminghaburen,local_train_station,53.2021808,5.8422968,Leeuwarden,LWC,22540.0
-LEDN,Leiden Centraal,interchange_intercity_station,52.166110992432,4.4816665649414,Leiden,LEDN,206022.0
-LDL,Leiden Lammenschans,local_train_station,52.146945953369,4.4924998283386,Leiden,LDL,38741.0
-LLS,Lelystad Centrum,interchange_intercity_station,52.507778167725,5.4727778434753,Lelystad,LLS,63219.0
-LTV,Lichtenvoorde-Groenlo,local_train_station,52.01188,6.59641,Oost Gelre,LTV,22908.0
-LC,Lochem,local_train_station,52.166667938232,6.4263887405395,Lochem,LC,22085.0
-LP,Loppersum,local_train_station,53.3347145,6.7472625,Eemsdelta,LP,22300.0
-LTN,Lunteren,local_train_station,52.085277557373,5.6244444847107,Ede,LTN,27281.0
-MZ,Maarheeze,local_train_station,51.304986,5.629796,Cranendonck,MZ,21567.0
-MRN,Maarn,interchange_local_train_station,52.064167022705,5.3699998855591,Utrechtse Heuvelrug,MRN,26976.0
-MAS,Maarssen,local_train_station,52.135276794434,5.0336112976074,Stichtse Vecht,MAS,35122.0
-MT,Maastricht,interchange_intercity_station,50.850276947021,5.7055554389954,Maastricht,MT,109460.0
-MTN,Maastricht Noord,local_train_station,50.87087,5.71774,Maastricht,MTN,26535.0
-MTR,Maastricht Randwyck,interchange_local_train_station,50.838611602783,5.7172222137451,Maastricht,MTR,66849.0
-MG,Mantgum,local_train_station,53.1296368,5.7131996,Leeuwarden,MG,20967.0
-MRB,Mariënberg,,52.50944519043,6.5752778053284,Hardenberg,MRB,45662.0
-MTH,Martenshoek,local_train_station,53.1607232,6.7402989,Midden-Groningen,MTH,45935.0
-MES,Meerssen,express_train_station,50.882879392551,5.7509994506836,Meerssen,MES,33082.0
-MP,Meppel,interchange_local_train_station,52.69083404541,6.1975002288818,Meppel,MP,73780.0
-MDB,Middelburg,local_train_station,51.494720458984,3.6172223091126,Middelburg,MDB,38453.0
-MMLH,Mook-Molenhoek,local_train_station,51.766262,5.879133,Mook en Middelaar,MMLH,33202.0
-NDB,Naarden-Bussum,interchange_local_train_station,52.280277252197,5.1569442749023,Gooise Meren,NDB,65656.0
-NA,Nieuw Amsterdam,express_train_station,52.718612670898,6.8486108779907,Emmen,NA,27180.0
-NVP,Nieuw Vennep,local_train_station,52.258888244629,4.6455554962158,Haarlemmermeer,NVP,41069.0
-NWK,Nieuwerkerk a/d IJssel,local_train_station,51.965278625488,4.6169443130493,Zuidplas,NWK,28932.0
-NKK,Nijkerk,local_train_station,52.222221374512,5.4938888549805,Nijkerk,NKK,26622.0
-NM,Nijmegen,interchange_intercity_station,51.843612670898,5.8522224426269,Nijmegen,NM,149995.0
-NMD,Nijmegen Dukenburg,local_train_station,51.824165344238,5.7955555915833,Nijmegen,NMD,40538.0
-NMGO,Nijmegen Goffert,local_train_station,51.8273,5.822722,Nijmegen,NMGO,40506.0
-NMH,Nijmegen Heyendaal,local_train_station,51.826946258545,5.8674998283386,Nijmegen,NMH,33202.0
-NML,Nijmegen Lent,local_train_station,51.863154,5.859625,Nijmegen,NML,35015.0
-NVD,Nijverdal,local_train_station,52.366111,6.462,Hellendoorn,NVD,29905.0
-NS,Nunspeet,local_train_station,52.370834350586,5.7852778434753,Nunspeet,NS,27443.0
-NH,Nuth,local_train_station,50.919445037842,5.8927779197693,Beekdaelen,NH,18036.0
-OBD,Obdam,local_train_station,52.67805480957,4.9072222709656,Koggenland,OBD,24940.0
-OT,Oisterwijk,local_train_station,51.582221984863,5.1941666603088,Oisterwijk,OT,22987.0
-ODZ,Oldenzaal,local_train_station,52.30638885498,6.9347224235535,Oldenzaal,ODZ,35751.0
-OST,Olst,intercity_station,52.334720611572,6.1130557060242,Olst-Wijhe,OST,27713.0
-OMN,Ommen,,52.50944519043,6.4158334732056,Ommen,OMN,30033.0
-OTB,Oosterbeek,local_train_station,51.994998931885,5.8400001525879,Renkum,OTB,21375.0
-OP,Opheusden,local_train_station,51.9261615,5.6371145,Neder-Betuwe,OP,19389.0
-O,Oss,interchange_intercity_station,51.765556335449,5.5322222709656,Oss,O,53892.0
-OW,Oss West,local_train_station,51.758056640625,5.5055556297302,Oss,OW,24346.0
-ODB,Oudenbosch,local_train_station,51.587776184082,4.5333333015442,Halderberge,ODB,24231.0
-OVN,Overveen,local_train_station,52.391109466553,4.6061110496521,Bloemendaal,OVN,28526.0
-PMR,Purmerend,interchange_local_train_station,52.50305557251,4.9536108970642,Purmerend,PMR,24471.0
-PMO,Purmerend Overwhere,local_train_station,52.511390686035,4.9683332443237,Purmerend,PMO,23590.0
-PMW,Purmerend Weidevenne,local_train_station,52.496590632542,4.9356293678284,Purmerend,PMW,23504.0
-PT,Putten,local_train_station,52.264999389648,5.5752778053284,Putten,PT,26553.0
-RAT,Raalte,local_train_station,52.391666412354,6.2775001525879,Raalte,RAT,29981.0
-RVS,Ravenstein,local_train_station,51.794166564941,5.6358332633972,Oss,RVS,23607.0
-RV,Reuver,local_train_station,51.28321916653,6.0789585113525,Beesel,RV,26128.0
-RH,Rheden,local_train_station,52.0101,6.0314,Rheden,RH,23874.0
-RHN,Rhenen,interchange_local_train_station,51.958610534668,5.5783333778381,Rhenen,RHN,26757.0
-RSN,Rijssen,local_train_station,52.3122215271,6.5202779769897,Rijssen-Holten,RSN,26909.0
-RSW,Rijswijk,local_train_station,52.039722442627,4.3191666603088,Rijswijk,RSW,48896.0
-RB,Rilland-Bath,local_train_station,51.422779083252,4.1611108779907,Reimerswaal,RB,29066.0
-RM,Roermond,interchange_intercity_station,51.193054199219,5.9941668510437,Roermond,RM,99919.0
-RD,Roodeschool,local_train_station,53.421262,6.7587,Het Hogeland,RD,24545.0
-RSD,Roosendaal,interchange_intercity_station,51.540279388428,4.4583334922791,Roosendaal,RSD,106574.0
-RS,Rosmalen,local_train_station,51.714721679688,5.3680553436279,'s-Hertogenbosch,RS,24351.0
-RTA,Rotterdam Alexander,intercity_station,51.951946258545,4.5536112785339,Rotterdam,RTA,67407.0
-RTB,Rotterdam Blaak,local_train_station,51.920276641846,4.4888887405395,Rotterdam,RTB,92823.0
-RTD,Rotterdam Centraal,mega_station,51.92499923706,4.468888759613,Rotterdam,RTD,253666.0
-RLB,Rotterdam Lombardijen,local_train_station,51.880001068115,4.531388759613,Rotterdam,RLB,47161.0
-RTN,Rotterdam Noord,local_train_station,51.942222595215,4.4816665649414,Rotterdam,RTN,28917.0
-RTST,Rotterdam Stadion,,51.893890380859,4.5197219848633,Rotterdam,RTST,4757.0
-RTZ,Rotterdam Zuid,local_train_station,51.904445648193,4.5102777481079,Rotterdam,RTZ,43867.0
-RL,Ruurlo,local_train_station,52.0810888,6.4492656,Berkelland,RL,22908.0
-SPTN,Santpoort Noord,local_train_station,52.43388748169,4.6325001716614,Velsen,SPTN,28650.0
-SPTZ,Santpoort Zuid,local_train_station,52.419723510742,4.6313886642456,Velsen,SPTZ,28238.0
-SSH,Sassenheim,local_train_station,52.215278,4.517222,Teylingen,SSH,41886.0
-SWD,Sauwerd,local_train_station,53.29113,6.5404,Het Hogeland,SWD,45608.0
-SGN,Schagen,local_train_station,52.784442901611,4.8052778244019,Schagen,SGN,31838.0
-SDA,Scheemda,local_train_station,53.1655362,6.9777775,Oldambt,SDA,27829.0
-SDM,Schiedam Centrum,local_train_station,51.921243812803,4.4089937210083,Schiedam,SDM,107184.0
-SOG,Schin op Geul,local_train_station,50.856388092041,5.8722224235535,Voerendaal,SOG,26689.0
-SN,Schinnen,local_train_station,50.939167022705,5.8744444847107,Beekdaelen,SN,18035.0
-SHL,Schiphol Airport,mega_station,52.30944442749,4.7619442939758,Haarlemmermeer,SHL,267192.0
-STD,Sittard,interchange_intercity_station,51.001667022705,5.8586111068726,Sittard-Geleen,STD,98074.0
-SDT,Sliedrecht,local_train_station,51.829723358154,4.7783331871033,Sliedrecht,SDT,41053.0
-SDTB,Sliedrecht Baanhoek,local_train_station,51.829722,4.743333,Sliedrecht,SDTB,40972.0
-SK,Sneek,interchange_local_train_station,53.0328688,5.6523969,Súdwest-Fryslân,SK,23730.0
-SKND,Sneek Noord,local_train_station,53.0409319,5.6631808,Súdwest-Fryslân,SKND,21689.0
-ST,Soest,interchange_local_train_station,52.173332214355,5.3099999427795,Soest,ST,21801.0
-STZ,Soest Zuid,local_train_station,52.165279388428,5.3030557632446,Soest,STZ,21567.0
-SD,Soestdijk,local_train_station,52.183612823486,5.3000001907349,Soest,SD,21576.0
-SBK,Spaubeek,local_train_station,50.94327,5.850529,Beek,SBK,18035.0
-STV,Stavoren,local_train_station,52.8865535,5.3600212,Súdwest-Fryslân,STV,16215.0
-STM,Stedum,local_train_station,53.3262092,6.6875551,Eemsdelta,STM,22768.0
-SWK,Steenwijk,intercity_station,52.791510992432,6.1145557632446,Steenwijkerland,SWK,45830.0
-SRN,Susteren,local_train_station,51.061389923096,5.8630557060242,Echt-Susteren,SRN,24946.0
-SM,Swalmen,local_train_station,51.23582,6.03228,Roermond,SM,26269.0
-TG,Tegelen,local_train_station,51.33894,6.14253,Venlo,TG,26130.0
-TBG,Terborg,local_train_station,51.9224549,6.3642466,Oude IJsselstreek,TBG,25484.0
-TL,Tiel,interchange_local_train_station,51.889446258545,5.4222221374512,Tiel,TL,47220.0
-TPSW,Tiel Passewaaij,local_train_station,51.873889923096,5.39222240448,Tiel,TPSW,27606.0
-TB,Tilburg,interchange_intercity_station,51.560554504395,5.0836110115051,Tilburg,TB,101300.0
-TBR,Tilburg Reeshof,local_train_station,51.573612213135,4.9944443702698,Tilburg,TBR,23110.0
-TBU,Tilburg Universiteit,local_train_station,51.564985,5.051778,Tilburg,TBU,44734.0
-TWL,Twello,local_train_station,52.237777709961,6.0986108779907,Voorst,TWL,22557.0
-UTG,Uitgeest,interchange_local_train_station,52.521667480469,4.7016668319702,Uitgeest,UTG,66684.0
-UHZ,Uithuizen,local_train_station,53.4099568,6.6748869,Het Hogeland,UHZ,24305.0
-UHM,Uithuizermeeden,local_train_station,53.4145845,6.7202975,Het Hogeland,UHM,24305.0
-UST,Usquert,local_train_station,53.4014742,6.6093776,Het Hogeland,UST,24305.0
-UT,Utrecht Centraal,mega_station,52.088890075684,5.1102776527405,Utrecht,UT,424116.0
-UTLR,Utrecht Leidsche Rijn,local_train_station,52.09896,5.06523,Utrecht,UTLR,39659.0
-UTLN,Utrecht Lunetten,local_train_station,52.06555557251,5.144166469574,Utrecht,UTLN,61070.0
-UTM,Utrecht Maliebaan,local_train_station,52.087776184082,5.1313886642456,Utrecht,UTM,4788.0
-UTO,Utrecht Overvecht,interchange_local_train_station,52.110000610352,5.1247220039368,Utrecht,UTO,88132.0
-UTT,Utrecht Terwijde,local_train_station,52.1000753,5.0439547,Utrecht,UTT,39630.0
-UTVR,Utrecht Vaartsche Rijn,interchange_local_train_station,52.078889,5.121667,Utrecht,UTVR,92460.0
-UTZL,Utrecht Zuilen,local_train_station,52.103055,5.09,Utrecht,UTZL,34862.0
-VK,Valkenburg,,50.869720458984,5.8322219848633,Valkenburg aan de Geul,VK,38302.0
-VSV,Varsseveld,local_train_station,51.937257,6.458839,Oude IJsselstreek,VSV,24921.0
-VDM,Veendam,interchange_local_train_station,53.10324,6.88475,Veendam,VDM,22800.0
-VNDC,Veenendaal Centrum,interchange_local_train_station,52.020000457764,5.548611164093,Veenendaal,VNDC,26755.0
-VNDW,Veenendaal West,local_train_station,52.028057098389,5.531388759613,Veenendaal,VNDW,26755.0
-KLP,Veenendaal-De Klomp,local_train_station,52.045833587646,5.5738887786865,Ede,KLP,30017.0
-VP,Velp,local_train_station,51.994720458984,5.9802780151367,Rheden,VP,23865.0
-VL,Venlo,interchange_intercity_station,51.363609313965,6.1727776527405,Venlo,VL,77080.0
-VRY,Venray,interchange_local_train_station,51.526568099007,6.0141777992248,Venray,VRY,33172.0
-VLB,Vierlingsbeek,local_train_station,51.59193,5.99714,Land van Cuijk,VLB,33167.0
-VTN,Vleuten,local_train_station,52.103056,5.007404,Utrecht,VTN,39631.0
-VS,Vlissingen,interchange_intercity_station,51.445835113525,3.5952777862549,Vlissingen,VS,37519.0
-VSS,Vlissingen Souburg,local_train_station,51.464721679688,3.5952777862549,Vlissingen,VSS,28819.0
-VDL,Voerendaal,local_train_station,50.887222290039,5.9302778244019,Voerendaal,VDL,26640.0
-VB,Voorburg,local_train_station,52.066665649414,4.3594446182251,Leidschendam-Voorburg,VB,34340.0
-VH,Voorhout,local_train_station,52.224445343018,4.4844446182251,Teylingen,VH,29400.0
-VST,Voorschoten,local_train_station,52.1252784729,4.4324998855591,Voorschoten,VST,47490.0
-VEM,Voorst-Empe,local_train_station,52.157501220703,6.1436109542847,Brummen,VEM,20403.0
-VD,Vorden,local_train_station,52.1071949,6.3170457,Bronckhorst,VD,22909.0
-VZ,Vriezenveen,local_train_station,52.40203,6.60041,Twenterand,VZ,17777.0
-VHP,Vroomshoop,local_train_station,52.4571921,6.5696679,Twenterand,VHP,17777.0
-VG,Vught,local_train_station,51.655555725098,5.2919445037842,Vught,VG,23333.0
-WAD,Waddinxveen,local_train_station,52.044166564941,4.6497220993042,Waddinxveen,WAD,40042.0
-WADN,Waddinxveen Noord,local_train_station,52.055000305176,4.6483335494995,Waddinxveen,WADN,40039.0
-WADT,Waddinxveen Triangel,local_train_station,52.02725,4.6491,Waddinxveen,WADT,40041.0
-WFM,Warffum,local_train_station,53.3908431,6.5671364,Het Hogeland,WFM,24368.0
-WT,Weert,intercity_station,51.248611450195,5.7036108970642,Weert,WT,72167.0
-WP,Weesp,interchange_local_train_station,52.3127784729,5.0430555343628,Amsterdam,WP,102945.0
-WL,Wehl,local_train_station,51.9578065,6.213844,Doetinchem,WL,39190.0
-WTV,Westervoort,local_train_station,51.96286,5.9695,Westervoort,WTV,39226.0
-WZ,Wezep,local_train_station,52.454166412354,6.0025000572205,Oldebroek,WZ,26366.0
-WDN,Wierden,interchange_local_train_station,52.361389160156,6.5916666984558,Wierden,WDN,48660.0
-WC,Wijchen,local_train_station,51.811668395996,5.730833530426,Wijchen,WC,41569.0
-WH,Wijhe,intercity_station,52.390277862549,6.1405553817749,Olst-Wijhe,WH,27637.0
-WS,Winschoten,interchange_local_train_station,53.1392377,7.035101,Oldambt,WS,27909.0
-WSM,Winsum,local_train_station,53.3300994,6.5202905,Het Hogeland,WSM,24370.0
-WW,Winterswijk,interchange_local_train_station,51.9677307,6.7155181,Winterswijk,WW,47828.0
-WWW,Winterswijk West,local_train_station,51.97453,6.70417,Winterswijk,WWW,22908.0
-WD,Woerden,interchange_local_train_station,52.084999084473,4.8936109542847,Woerden,WD,101724.0
-WF,Wolfheze,local_train_station,52.005554199219,5.7936110496521,Renkum,WF,22505.0
-WV,Wolvega,local_train_station,52.880832672119,6.0036110877991,Weststellingwerf,WV,21844.0
-WK,Workum,local_train_station,52.9724864,5.4564285,Súdwest-Fryslân,WK,16215.0
-WM,Wormerveer,local_train_station,52.489166259766,4.7922220230103,Zaanstad,WM,36436.0
-ZD,Zaandam,interchange_intercity_station,52.438888549805,4.8136110305786,Zaanstad,ZD,106205.0
-ZDK,Zaandam Kogerveld,local_train_station,52.456665039062,4.8202776908875,Zaanstad,ZDK,23563.0
-ZZS,Zaandijk Zaanse Schans,interchange_local_train_station,52.469165802002,4.8049998283386,Zaanstad,ZZS,36409.0
-ZBM,Zaltbommel,local_train_station,51.80888748169,5.2633333206177,Zaltbommel,ZBM,33667.0
-ZVT,Zandvoort aan Zee,local_train_station,52.3752784729,4.5327777862549,Zandvoort,ZVT,32903.0
-ZA,Zetten-Andelst,local_train_station,51.920056,5.7228408,Overbetuwe,ZA,19389.0
-ZV,Zevenaar,interchange_local_train_station,51.923053741455,6.0719442367554,Zevenaar,ZV,54366.0
-ZVB,Zevenbergen,local_train_station,51.64042,4.60904,Moerdijk,ZVB,24227.0
-ZTM,Zoetermeer,interchange_local_train_station,52.047500610352,4.4772224426269,Zoetermeer,ZTM,33609.0
-ZTMO,Zoetermeer Oost,local_train_station,52.046390533447,4.4927778244019,Zoetermeer,ZTMO,34132.0
-ZB,Zuidbroek,interchange_local_train_station,53.159612280006,6.8679141998291,Midden-Groningen,ZB,46048.0
-ZH,Zuidhorn,local_train_station,53.2486292,6.4062361,Westerkwartier,ZH,31257.0
-ZP,Zutphen,interchange_intercity_station,52.145278930664,6.1941666603088,Zutphen,ZP,116360.0
-ZWD,Zwijndrecht,local_train_station,51.814998626709,4.6416668891907,Zwijndrecht,ZWD,45940.0
-ZL,Zwolle,interchange_intercity_station,52.504722595215,6.0919442176819,Zwolle,ZL,260114.0
-ZLSH,Zwolle Stadshagen,local_train_station,52.52764,6.05146,Zwolle,ZLSH,25304.0
+HT,'s-Hertogenbosch,interchange_intercity_station,51.69048,5.29362,'s-Hertogenbosch,HT,506.82739726027404
+HTO,'s-Hertogenbosch Oost,local_train_station,51.700553894043,5.3183331489563,'s-Hertogenbosch,HTO,66.72876712328767
+HDE,'t Harde,local_train_station,52.4091682,5.893611,Elburg,HDE,74.10958904109587
+ATN,Aalten,local_train_station,51.921326524551,6.5786272287369,Aalten,ATN,68.28219178082193
+AC,Abcoude,local_train_station,52.2785,4.977,De Ronde Venen,AC,99.35890410958905
+AKM,Akkrum,local_train_station,53.046390533447,5.843611240387,Heerenveen,AKM,66.33972602739726
+AMR,Alkmaar,interchange_intercity_station,52.63777923584,4.7397222518921,Alkmaar,AMR,207.30684931506846
+AMRN,Alkmaar Noord,local_train_station,52.643890380859,4.7641668319702,Alkmaar,AMRN,145.14246575342466
+AML,Almelo,interchange_intercity_station,52.358055114746,6.6538887023926,Almelo,AML,279.83287671232875
+AMRI,Almelo de Riet,local_train_station,52.341945648193,6.6666665077209,Almelo,AMRI,79.76986301369863
+ALMB,Almere Buiten,local_train_station,52.394165039062,5.2780556678772,Almere,ALMB,139.77534246575343
+ALM,Almere Centrum,interchange_intercity_station,52.37503,5.21764,Almere,ALM,369.8904109589041
+ALMM,Almere Muziekwijk,local_train_station,52.367500305176,5.1902775764465,Almere,ALMM,211.25753424657535
+ALMO,Almere Oostvaarders,local_train_station,52.403331756592,5.3005557060242,Almere,ALMO,133.86027397260273
+ALMP,Almere Parkwijk,local_train_station,52.376667022705,5.244722366333,Almere,ALMP,124.65205479452055
+AMPO,Almere Poort,local_train_station,52.342778,5.151944,Almere,AMPO,211.28493150684932
+APN,Alphen a/d Rijn,interchange_intercity_station,52.124443054199,4.6577777862549,Alphen aan den Rijn,APN,217.24931506849316
+AMF,Amersfoort Centraal,interchange_intercity_station,52.153888702393,5.3705554008484,Amersfoort,AMF,565.6986301369863
+AMFS,Amersfoort Schothorst,local_train_station,52.174822137451,5.4038887023926,Amersfoort,AMFS,202.4958904109589
+AVAT,Amersfoort Vathorst,local_train_station,52.192779541016,5.4338889122009,Amersfoort,AVAT,133.2986301369863
+ASA,Amsterdam Amstel,intercity_station,52.346668243408,4.9177780151367,Amsterdam,ASA,285.6876712328767
+ASB,Amsterdam Bijlmer ArenA,interchange_local_train_station,52.3122215271,4.9469442367554,Amsterdam,ASB,250.5671232876712
+ASD,Amsterdam Centraal,mega_station,52.378887176514,4.9002776145935,Amsterdam,ASD,1045.9890410958903
+ASHD,Amsterdam Holendrecht,local_train_station,52.29844,4.95972,Amsterdam,ASHD,99.97260273972604
+ASDL,Amsterdam Lelylaan,local_train_station,52.357776641846,4.8338890075684,Amsterdam,ASDL,170.56438356164387
+ASDM,Amsterdam Muiderpoort,local_train_station,52.360553741455,4.9311113357544,Amsterdam,ASDM,252.25753424657532
+RAI,Amsterdam RAI,local_train_station,52.337223052979,4.8902778625488,Amsterdam,RAI,117.4904109589041
+ASSP,Amsterdam Science Park,local_train_station,52.35526,4.94651,Amsterdam,ASSP,149.25205479452055
+ASS,Amsterdam Sloterdijk,interchange_intercity_station,52.388889312744,4.8377776145935,Amsterdam,ASS,729.4136986301369
+ASDZ,Amsterdam Zuid,intercity_station,52.338889,4.872356,Amsterdam,ASDZ,393.97534246575344
+ANA,Anna Paulowna,local_train_station,52.867221832275,4.8111109733581,Hollands Kroon,ANA,81.56986301369862
+APD,Apeldoorn,interchange_intercity_station,52.209167480469,5.9702777862549,Apeldoorn,APD,239.16164383561642
+APDM,Apeldoorn De Maten,local_train_station,52.205276489258,6.0005555152893,Apeldoorn,APDM,54.23287671232877
+APDO,Apeldoorn Osseveld,local_train_station,52.215278625488,6.0044445991516,Apeldoorn,APDO,61.41917808219179
+APG,Appingedam,local_train_station,53.3258135,6.8619577,Eemsdelta,APG,61.09589041095891
+AKL,Arkel,local_train_station,51.87194442749,4.9927778244019,Molenlanden,AKL,62.821917808219176
+ARN,Arnemuiden,local_train_station,51.501667022705,3.6691665649414,Middelburg,ARN,78.81369863013698
+AH,Arnhem Centraal,interchange_intercity_station,51.985000610352,5.8991665840149,Arnhem,AH,590.8328767123287
+AHPR,Arnhem Presikhaaf,local_train_station,51.988056182861,5.9438886642456,Arnhem,AHPR,65.3835616438356
+AHP,Arnhem Velperpoort,local_train_station,51.985279083252,5.9194445610046,Arnhem,AHP,170.15890410958903
+AHZ,Arnhem Zuid,local_train_station,51.955001831055,5.8519444465637,Arnhem,AHZ,95.93972602739727
+ASN,Assen,interchange_intercity_station,52.991664886475,6.5708332061768,Assen,ASN,150.36712328767123
+BRN,Baarn,interchange_local_train_station,52.208332061768,5.2808332443237,Baarn,BRN,139.91232876712328
+NSCH,Bad Nieuweschans,interchange_local_train_station,53.1844,7.19937,Oldambt,NSCH,40.40273972602739
+BF,Baflo,local_train_station,53.3608969,6.5185581,Het Hogeland,BF,68.1041095890411
+BRD,Barendrecht,local_train_station,51.854721069336,4.5533332824707,Barendrecht,BRD,122.05205479452056
+BNC,Barneveld Centrum,local_train_station,52.139999389648,5.590277671814,Barneveld,BNC,114.31506849315069
+BNN,Barneveld Noord,local_train_station,52.161388397217,5.5980553627014,Barneveld,BNN,113.04657534246577
+BNZ,Barneveld Zuid,local_train_station,52.128853,5.60246,Barneveld,BNZ,115.1972602739726
+BDM,Bedum,local_train_station,53.3068857,6.593054,Het Hogeland,BDM,61.1013698630137
+BK,Beek-Elsloo,local_train_station,50.947498321533,5.7866668701172,Stein,BK,70.25753424657535
+BSD,Beesd,local_train_station,51.899444580078,5.1944446563721,West Betuwe,BSD,62.868493150684934
+BL,Beilen,local_train_station,52.854721069336,6.5211110115051,Midden-Drenthe,BL,72.24383561643835
+BGN,Bergen op Zoom,local_train_station,51.49388885498,4.2961111068726,Bergen op Zoom,BGN,109.53424657534246
+BET,Best,local_train_station,51.509998321533,5.3891668319702,Best,BET,121.92602739726027
+BV,Beverwijk,local_train_station,52.478332519531,4.6566667556763,Beverwijk,BV,77.15068493150685
+BHV,Bilthoven,local_train_station,52.130001068115,5.2038888931274,De Bilt,BHV,131.04931506849314
+BR,Blerick,local_train_station,51.372501373291,6.1550002098083,Venlo,BR,155.3068493150685
+BLL,Bloemendaal,local_train_station,52.404167175293,4.6275000572205,Bloemendaal,BLL,77.36712328767123
+BDG,Bodegraven,local_train_station,52.081390380859,4.7461109161377,Bodegraven-Reeuwijk,BDG,105.52602739726026
+BN,Borne,local_train_station,52.298889160156,6.7480554580689,Borne,BN,79.77260273972604
+BSK,Boskoop,local_train_station,52.077777862549,4.6469445228577,Alphen aan den Rijn,BSK,109.91780821917807
+BSKS,Boskoop Snijdelwijk,local_train_station,52.067658,4.646186,Waddinxveen,BSKS,109.6958904109589
+BHDV,Boven-Hardinxveld,local_train_station,51.832222,4.878056,Hardinxveld-Giessendam,BHDV,112.26575342465755
+BKF,Bovenkarspel Flora,local_train_station,52.696109771729,5.2527775764465,Stede Broec,BKF,81.70136986301368
+BKG,Bovenkarspel-Grootebroek,local_train_station,52.694999694824,5.2377777099609,Stede Broec,BKG,81.70410958904108
+BMR,Boxmeer,interchange_local_train_station,51.644521767653,5.9390330314636,Land van Cuijk,BMR,90.86027397260274
+BTL,Boxtel,interchange_local_train_station,51.58433,5.31912,Boxtel,BTL,127.11780821917807
+BD,Breda,interchange_intercity_station,51.595554351807,4.7800002098083,Breda,BD,263.40000000000003
+BDPB,Breda-Prinsenbeek,local_train_station,51.606388092041,4.7208333015442,Breda,BDPB,64.37534246575342
+BKL,Breukelen,interchange_local_train_station,52.17149,4.9906,Stichtse Vecht,BKL,171.6027397260274
+BMN,Brummen,local_train_station,52.091110229492,6.1469445228577,Brummen,BMN,64.56986301369862
+BP,Buitenpost,,53.2564547,6.1446496,Achtkarspelen,BP,95.44657534246575
+BDE,Bunde,local_train_station,50.896945953369,5.7366666793823,Meerssen,BDE,70.25753424657535
+BNK,Bunnik,local_train_station,52.063056945801,5.1944446563721,Bunnik,BNK,86.92876712328768
+BSMZ,Bussum Zuid,local_train_station,52.26583480835,5.1630554199219,Gooise Meren,BSMZ,116.38904109589039
+CPS,Capelle Schollevaar,local_train_station,51.954166412354,4.5841665267944,Capelle aan den IJssel,CPS,78.91232876712328
+CAS,Castricum,intercity_station,52.545833587646,4.6586112976074,Castricum,CAS,195.35068493150683
+CVM,Chevremont,local_train_station,50.876110076904,6.0597224235535,Kerkrade,CVM,70.6027397260274
+CO,Coevorden,,52.663612365723,6.7355556488037,Coevorden,CO,83.91780821917808
+CK,Cuijk,local_train_station,51.726682587905,5.8742952346802,Land van Cuijk,CK,91.16438356164383
+CL,Culemborg,local_train_station,51.946666717529,5.2269444465637,Culemborg,CL,168.2767123287671
+DA,Daarlerveen,local_train_station,52.4407702,6.5759947,Hellendoorn,DA,48.7041095890411
+DLN,Dalen,local_train_station,52.69416809082,6.7580556869507,Coevorden,DLN,43.983561643835614
+DL,Dalfsen,express_train_station,52.498332977295,6.25861120224,Dalfsen,DL,82.06301369863013
+DVNK,De Vink,local_train_station,52.147220611572,4.4563889503479,Voorschoten,DVNK,130.11780821917807
+DWE,De Westereen,local_train_station,53.24817,6.03463,Dantumadiel,DWE,61.742465753424646
+DEI,Deinum,local_train_station,53.1888115,5.7281572,Waadhoeke,DEI,52.89863013698629
+DDN,Delden,local_train_station,52.259998321533,6.7161111831665,Hof van Twente,DDN,62.8904109589041
+DT,Delft,interchange_intercity_station,52.00666809082,4.3563890457153,Delft,DT,345.3753424657534
+DTCP,Delft Campus,local_train_station,51.990833282471,4.3647222518921,Delft,DTCP,123.08767123287672
+DZ,Delfzijl,local_train_station,53.3336625,6.9240797,Eemsdelta,DZ,61.09589041095891
+DZW,Delfzijl West,local_train_station,53.3320834,6.9069092,Eemsdelta,DZW,61.09589041095891
+DLD,Den Dolder,interchange_local_train_station,52.140277862549,5.2427778244019,Zeist,DLD,130.56986301369864
+GVC,Den Haag Centraal,mega_station,52.080276489258,4.3249998092651,'s-Gravenhage,GVC,589.1013698630136
+GV,Den Haag HS,interchange_intercity_station,52.069721221924,4.3225002288818,'s-Gravenhage,GV,352.6602739726028
+LAA,Den Haag Laan v NOI,interchange_local_train_station,52.078609466553,4.3427777290344,Leidschendam-Voorburg,LAA,267.26849315068495
+GVM,Den Haag Mariahoeve,local_train_station,52.090557098389,4.3694443702698,Leidschendam-Voorburg,GVM,130.1917808219178
+GVMW,Den Haag Moerwijk,local_train_station,52.053890228271,4.3086109161377,'s-Gravenhage,GVMW,133.8986301369863
+YPB,Den Haag Ypenburg,local_train_station,52.055278778076,4.39222240448,'s-Gravenhage,YPB,100.64109589041095
+HDR,Den Helder,intercity_station,52.955276489258,4.7611112594605,Den Helder,HDR,84.1890410958904
+HDRZ,Den Helder Zuid,local_train_station,52.932498931885,4.7641668319702,Den Helder,HDRZ,81.56986301369862
+DN,Deurne,local_train_station,51.455833435059,5.7888889312744,Deurne,DN,144.0794520547945
+DV,Deventer,interchange_intercity_station,52.257499694824,6.1605553627014,Deventer,DV,261.0602739726028
+DVC,Deventer Colmschate,local_train_station,52.2502784729,6.2144446372986,Deventer,DVC,63.91232876712328
+DID,Didam,local_train_station,51.933502,6.1324106,Montferland,DID,107.43013698630138
+DMN,Diemen,local_train_station,52.34515,4.967566,Diemen,DMN,149.6164383561644
+DMNZ,Diemen Zuid,local_train_station,52.330276489258,4.9558334350586,Diemen,DMNZ,112.59452054794521
+DR,Dieren,intercity_station,52.044998168945,6.1030554771423,Rheden,DR,142.0849315068493
+DTC,Doetinchem,interchange_local_train_station,51.9585962,6.2962148,Doetinchem,DTC,107.39178082191782
+DTCH,Doetinchem De Huet,local_train_station,51.9591413,6.2598521,Doetinchem,DTCH,107.36712328767125
+DDR,Dordrecht,interchange_intercity_station,51.807220458984,4.668333530426,Dordrecht,DDR,480.02465753424656
+DDRS,Dordrecht Stadspolders,local_train_station,51.801944732666,4.7166666984558,Dordrecht,DDRS,112.89041095890408
+DDZD,Dordrecht Zuid,local_train_station,51.790000915527,4.6713891029358,Dordrecht,DDZD,121.25753424657535
+DB,Driebergen-Zeist,interchange_local_train_station,52.065277099609,5.25861120224,Utrechtse Heuvelrug,DB,182.90410958904107
+DRH,Driehuis,local_train_station,52.442501068115,4.6380553245544,Velsen,DRH,76.67123287671232
+DRP,Dronryp,local_train_station,53.1778086,5.6347411,Waadhoeke,DRP,52.92602739726027
+DRON,Dronten,local_train_station,52.5344,5.72089,Dronten,DRON,77.83287671232875
+DVN,Duiven,local_train_station,51.943332672119,6.0147223472595,Duiven,DVN,107.46849315068495
+DVD,Duivendrecht,interchange_local_train_station,52.323333740234,4.9363889694214,Ouder-Amstel,DVD,293.78082191780817
+EC,Echt,local_train_station,51.100555419922,5.8788890838623,Echt-Susteren,EC,68.71506849315068
+EDC,Ede Centrum,local_train_station,52.043609619141,5.668333530426,Ede,EDC,74.73698630136985
+ED,Ede-Wageningen,interchange_intercity_station,52.027778625488,5.6730556488037,Ede,ED,260.83561643835617
+EEM,Eemshaven,local_train_station,53.458419,6.832,Het Hogeland,EEM,13.676712328767124
+EDN,Eijsden,local_train_station,50.771945953369,5.710000038147,Eijsden-Margraten,EDN,34.652054794520545
+EHV,Eindhoven Centraal,mega_station,51.443332672119,5.4813890457153,Eindhoven,EHV,440.79178082191777
+EHS,Eindhoven Strijp-S,local_train_station,51.451110839844,5.4558334350586,Eindhoven,EHS,121.8876712328767
+EST,Elst,interchange_local_train_station,51.916942596435,5.8550000190735,Overbetuwe,EST,152.24109589041095
+EMN,Emmen,express_train_station,52.790000915527,6.8994445800781,Emmen,EMN,76.72328767123288
+EMNZ,Emmen Zuid,express_train_station,52.748866374691,6.8747806549072,Emmen,EMNZ,74.79452054794521
+EKZ,Enkhuizen,local_train_station,52.699165344238,5.286388874054,Enkhuizen,EKZ,81.6876712328767
+ES,Enschede,interchange_intercity_station,52.222499847412,6.8899998664856,Enschede,ES,237.04657534246573
+ESE,Enschede De Eschmarke,local_train_station,52.221389770508,6.9511113166809,Enschede,ESE,69.14246575342464
+ESK,Enschede Kennispark,local_train_station,52.23749923706,6.8388891220093,Enschede,ESK,80.78630136986301
+EML,Ermelo,local_train_station,52.301666259766,5.6147222518921,Ermelo,EML,71.89863013698631
+ETN,Etten-Leur,intercity_station,51.57500076294,4.6358332633972,Etten-Leur,ETN,77.24109589041096
+EGH,Eygelshoven,local_train_station,50.890556335449,6.0450000762939,Kerkrade,EGH,70.65205479452054
+EGHM,Eygelshoven Markt,local_train_station,50.896049819644,6.0602474212646,Kerkrade,EGHM,32.82739726027397
+FWD,Feanwâlden,local_train_station,53.2351834,5.9886615,Dantumadiel,FWD,114.0082191780822
+FN,Franeker,local_train_station,53.1824488,5.5483094,Waadhoeke,FN,64.12328767123287
+GDR,Gaanderen,local_train_station,51.93074,6.3486,Doetinchem,GDR,69.80821917808218
+GDM,Geldermalsen,interchange_local_train_station,51.88301,5.27127,West Betuwe,GDM,241.43287671232875
+GP,Geldrop,interchange_local_train_station,51.419723510742,5.5505557060242,Geldrop-Mierlo,GP,59.07123287671232
+GLN,Geleen Oost,local_train_station,50.966945648193,5.8430557250977,Sittard-Geleen,GLN,49.410958904109584
+LUT,Geleen-Lutterade,local_train_station,50.975555419922,5.8247222900391,Sittard-Geleen,LUT,70.25205479452055
+GZ,Gilze-Rijen,local_train_station,51.583610534668,4.9261112213135,Gilze en Rijen,GZ,63.35342465753425
+GBR,Glanerbrug,local_train_station,52.218612670898,6.9744443893433,Enschede,GBR,69.14246575342464
+GS,Goes,local_train_station,51.498054504395,3.8905556201935,Goes,GS,114.51780821917808
+GO,Goor,local_train_station,52.230278015137,6.5844445228577,Hof van Twente,GO,63.27671232876712
+GR,Gorinchem,interchange_local_train_station,51.833889007568,4.9683332443237,Gorinchem,GR,113.02465753424659
+GD,Gouda,interchange_intercity_station,52.017501831055,4.7044444084167,Gouda,GD,472.03013698630144
+GDG,Gouda Goverwelle,local_train_station,52.014999389648,4.7408332824707,Gouda,GDG,165.8876712328767
+GBG,Gramsbergen,local_train_station,52.60916519165,6.6758332252502,Hardenberg,GBG,44.04109589041096
+GK,Grijpskerk,local_train_station,53.255740325573,6.3097786903381,Westerkwartier,GK,61.739726027397246
+GN,Groningen,interchange_intercity_station,53.210556030273,6.5647220611572,Groningen,GN,547.0493150684931
+GERP,Groningen Europapark,local_train_station,53.20480027,6.5854178,Groningen,GERP,217.9945205479452
+GNN,Groningen Noord,local_train_station,53.2301469,6.5563172,Groningen,GNN,127.64657534246575
+GW,Grou-Jirnsum,local_train_station,53.088890075684,5.8225002288818,Leeuwarden,GW,61.27945205479452
+HLM,Haarlem,interchange_intercity_station,52.38777923584,4.6383333206177,Haarlem,HLM,367.3479452054794
+HLMS,Haarlem Spaarnwoude,local_train_station,52.382778167725,4.6730556488037,Haarlem,HLMS,152.37808219178083
+HWZB,Halfweg-Zwanenburg,local_train_station,52.385935,4.747165,Haarlemmermeer,HWZB,152.46575342465752
+HDB,Hardenberg,express_train_station,52.572776794434,6.6286110877991,Hardenberg,HDB,126.74246575342465
+HD,Harderwijk,interchange_local_train_station,52.337501525879,5.619722366333,Harderwijk,HD,72.93972602739726
+HBZM,Hardinxveld Blauwe Zoom,local_train_station,51.82944,4.81556,Hardinxveld-Giessendam,HBZM,64.74794520547945
+GND,Hardinxveld-Giessendam,local_train_station,51.830554962158,4.8358335494995,Hardinxveld-Giessendam,GND,112.87397260273973
+HRN,Haren,local_train_station,53.176109313965,6.6172223091125,Groningen,HRN,75.9917808219178
+HLG,Harlingen,local_train_station,53.1704205,5.4251932,Harlingen,HLG,64.26301369863013
+HLGH,Harlingen Haven,local_train_station,53.174917,5.4112885,Harlingen,HLGH,64.26301369863013
+HK,Heemskerk,local_train_station,52.495277404785,4.6869444847107,Heemskerk,HK,76.67397260273972
+HAD,Heemstede-Aerdenhout,intercity_station,52.35916519165,4.6066665649414,Heemstede,HAD,178.35342465753425
+HR,Heerenveen,intercity_station,52.961387634277,5.9141664505005,Heerenveen,HR,127.38904109589039
+HRY,Heerenveen IJsstadion,,52.935276031494,5.9438886642456,Heerenveen,HRY,0.02191780821917808
+HWD,Heerhugowaard,interchange_local_train_station,52.669723510742,4.8227777481079,Dijk en Waard,HWD,159.3835616438356
+HRL,Heerlen,interchange_intercity_station,50.89083480835,5.9749999046326,Heerlen,HRL,276.86301369863014
+HRLW,Heerlen Woonboulevard,local_train_station,50.896667,5.952222,Heerlen,HRLW,72.98630136986301
+HZE,Heeze,local_train_station,51.384998321533,5.5694446563721,Heeze-Leende,HZE,59.07397260273972
+HLO,Heiloo,local_train_station,52.599445343018,4.7005553245544,Heiloo,HLO,160.02465753424656
+HNO,Heino,local_train_station,52.427223205566,6.2211112976074,Raalte,HNO,67.186301369863
+HM,Helmond,interchange_intercity_station,51.475555419922,5.6619443893433,Helmond,HM,147.21369863013697
+HMH,Helmond 't Hout,local_train_station,51.46794,5.63085,Helmond,HMH,59.57260273972604
+HMBV,Helmond Brandevoort,local_train_station,51.462223052979,5.6072220802307,Helmond,HMBV,59.58082191780823
+HMBH,Helmond Brouwhuis,local_train_station,51.47068,5.70177,Helmond,HMBH,59.8109589041096
+HMN,Hemmen-Dodewaard,local_train_station,51.9222129,5.6737254,Neder-Betuwe,HMN,52.945205479452056
+HGL,Hengelo,interchange_intercity_station,52.261665344238,6.7938890457153,Hengelo,HGL,287.5424657534247
+HGLG,Hengelo Gezondheidspark,local_train_station,52.261667,6.767778,Hengelo,HGLG,62.030136986301365
+HGLO,Hengelo Oost,local_train_station,52.268890380859,6.8194446563721,Hengelo,HGLO,65.6082191780822
+HIL,Hillegom,local_train_station,52.302501678467,4.5655555725098,Hillegom,HIL,80.17808219178085
+HVS,Hilversum,interchange_intercity_station,52.225833892822,5.1819443702698,Hilversum,HVS,335.3863013698631
+HVSM,Hilversum Media Park,local_train_station,52.238056182861,5.1738886833191,Hilversum,HVSM,116.43013698630136
+HVSP,Hilversum Sportpark,local_train_station,52.216110229492,5.1872220039368,Hilversum,HVSP,113.87123287671233
+HNP,Hindeloopen,local_train_station,52.9464903,5.423063,Súdwest-Fryslân,HNP,44.42465753424658
+HB,Hoensbroek,local_train_station,50.905555725098,5.9305553436279,Heerlen,HB,49.40821917808219
+HVL,Hoevelaken,local_train_station,52.16652,5.45718,Amersfoort,HVL,113.04383561643836
+HOR,Hollandsche Rading,local_train_station,52.17777633667,5.1791667938232,De Bilt,HOR,78.73972602739725
+HON,Holten,local_train_station,52.283889770508,6.42027759552,Rijssen-Holten,HON,63.9068493150685
+HFD,Hoofddorp,local_train_station,52.293334960938,4.7005553245544,Haarlemmermeer,HFD,278.04109589041093
+HGV,Hoogeveen,local_train_station,52.733890533447,6.4736108779907,Hoogeveen,HGV,72.3945205479452
+HGZ,Hoogezand-Sappemeer,interchange_local_train_station,53.159818131676,6.7707538604736,Midden-Groningen,HGZ,125.85479452054793
+HKS,Hoogkarspel,local_train_station,52.69055557251,5.1838889122009,Drechterland,HKS,83.37534246575342
+HN,Hoorn,interchange_intercity_station,52.644721984863,5.0555553436279,Hoorn,HN,212.27671232876708
+HNK,Hoorn Kersenboogerd,local_train_station,52.653610229492,5.0855555534363,Hoorn,HNK,120.98904109589041
+HRT,Horst-Sevenum,local_train_station,51.426387786865,6.0422220230103,Horst aan de Maas,HRT,84.67671232876711
+HTN,Houten,interchange_local_train_station,52.03402,5.16821,Houten,HTN,171.02191780821917
+HTNC,Houten Castellum,local_train_station,52.01701,5.17949,Houten,HTNC,166.50684931506848
+SGL,Houthem-St. Gerlach,local_train_station,50.873332977295,5.7972221374512,Valkenburg aan de Geul,SGL,72.6986301369863
+HDG,Hurdegaryp,local_train_station,53.2187783,5.934543,Tytsjerksteradiel,HDG,62.03287671232876
+IJT,IJlst,local_train_station,53.0146614,5.6160801,Súdwest-Fryslân,IJT,42.12328767123287
+KPN,Kampen,local_train_station,52.559722900391,5.9216666221619,Kampen,KPN,69.32876712328766
+KPNZ,Kampen Zuid,local_train_station,52.5331,5.91309,Kampen,KPNZ,75.46027397260274
+BZL,Kapelle-Biezelinge,local_train_station,51.480834960938,3.9561111927033,Kapelle,BZL,80.78904109589041
+KRD,Kerkrade Centrum,interchange_local_train_station,50.861667633057,6.0574998855591,Kerkrade,KRD,70.6027397260274
+KTR,Kesteren,local_train_station,51.9313869,5.5833465,Neder-Betuwe,KTR,53.12054794520549
+KBK,Klarenbeek,local_train_station,52.17805480957,6.0836110115051,Voorst,KBK,51.608219178082194
+KMR,Klimmen-Ransdaal,local_train_station,50.866390228271,5.8905553817749,Voerendaal,KMR,73.12054794520547
+KZ,Koog aan de Zaan,local_train_station,52.458610534668,4.8055553436279,Zaanstad,KZ,99.74520547945205
+KMW,Koudum-Molkwerum,local_train_station,52.9028197,5.4106913,Súdwest-Fryslân,KMW,44.42465753424658
+KBD,Krabbendijke,local_train_station,51.433334350586,4.1169443130493,Reimerswaal,KBD,79.61095890410958
+KMA,Krommenie-Assendelft,local_train_station,52.49511,4.75417,Zaanstad,KMA,99.75068493150685
+KW,Kropswolde,local_train_station,53.1617362,6.7220882,Midden-Groningen,KW,125.85205479452054
+KRG,Kruiningen-Yerseke,local_train_station,51.465000152588,4.0372223854065,Reimerswaal,KRG,80.79452054794521
+ZLW,Lage Zwaluwe,interchange_local_train_station,51.69111251831,4.6630554199219,Moerdijk,ZLW,140.20547945205482
+LG,Landgraaf,interchange_local_train_station,50.896389007568,6.019166469574,Landgraaf,LG,107.32328767123286
+LLZM,Lansingerland-Zoetermeer,local_train_station,52.042222,4.517222,Zoetermeer,LLZM,93.51506849315068
+LDM,Leerdam,local_train_station,51.894721984863,5.0913887023926,Vijfheerenlanden,LDM,62.86575342465754
+LW,Leeuwarden,interchange_intercity_station,53.195835113525,5.7922220230103,Leeuwarden,LW,367.1205479452055
+LWC,Leeuwarden Camminghaburen,local_train_station,53.2021808,5.8422968,Leeuwarden,LWC,61.75342465753424
+LEDN,Leiden Centraal,interchange_intercity_station,52.166110992432,4.4816665649414,Leiden,LEDN,564.4438356164384
+LDL,Leiden Lammenschans,local_train_station,52.146945953369,4.4924998283386,Leiden,LDL,106.13972602739726
+LLS,Lelystad Centrum,interchange_intercity_station,52.507778167725,5.4727778434753,Lelystad,LLS,173.20273972602737
+LTV,Lichtenvoorde-Groenlo,local_train_station,52.01188,6.59641,Oost Gelre,LTV,62.76164383561643
+LC,Lochem,local_train_station,52.166667938232,6.4263887405395,Lochem,LC,60.5068493150685
+LP,Loppersum,local_train_station,53.3347145,6.7472625,Eemsdelta,LP,61.09589041095891
+LTN,Lunteren,local_train_station,52.085277557373,5.6244444847107,Ede,LTN,74.74246575342465
+MZ,Maarheeze,local_train_station,51.304986,5.629796,Cranendonck,MZ,59.087671232876716
+MRN,Maarn,interchange_local_train_station,52.064167022705,5.3699998855591,Utrechtse Heuvelrug,MRN,73.90684931506848
+MAS,Maarssen,local_train_station,52.135276794434,5.0336112976074,Stichtse Vecht,MAS,96.22465753424657
+MT,Maastricht,interchange_intercity_station,50.850276947021,5.7055554389954,Maastricht,MT,299.89041095890406
+MTN,Maastricht Noord,local_train_station,50.87087,5.71774,Maastricht,MTN,72.69863013698631
+MTR,Maastricht Randwyck,interchange_local_train_station,50.838611602783,5.7172222137451,Maastricht,MTR,183.14794520547946
+MG,Mantgum,local_train_station,53.1296368,5.7131996,Leeuwarden,MG,57.44383561643835
+MRB,Mariënberg,,52.50944519043,6.5752778053284,Hardenberg,MRB,125.1013698630137
+MTH,Martenshoek,local_train_station,53.1607232,6.7402989,Midden-Groningen,MTH,125.84931506849315
+MES,Meerssen,express_train_station,50.882879392551,5.7509994506836,Meerssen,MES,90.63561643835617
+MP,Meppel,interchange_local_train_station,52.69083404541,6.1975002288818,Meppel,MP,202.1369863013699
+MDB,Middelburg,local_train_station,51.494720458984,3.6172223091126,Middelburg,MDB,105.35068493150683
+MMLH,Mook-Molenhoek,local_train_station,51.766262,5.879133,Mook en Middelaar,MMLH,90.96438356164384
+NDB,Naarden-Bussum,interchange_local_train_station,52.280277252197,5.1569442749023,Gooise Meren,NDB,179.87945205479454
+NA,Nieuw Amsterdam,express_train_station,52.718612670898,6.8486108779907,Emmen,NA,74.46575342465754
+NVP,Nieuw Vennep,local_train_station,52.258888244629,4.6455554962158,Haarlemmermeer,NVP,112.5178082191781
+NWK,Nieuwerkerk a/d IJssel,local_train_station,51.965278625488,4.6169443130493,Zuidplas,NWK,79.26575342465753
+NKK,Nijkerk,local_train_station,52.222221374512,5.4938888549805,Nijkerk,NKK,72.93698630136986
+NM,Nijmegen,interchange_intercity_station,51.843612670898,5.8522224426269,Nijmegen,NM,410.9452054794521
+NMD,Nijmegen Dukenburg,local_train_station,51.824165344238,5.7955555915833,Nijmegen,NMD,111.06301369863014
+NMGO,Nijmegen Goffert,local_train_station,51.8273,5.822722,Nijmegen,NMGO,110.97534246575341
+NMH,Nijmegen Heyendaal,local_train_station,51.826946258545,5.8674998283386,Nijmegen,NMH,90.96438356164384
+NML,Nijmegen Lent,local_train_station,51.863154,5.859625,Nijmegen,NML,95.93150684931507
+NVD,Nijverdal,local_train_station,52.366111,6.462,Hellendoorn,NVD,81.93150684931507
+NS,Nunspeet,local_train_station,52.370834350586,5.7852778434753,Nunspeet,NS,75.186301369863
+NH,Nuth,local_train_station,50.919445037842,5.8927779197693,Beekdaelen,NH,49.413698630136984
+OBD,Obdam,local_train_station,52.67805480957,4.9072222709656,Koggenland,OBD,68.32876712328766
+OT,Oisterwijk,local_train_station,51.582221984863,5.1941666603088,Oisterwijk,OT,62.97808219178082
+ODZ,Oldenzaal,local_train_station,52.30638885498,6.9347224235535,Oldenzaal,ODZ,97.94794520547944
+OST,Olst,intercity_station,52.334720611572,6.1130557060242,Olst-Wijhe,OST,75.92602739726027
+OMN,Ommen,,52.50944519043,6.4158334732056,Ommen,OMN,82.28219178082192
+OTB,Oosterbeek,local_train_station,51.994998931885,5.8400001525879,Renkum,OTB,58.56164383561644
+OP,Opheusden,local_train_station,51.9261615,5.6371145,Neder-Betuwe,OP,53.12054794520549
+O,Oss,interchange_intercity_station,51.765556335449,5.5322222709656,Oss,O,147.64931506849314
+OW,Oss West,local_train_station,51.758056640625,5.5055556297302,Oss,OW,66.7013698630137
+ODB,Oudenbosch,local_train_station,51.587776184082,4.5333333015442,Halderberge,ODB,66.38630136986302
+OVN,Overveen,local_train_station,52.391109466553,4.6061110496521,Bloemendaal,OVN,78.15342465753425
+PMR,Purmerend,interchange_local_train_station,52.50305557251,4.9536108970642,Purmerend,PMR,67.04383561643836
+PMO,Purmerend Overwhere,local_train_station,52.511390686035,4.9683332443237,Purmerend,PMO,64.63013698630137
+PMW,Purmerend Weidevenne,local_train_station,52.496590632542,4.9356293678284,Purmerend,PMW,64.3945205479452
+PT,Putten,local_train_station,52.264999389648,5.5752778053284,Putten,PT,72.74794520547944
+RAT,Raalte,local_train_station,52.391666412354,6.2775001525879,Raalte,RAT,82.13972602739726
+RVS,Ravenstein,local_train_station,51.794166564941,5.6358332633972,Oss,RVS,64.67671232876712
+RV,Reuver,local_train_station,51.28321916653,6.0789585113525,Beesel,RV,71.58356164383562
+RH,Rheden,local_train_station,52.0101,6.0314,Rheden,RH,65.40821917808219
+RHN,Rhenen,interchange_local_train_station,51.958610534668,5.5783333778381,Rhenen,RHN,73.30684931506849
+RSN,Rijssen,local_train_station,52.3122215271,6.5202779769897,Rijssen-Holten,RSN,73.72328767123288
+RSW,Rijswijk,local_train_station,52.039722442627,4.3191666603088,Rijswijk,RSW,133.96164383561643
+RB,Rilland-Bath,local_train_station,51.422779083252,4.1611108779907,Reimerswaal,RB,79.63287671232877
+RM,Roermond,interchange_intercity_station,51.193054199219,5.9941668510437,Roermond,RM,273.7506849315068
+RD,Roodeschool,local_train_station,53.421262,6.7587,Het Hogeland,RD,67.24657534246576
+RSD,Roosendaal,interchange_intercity_station,51.540279388428,4.4583334922791,Roosendaal,RSD,291.9835616438356
+RS,Rosmalen,local_train_station,51.714721679688,5.3680553436279,'s-Hertogenbosch,RS,66.7150684931507
+RTA,Rotterdam Alexander,intercity_station,51.951946258545,4.5536112785339,Rotterdam,RTA,184.6767123287671
+RTB,Rotterdam Blaak,local_train_station,51.920276641846,4.4888887405395,Rotterdam,RTB,254.3095890410959
+RTD,Rotterdam Centraal,mega_station,51.92499923706,4.468888759613,Rotterdam,RTD,694.9753424657534
+RLB,Rotterdam Lombardijen,local_train_station,51.880001068115,4.531388759613,Rotterdam,RLB,129.2082191780822
+RTN,Rotterdam Noord,local_train_station,51.942222595215,4.4816665649414,Rotterdam,RTN,79.22465753424657
+RTST,Rotterdam Stadion,,51.893890380859,4.5197219848633,Rotterdam,RTST,13.032876712328768
+RTZ,Rotterdam Zuid,local_train_station,51.904445648193,4.5102777481079,Rotterdam,RTZ,120.18356164383563
+RL,Ruurlo,local_train_station,52.0810888,6.4492656,Berkelland,RL,62.76164383561643
+SPTN,Santpoort Noord,local_train_station,52.43388748169,4.6325001716614,Velsen,SPTN,78.4931506849315
+SPTZ,Santpoort Zuid,local_train_station,52.419723510742,4.6313886642456,Velsen,SPTZ,77.36438356164383
+SSH,Sassenheim,local_train_station,52.215278,4.517222,Teylingen,SSH,114.75616438356164
+SWD,Sauwerd,local_train_station,53.29113,6.5404,Het Hogeland,SWD,124.95342465753424
+SGN,Schagen,local_train_station,52.784442901611,4.8052778244019,Schagen,SGN,87.22739726027399
+SDA,Scheemda,local_train_station,53.1655362,6.9777775,Oldambt,SDA,76.24383561643835
+SDM,Schiedam Centrum,local_train_station,51.921243812803,4.4089937210083,Schiedam,SDM,293.65479452054797
+SOG,Schin op Geul,local_train_station,50.856388092041,5.8722224235535,Voerendaal,SOG,73.12054794520547
+SN,Schinnen,local_train_station,50.939167022705,5.8744444847107,Beekdaelen,SN,49.410958904109584
+SHL,Schiphol Airport,mega_station,52.30944442749,4.7619442939758,Haarlemmermeer,SHL,732.0328767123289
+STD,Sittard,interchange_intercity_station,51.001667022705,5.8586111068726,Sittard-Geleen,STD,268.6958904109589
+SDT,Sliedrecht,local_train_station,51.829723358154,4.7783331871033,Sliedrecht,SDT,112.47397260273972
+SDTB,Sliedrecht Baanhoek,local_train_station,51.829722,4.743333,Sliedrecht,SDTB,112.25205479452055
+SK,Sneek,interchange_local_train_station,53.0328688,5.6523969,Súdwest-Fryslân,SK,65.01369863013699
+SKND,Sneek Noord,local_train_station,53.0409319,5.6631808,Súdwest-Fryslân,SKND,59.42191780821917
+ST,Soest,interchange_local_train_station,52.173332214355,5.3099999427795,Soest,ST,59.72876712328768
+STZ,Soest Zuid,local_train_station,52.165279388428,5.3030557632446,Soest,STZ,59.087671232876716
+SD,Soestdijk,local_train_station,52.183612823486,5.3000001907349,Soest,SD,59.11232876712329
+SBK,Spaubeek,local_train_station,50.94327,5.850529,Beek,SBK,49.410958904109584
+STV,Stavoren,local_train_station,52.8865535,5.3600212,Súdwest-Fryslân,STV,44.42465753424658
+STM,Stedum,local_train_station,53.3262092,6.6875551,Eemsdelta,STM,62.37808219178083
+SWK,Steenwijk,intercity_station,52.791510992432,6.1145557632446,Steenwijkerland,SWK,125.56164383561644
+SRN,Susteren,local_train_station,51.061389923096,5.8630557060242,Echt-Susteren,SRN,68.34520547945206
+SM,Swalmen,local_train_station,51.23582,6.03228,Roermond,SM,71.96986301369863
+TG,Tegelen,local_train_station,51.33894,6.14253,Venlo,TG,71.58904109589041
+TBG,Terborg,local_train_station,51.9224549,6.3642466,Oude IJsselstreek,TBG,69.81917808219178
+TL,Tiel,interchange_local_train_station,51.889446258545,5.4222221374512,Tiel,TL,129.36986301369862
+TPSW,Tiel Passewaaij,local_train_station,51.873889923096,5.39222240448,Tiel,TPSW,75.63287671232878
+TB,Tilburg,interchange_intercity_station,51.560554504395,5.0836110115051,Tilburg,TB,277.5342465753425
+TBR,Tilburg Reeshof,local_train_station,51.573612213135,4.9944443702698,Tilburg,TBR,63.31506849315069
+TBU,Tilburg Universiteit,local_train_station,51.564985,5.051778,Tilburg,TBU,122.55890410958904
+TWL,Twello,local_train_station,52.237777709961,6.0986108779907,Voorst,TWL,61.8
+UTG,Uitgeest,interchange_local_train_station,52.521667480469,4.7016668319702,Uitgeest,UTG,182.69589041095892
+UHZ,Uithuizen,local_train_station,53.4099568,6.6748869,Het Hogeland,UHZ,66.58904109589041
+UHM,Uithuizermeeden,local_train_station,53.4145845,6.7202975,Het Hogeland,UHM,66.58904109589041
+UST,Usquert,local_train_station,53.4014742,6.6093776,Het Hogeland,UST,66.58904109589041
+UT,Utrecht Centraal,mega_station,52.088890075684,5.1102776527405,Utrecht,UT,1161.9616438356165
+UTLR,Utrecht Leidsche Rijn,local_train_station,52.09896,5.06523,Utrecht,UTLR,108.65479452054794
+UTLN,Utrecht Lunetten,local_train_station,52.06555557251,5.144166469574,Utrecht,UTLN,167.31506849315065
+UTM,Utrecht Maliebaan,local_train_station,52.087776184082,5.1313886642456,Utrecht,UTM,13.117808219178082
+UTO,Utrecht Overvecht,interchange_local_train_station,52.110000610352,5.1247220039368,Utrecht,UTO,241.45753424657534
+UTT,Utrecht Terwijde,local_train_station,52.1000753,5.0439547,Utrecht,UTT,108.57534246575341
+UTVR,Utrecht Vaartsche Rijn,interchange_local_train_station,52.078889,5.121667,Utrecht,UTVR,253.31506849315065
+UTZL,Utrecht Zuilen,local_train_station,52.103055,5.09,Utrecht,UTZL,95.51232876712331
+VK,Valkenburg,,50.869720458984,5.8322219848633,Valkenburg aan de Geul,VK,104.93698630136986
+VSV,Varsseveld,local_train_station,51.937257,6.458839,Oude IJsselstreek,VSV,68.27671232876713
+VDM,Veendam,interchange_local_train_station,53.10324,6.88475,Veendam,VDM,62.46575342465753
+VNDC,Veenendaal Centrum,interchange_local_train_station,52.020000457764,5.548611164093,Veenendaal,VNDC,73.3013698630137
+VNDW,Veenendaal West,local_train_station,52.028057098389,5.531388759613,Veenendaal,VNDW,73.3013698630137
+KLP,Veenendaal-De Klomp,local_train_station,52.045833587646,5.5738887786865,Ede,KLP,82.23835616438356
+VP,Velp,local_train_station,51.994720458984,5.9802780151367,Rheden,VP,65.3835616438356
+VL,Venlo,interchange_intercity_station,51.363609313965,6.1727776527405,Venlo,VL,211.17808219178085
+VRY,Venray,interchange_local_train_station,51.526568099007,6.0141777992248,Venray,VRY,90.88219178082193
+VLB,Vierlingsbeek,local_train_station,51.59193,5.99714,Land van Cuijk,VLB,90.86849315068494
+VTN,Vleuten,local_train_station,52.103056,5.007404,Utrecht,VTN,108.57808219178081
+VS,Vlissingen,interchange_intercity_station,51.445835113525,3.5952777862549,Vlissingen,VS,102.7917808219178
+VSS,Vlissingen Souburg,local_train_station,51.464721679688,3.5952777862549,Vlissingen,VSS,78.95616438356163
+VDL,Voerendaal,local_train_station,50.887222290039,5.9302778244019,Voerendaal,VDL,72.98630136986301
+VB,Voorburg,local_train_station,52.066665649414,4.3594446182251,Leidschendam-Voorburg,VB,94.08219178082193
+VH,Voorhout,local_train_station,52.224445343018,4.4844446182251,Teylingen,VH,80.54794520547946
+VST,Voorschoten,local_train_station,52.1252784729,4.4324998855591,Voorschoten,VST,130.10958904109592
+VEM,Voorst-Empe,local_train_station,52.157501220703,6.1436109542847,Brummen,VEM,55.8986301369863
+VD,Vorden,local_train_station,52.1071949,6.3170457,Bronckhorst,VD,62.764383561643825
+VZ,Vriezenveen,local_train_station,52.40203,6.60041,Twenterand,VZ,48.7041095890411
+VHP,Vroomshoop,local_train_station,52.4571921,6.5696679,Twenterand,VHP,48.7041095890411
+VG,Vught,local_train_station,51.655555725098,5.2919445037842,Vught,VG,63.926027397260285
+WAD,Waddinxveen,local_train_station,52.044166564941,4.6497220993042,Waddinxveen,WAD,109.70410958904108
+WADN,Waddinxveen Noord,local_train_station,52.055000305176,4.6483335494995,Waddinxveen,WADN,109.6958904109589
+WADT,Waddinxveen Triangel,local_train_station,52.02725,4.6491,Waddinxveen,WADT,109.7013698630137
+WFM,Warffum,local_train_station,53.3908431,6.5671364,Het Hogeland,WFM,66.76164383561645
+WT,Weert,intercity_station,51.248611450195,5.7036108970642,Weert,WT,197.71780821917807
+WP,Weesp,interchange_local_train_station,52.3127784729,5.0430555343628,Amsterdam,WP,282.04109589041093
+WL,Wehl,local_train_station,51.9578065,6.213844,Doetinchem,WL,107.36986301369865
+WTV,Westervoort,local_train_station,51.96286,5.9695,Westervoort,WTV,107.46849315068495
+WZ,Wezep,local_train_station,52.454166412354,6.0025000572205,Oldebroek,WZ,72.23561643835616
+WDN,Wierden,interchange_local_train_station,52.361389160156,6.5916666984558,Wierden,WDN,133.31506849315068
+WC,Wijchen,local_train_station,51.811668395996,5.730833530426,Wijchen,WC,113.88767123287671
+WH,Wijhe,intercity_station,52.390277862549,6.1405553817749,Olst-Wijhe,WH,75.71780821917808
+WS,Winschoten,interchange_local_train_station,53.1392377,7.035101,Oldambt,WS,76.46301369863014
+WSM,Winsum,local_train_station,53.3300994,6.5202905,Het Hogeland,WSM,66.76712328767124
+WW,Winterswijk,interchange_local_train_station,51.9677307,6.7155181,Winterswijk,WW,131.03561643835616
+WWW,Winterswijk West,local_train_station,51.97453,6.70417,Winterswijk,WWW,62.76164383561643
+WD,Woerden,interchange_local_train_station,52.084999084473,4.8936109542847,Woerden,WD,278.6958904109589
+WF,Wolfheze,local_train_station,52.005554199219,5.7936110496521,Renkum,WF,61.65753424657535
+WV,Wolvega,local_train_station,52.880832672119,6.0036110877991,Weststellingwerf,WV,59.846575342465755
+WK,Workum,local_train_station,52.9724864,5.4564285,Súdwest-Fryslân,WK,44.42465753424658
+WM,Wormerveer,local_train_station,52.489166259766,4.7922220230103,Zaanstad,WM,99.82465753424658
+ZD,Zaandam,interchange_intercity_station,52.438888549805,4.8136110305786,Zaanstad,ZD,290.97260273972597
+ZDK,Zaandam Kogerveld,local_train_station,52.456665039062,4.8202776908875,Zaanstad,ZDK,64.55616438356164
+ZZS,Zaandijk Zaanse Schans,interchange_local_train_station,52.469165802002,4.8049998283386,Zaanstad,ZZS,99.75068493150685
+ZBM,Zaltbommel,local_train_station,51.80888748169,5.2633333206177,Zaltbommel,ZBM,92.23835616438357
+ZVT,Zandvoort aan Zee,local_train_station,52.3752784729,4.5327777862549,Zandvoort,ZVT,90.14520547945206
+ZA,Zetten-Andelst,local_train_station,51.920056,5.7228408,Overbetuwe,ZA,53.12054794520549
+ZV,Zevenaar,interchange_local_train_station,51.923053741455,6.0719442367554,Zevenaar,ZV,148.94794520547947
+ZVB,Zevenbergen,local_train_station,51.64042,4.60904,Moerdijk,ZVB,66.37534246575343
+ZTM,Zoetermeer,interchange_local_train_station,52.047500610352,4.4772224426269,Zoetermeer,ZTM,92.07945205479452
+ZTMO,Zoetermeer Oost,local_train_station,52.046390533447,4.4927778244019,Zoetermeer,ZTMO,93.5123287671233
+ZB,Zuidbroek,interchange_local_train_station,53.159612280006,6.8679141998291,Midden-Groningen,ZB,126.15890410958903
+ZH,Zuidhorn,local_train_station,53.2486292,6.4062361,Westerkwartier,ZH,85.63561643835617
+ZP,Zutphen,interchange_intercity_station,52.145278930664,6.1941666603088,Zutphen,ZP,318.7945205479452
+ZWD,Zwijndrecht,local_train_station,51.814998626709,4.6416668891907,Zwijndrecht,ZWD,125.86301369863014
+ZL,Zwolle,interchange_intercity_station,52.504722595215,6.0919442176819,Zwolle,ZL,712.641095890411
+ZLSH,Zwolle Stadshagen,local_train_station,52.52764,6.05146,Zwolle,ZLSH,69.32602739726026
