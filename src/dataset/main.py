@@ -1,124 +1,9 @@
 import pandas as pd
 import os
+from src.dataset.cbs import clean_house_type_data, clean_income_data, clean_labor_data, clean_municipality_data, clean_price_data, clean_surface_data
 from src.dataset.utils import municipality_name_mapping, \
-    missing_incomes, apply_name_mapping, dir_path
+    apply_name_mapping, dir_path
 from src.dataset.distances import load_and_process_geojson
-
-def clean_price_data(file_path: str) -> pd.DataFrame:
-    """
-    Cleans the price data and creates a Pandas DataFrame from the CSV file.
-
-    Parameters:
-        file_path (str): The path to the CSV file containing price data.
-
-    Returns:
-        pd.DataFrame: A cleaned DataFrame with price data.
-    """
-    data = pd.read_csv(file_path, sep=';', header=2)
-    data.columns = ['municipality', 'Subject', 'Currency', 'avg_price']
-    data = data.drop(columns=['Subject', 'Currency'])
-    data['avg_price'] = pd.to_numeric(data['avg_price'], errors='coerce')
-    data.dropna(subset=['avg_price'], inplace=True)
-
-    return data
-
-def clean_surface_data(file_path: str) -> pd.DataFrame:
-    """
-    Cleans the surface area data and creates a Pandas DataFrame from CSV file.
-
-    Parameters:
-        file_path (str): The path to the CSV file containing surface area data.
-
-    Returns:
-        pd.DataFrame: A cleaned DataFrame with surface area data.
-    """
-    data = pd.read_csv(file_path, delimiter=';', skiprows=4)
-    corrected_columns = {'Unnamed: 0': 'municipality', 'Totaal.1': 'avg_surface'}
-    data = data.rename(columns=corrected_columns)
-    data = data[['municipality', 'avg_surface']].dropna()
-    data = data[1:]  
-    data.reset_index(drop=True, inplace=True)
-    data['avg_surface'] = pd.to_numeric(data['avg_surface'], errors='coerce')
-
-    return data
-
-def clean_municipality_data(file_path: str) -> pd.DataFrame:
-    """
-    Cleans the data related to municipality size, population density, and total population.
-
-    Parameters:
-        file_path (str): The path to the CSV file containing the relevant data.
-
-    Returns:
-        pd.DataFrame: A cleaned DataFrame with columns for municipality, size, population density, and total population.
-    """
-    data = pd.read_csv(file_path, delimiter=';', skiprows=4)
-
-    data.columns = ['municipality', 'year', 'population', 'pop_density', 'size']
-
-    data = data.drop(columns=['year'])
-
-    # Strip whitespace and potential non-numeric characters
-    for col in data.columns[1:]:
-        data[col] = data[col].replace({',': '', ' km²': '', ' aantal': '', r'\s+': ''}, regex=True)
-
-    data['population'] = pd.to_numeric(data['population'], errors='coerce')
-    data['pop_density'] = pd.to_numeric(data['pop_density'], errors='coerce')
-    data['size'] = pd.to_numeric(data['size'], errors='coerce')
-
-    data.dropna(subset=['population', 'pop_density', 'size'], inplace=True)
-    data.reset_index(drop=True, inplace=True)
-    
-    return data
-
-def clean_income_data(file_path: str) -> pd.DataFrame:
-    """
-    Cleans the income data and creates a Pandas DataFrame from the CSV file.
-
-    Parameters:
-        file_path (str): The path to the CSV file containing income data.
-
-    Returns:
-        pd.DataFrame: A cleaned DataFrame with income data.
-    """
-    data = pd.read_csv(file_path, delimiter=';', skiprows=6)
-    data.columns = ['municipality', 'avg_income']
-    data.reset_index(drop=True, inplace=True)
-
-    for col in data.columns[1:]:
-        data[col] = data[col].replace({',': '.', r'\s+': ''}, regex=True)
-
-    data['avg_income'] = pd.to_numeric(data['avg_income'], errors='coerce')
-
-    # Fill missing income data
-    data['avg_income'] = data['avg_income'].fillna(data['municipality'].map(missing_incomes))
-
-    data.dropna(subset=['avg_income'], inplace=True)
-
-    return data
-
-def clean_labor_data(file_path: str) -> pd.DataFrame:
-    """
-    Cleans the labor data and creates a Pandas DataFrame from the CSV file.
-
-    Parameters:
-        file_path (str): The path to the CSV file containing labor data.
-
-    Returns:
-        pd.DataFrame: A cleaned DataFrame with labor data.
-    """
-    data = pd.read_csv(file_path, delimiter=';', skiprows=5)
-    data.columns = ['municipality', 'unemp_rate', 'net_labor_participation']
-    data.reset_index(drop=True, inplace=True)
-
-    for col in data.columns[1:]:
-        data[col] = data[col].replace({',': '.', r'\s+': ''}, regex=True)
-
-    data['unemp_rate'] = pd.to_numeric(data['unemp_rate'], errors='coerce')
-    data['net_labor_participation'] = pd.to_numeric(data['net_labor_participation'], errors='coerce')
-
-
-    return data
 
 def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -202,6 +87,7 @@ surface_path = os.path.join(base_path, 'cbs/surface.csv')
 mun_size_path = os.path.join(base_path, 'cbs/mun_size.csv')
 incomes_path = os.path.join(base_path, 'cbs/incomes.csv')
 labor_path = os.path.join(base_path, 'cbs/labor.csv')
+house_types_path = os.path.join(base_path, 'cbs/property_types.csv')
 geojson_path = os.path.join(base_path, 'gemeente.geojson')
 
 stations_path = os.path.join(dir_path, '../../output/data/stations.csv')
@@ -224,6 +110,7 @@ def create_main_dataset() -> None:
     data_mun_size = clean_municipality_data(mun_size_path)
     data_incomes = clean_income_data(incomes_path)
     data_labor = clean_labor_data(labor_path)
+    data_house_types = clean_house_type_data(house_types_path)
 
     print('Processing GeoJSON data...')
     data_cities = load_and_process_geojson(geojson_path)
@@ -233,8 +120,8 @@ def create_main_dataset() -> None:
     # Merge data
     print('Merging final datasets...')
     final_data = merge_datasets(data_prices, data_surface, data_mun_size, 
-                                data_incomes, data_labor, data_cities, 
-                                data_stations_count)
+                                data_incomes, data_labor, data_house_types, 
+                                data_cities, data_stations_count)
 
     # Process the merged data
     final_data = process_merged_data(final_data)
