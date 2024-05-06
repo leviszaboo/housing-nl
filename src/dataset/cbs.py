@@ -175,7 +175,7 @@ def clean_house_type_data(file_path: str) -> pd.DataFrame:
     data.dropna(subset=['total', 'multy_family', 'single_family', 'detached'], inplace=True)
 
     data['multy_family'] = data['multy_family'] / data['total']
-    data['single_family'] = data['single_family'] / data['total']
-    data['detached'] = data['detached'] / data['total']
+
+    data = data.drop(columns=['single_family', 'detached'])
 
     return data
