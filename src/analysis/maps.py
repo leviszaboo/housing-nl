@@ -204,6 +204,39 @@ def create_income_map(df: pd.DataFrame, geojson_data) -> None:
     print("Income map created.")
     return
 
+def create_multy_family_map(df: pd.DataFrame, geojson_data) -> None:
+    """
+    Create a map of the ratio of multi-family houses by municipality.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame containing the data.
+
+    Returns:
+        None
+    """
+    print("Creating multi-family map...")
+
+    fig = px.choropleth_mapbox(df,
+                           geojson=geojson_data,
+                           locations='municipality',
+                           color='multy_family',
+                           featureidkey="properties.statnaam", 
+                           color_continuous_scale='cividis_r',  
+                           mapbox_style="carto-positron",  
+                           zoom=6.5, center = {"lat": 52.370216, "lon": 4.895168},
+                           opacity=0.8,
+                           labels={'multy_family': 'Ratio of Multi-Family Houses'}
+                          )
+
+    fig.update_layout(mapbox_style="white-bg", mapbox_layers=[])
+
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+    fig.write_html(os.path.join(output_path, 'multy_family_map.html'))
+
+    print("Multi-family map created.")
+    return
+
 def create_maps(df: pd.DataFrame, geojson_data) -> None:
     """
     Create maps for the average m² price by municipality.
