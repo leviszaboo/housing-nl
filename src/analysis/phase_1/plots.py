@@ -1,8 +1,9 @@
+import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
-from src.analysis.utils import dir_path
+from src.analysis.utils import dir_path, phase_1_vars
 
 output_path = os.path.join(dir_path, '../../output/figures/phase_1')
 
@@ -54,3 +55,62 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
 
     plt.savefig(os.path.join(output_path, 'violin.png'))
 
+def scatter_plots(df: pd.DataFrame) -> None:
+    """
+    Create scatter plots of variables against m2_price.
+
+    Parameters:
+        df: DataFrame with the main dataset
+    
+    Returns:
+        None
+    """
+    variables = phase_1_vars
+
+    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 25))
+    fig.suptitle("Scatter Plots of Variables Against m2_price", fontsize=16)
+
+    axes = axes.flatten()
+
+    for i, var in enumerate(variables):
+        axes[i].scatter(df[var], df['m2_price'], alpha=0.7, edgecolor='k')
+        axes[i].set_xlabel(var)
+        axes[i].set_ylabel('m2_price')
+        axes[i].set_title(f'{var} vs m2_price')
+
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
+
+    plt.savefig(os.path.join(output_path, 'scatter_plots.png'))
+
+def correlation_heatmap(df: pd.DataFrame) -> None:
+    """
+    Create a heatmap of the correlation matrix of the variables.
+
+    Parameters:
+        df: DataFrame with the main dataset
+    
+    Returns:
+        None
+    """
+    variables = phase_1_vars
+
+    plt.figure(figsize=(14, 12))
+    sns.heatmap(df[variables].corr(), annot=True, fmt='.2f', cmap='BrBG', linewidths=.5)
+    plt.xticks(rotation=45)
+    plt.title('Correlation Matrix of Variables')
+
+    plt.savefig(os.path.join(output_path, 'corr_heatmap.png'))
+
+def create_plots(df: pd.DataFrame) -> None:
+    """
+    Create plots for the Phase 1 analysis.
+
+    Parameters:
+        df: DataFrame with the main dataset
+    
+    Returns:
+        None
+    """
+    plots_station_no_station(df)
+    scatter_plots(df)
+    correlation_heatmap(df)

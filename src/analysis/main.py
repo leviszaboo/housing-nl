@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 from src.analysis.maps import create_maps
-from src.analysis.phase_1.plots import plots_station_no_station
+from src.analysis.phase_1.plots import create_plots, plots_station_no_station
 from src.analysis.phase_1.tables import create_tables
 from src.analysis.phase_1.tests import run_and_save_tests
 from src.analysis.utils import dir_path
@@ -26,8 +26,8 @@ def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
     # Create chloropleth maps
     create_maps(df, geojson_data)
 
-    # Create figures for comparison of m² prices by presence of train stations
-    plots_station_no_station(df)
+    # Create figures 
+    create_plots(df)
 
     # Run tests and save the results
     run_and_save_tests(df)
