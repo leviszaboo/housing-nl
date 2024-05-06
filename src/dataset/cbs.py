@@ -129,37 +129,7 @@ def clean_house_type_data(file_path: str) -> pd.DataFrame:
         pd.DataFrame: A cleaned DataFrame with house type data.
     """
     data = pd.read_csv(file_path, delimiter=';', skiprows=4)
-    data.columns = ['municipality', 'total', 'multy_family', 'single_family', 'detached']
-    data.reset_index(drop=True, inplace=True)
-
-    for col in data.columns[1:]:
-        data[col] = data[col].replace({',': '.', r'\s+': ''}, regex=True)
-
-    data['total'] = pd.to_numeric(data['total'], errors='coerce')
-    data['multy_family'] = pd.to_numeric(data['avg_price'], errors='coerce')
-    data['single_family'] = pd.to_numeric(data['single_family'], errors='coerce')
-    data['detached'] = pd.to_numeric(data['detached'], errors='coerce')
-
-    data.dropna(subset=['total', 'multy_family', 'single_family', 'detached'], inplace=True)
-
-    data['multy_family'] = data['multy_family'] / data['total']
-    data['single_family'] = data['single_family'] / data['total']
-    data['detached'] = data['detached'] / data['total']
-
-    return data
-
-def clean_house_type_data(file_path: str) -> pd.DataFrame:
-    """
-    Cleans the house type data and creates a Pandas DataFrame from the CSV file.
-
-    Parameters:
-        file_path (str): The path to the CSV file containing house type data.
-
-    Returns:
-        pd.DataFrame: A cleaned DataFrame with house type data.
-    """
-    data = pd.read_csv(file_path, delimiter=';', skiprows=4)
-    data.columns = ['municipality', 'period', 'total', 'multy_family', 'single_family', 'detached']
+    data.columns = ['municipality', 'period', 'total_homes', 'multy_family', 'single_family', 'detached']
     data.reset_index(drop=True, inplace=True)
 
     data = data.drop(columns=['period'])
@@ -167,14 +137,14 @@ def clean_house_type_data(file_path: str) -> pd.DataFrame:
     for col in data.columns[1:]:
         data[col] = data[col].replace({',': '.', r'\s+': ''}, regex=True)
 
-    data['total'] = pd.to_numeric(data['total'], errors='coerce')
+    data['total_homes'] = pd.to_numeric(data['total_homes'], errors='coerce')
     data['multy_family'] = pd.to_numeric(data['multy_family'], errors='coerce')
     data['single_family'] = pd.to_numeric(data['single_family'], errors='coerce')
     data['detached'] = pd.to_numeric(data['detached'], errors='coerce')
 
-    data.dropna(subset=['total', 'multy_family', 'single_family', 'detached'], inplace=True)
+    data.dropna(subset=['total_homes', 'multy_family', 'single_family', 'detached'], inplace=True)
 
-    data['multy_family'] = data['multy_family'] / data['total']
+    data['multy_family'] = (data['multy_family'] / data['total_homes']) * 100
 
     data = data.drop(columns=['single_family', 'detached'])
 

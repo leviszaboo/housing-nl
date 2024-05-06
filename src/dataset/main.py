@@ -74,8 +74,9 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: The processed data.
     """
     data.insert(1, 'm2_price', data['avg_price'] / data['avg_surface'])
+    data.insert(8, 'homes_per_capita', data['total_homes'] / data['population'])
 
-    data.drop(columns=['avg_price', 'avg_surface'], inplace=True)
+    data.drop(columns=['avg_price', 'avg_surface', 'total_homes'], inplace=True)
 
     return data
 
