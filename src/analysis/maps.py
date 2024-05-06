@@ -87,13 +87,13 @@ def create_distances_map(df: pd.DataFrame, geojson_data) -> None:
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
                            locations='municipality',
-                           color='distance_to_nearest_city',
+                           color='distance_to_urban_center',
                            featureidkey="properties.statnaam", 
                            color_continuous_scale='cividis',  
                            mapbox_style="carto-positron",  
                            zoom=6.5, center = {"lat": 52.370216, "lon": 4.895168},
                            opacity=0.8,
-                           labels={'distance_to_nearest_city': 'Kilometers'}
+                           labels={'distance_to_urban_center': 'Kilometers'}
                           )
 
     fig.update_layout(mapbox_style="white-bg", mapbox_layers=[])

@@ -37,9 +37,6 @@ city_coords = {
     'The Hague': (52.0705, 4.3007),
     'Utrecht': (52.0907, 5.1214),
     'Eindhoven': (51.4231, 5.4623),
-    'Tilburg': (51.5853, 5.0564),
-    'Breda': (51.5719, 4.7683),
-    "'s-Hertogenbosch": (51.6978, 5.3037),
     'Maastricht': (50.8514, 5.6910),
     'Groningen': (53.2194, 6.5665)
 }

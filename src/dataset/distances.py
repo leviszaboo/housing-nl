@@ -70,18 +70,15 @@ def load_and_process_geojson(file_path: str) -> pd.DataFrame:
         lat, lon = calculate_centroid_lat_lon(geometry)
 
         # Calculate distances to each city and find the nearest one
-        nearest_city = None
         min_distance = float('inf')
-        for city, coords in city_coords.items():
+        for _, coords in city_coords.items():
             distance = haversine(lat, lon, coords[0], coords[1])
             if distance < min_distance:
                 min_distance = distance
-                nearest_city = city
 
         list_data.append({
             'municipality': corrected_name,
-            'nearest_city': nearest_city,
-            'distance_to_nearest_city': min_distance
+            'distance_to_urban_center': min_distance
         })
 
     return pd.DataFrame(list_data)
