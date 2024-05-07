@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import os
 from src.dataset.cbs import clean_house_type_data, clean_income_data, clean_labor_data, clean_municipality_data, clean_price_data, clean_surface_data
 from src.dataset.utils import municipality_name_mapping, \
@@ -42,9 +43,57 @@ def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -
     count_columns = [col for col in merged_df.columns if '_count' in col] + ['traffic']
     merged_df[count_columns] = merged_df[count_columns].astype(int)
 
-    merged_df['has_station'] = merged_df['station_count'] > 0
+    merged_df['has_station'] = (merged_df['station_count'] > 0).astype(int)
 
     return merged_df
+
+def create_phase_1_dataset(df: pd.DataFrame, ) -> None:
+    """
+    Creates the Phase 1 dataset by including logarithmic and interaction columns.
+
+    Parameters:
+        df (pd.DataFrame): The main dataset.
+    
+    Returns:
+        None
+    """
+
+    df['log_avg_income'] = np.log(df['avg_income'])
+    df['log_distance'] = np.log(df['distance_to_urban_center'])
+    df['log_homes_per_capita'] = np.log(df['homes_per_capita'])
+    df['log_multy_family'] = np.log(df['multy_family'])
+    df['log_m2_price'] = np.log(df['m2_price'])
+
+    df['station_x_count'] = df['has_station'] * df['station_count']
+    df['station_x_multy_fam'] = df['has_station'] * df['log_multy_family']
+    df['station_x_pop_den'] = df['has_station'] * df['pop_density']
+    df['station_x_distance'] = df['has_station'] * df['log_distance']
+
+    df.to_csv(os.path.join(dir_path, '../../output/data/phase1.csv'), index=False)
+
+def create_phase_2_dataset(df: pd.DataFrame) -> None:
+    """
+    Creates the Phase 2 dataset by limiting to municipalities with a station 
+    and including logarithmic and interaction columns.
+
+    Parameters:
+        df (pd.DataFrame): The main dataset.
+    
+    Returns:
+        None
+    """
+    df = df[df['has_station'] == 1]
+
+    df['log_traffic'] = np.log(df['traffic'])
+    df['log_avg_income'] = np.log(df['avg_income'])
+    df['log_distance'] = np.log(df['distance_to_urban_center'])
+    df['log_homes_per_capita'] = np.log(df['homes_per_capita'])
+    df['log_multy_family'] = np.log(df['multy_family'])
+    df['log_m2_price'] = np.log(df['m2_price'])
+
+    df['traffic_x_multy_fam'] = df['log_traffic'] * df['log_multy_family']  
+
+    df.to_csv(os.path.join(dir_path, '../../output/data/phase2.csv'), index=False)
 
 def merge_datasets(*datasets: pd.DataFrame) -> pd.DataFrame:
     """
@@ -126,6 +175,13 @@ def create_main_dataset() -> None:
 
     # Process the merged data
     final_data = process_merged_data(final_data)
+
+    phase_1 = final_data.copy()
+    phase_2 = final_data.copy()
+
+    # Create the analysis datasets
+    create_phase_1_dataset(phase_1)
+    create_phase_2_dataset(phase_2)
 
     # Save the final data to a CSV file
     final_data.to_csv(main_output, index=False)

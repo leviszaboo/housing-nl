@@ -54,7 +54,7 @@ def main() -> None:
 
             logging.info(f'Data processing completed in {time.time() - start_time:.2f} seconds.')
         except Exception as e:
-            logging.error(f'An error occurred during data processing: {e}')
+            logging.error(f'An error occurred during data processing: {e.with_traceback()}')
             return
 
     if analysis_only_tasks:
@@ -65,7 +65,7 @@ def main() -> None:
             run_analysis()
             logging.info(f'Analysis completed in {time.time() - start_time:.2f} seconds.')
         except Exception as e:
-            logging.error(f'An error occurred during analysis: {e}')
+            logging.error(f'An error occurred during analysis: {e.with_traceback()}')
             return
 
 if __name__ == '__main__':
