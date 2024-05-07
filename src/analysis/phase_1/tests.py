@@ -19,28 +19,21 @@ def run_tests(df: pd.DataFrame) -> dict:
     """
     print("Running tests...")
 
-    # Split the data into two groups based on the presence of train stations
     with_station = df[df['has_station']]['m2_price']
     without_station = df[~df['has_station']]['m2_price']
 
-    # Normality test (Shapiro-Wilk) for both groups
     shapiro_with_station = shapiro(with_station)
     shapiro_without_station = shapiro(without_station)
 
-    # Homogeneity of variances test (Levene's test)
     levene_test = levene(with_station, without_station)
 
-    # Decide which test to use for comparing the groups based on normality and variance results
     if shapiro_with_station.pvalue > 0.05 and shapiro_without_station.pvalue > 0.05 and levene_test.pvalue > 0.05:
-        # Use an independent t-test
         test_result = ttest_ind(with_station, without_station, equal_var=True)
         test_type = 'Independent t-test'
     else:
-        # Use Mann-Whitney U test
         test_result = mannwhitneyu(with_station, without_station, alternative='two-sided')
         test_type = 'Mann-Whitney U test'
 
-    # Compile results into a readable format, including statistics
     results = {
         'Normality Test (With Station) Statistic': shapiro_with_station.statistic,
         'Normality Test (With Station) P-value': shapiro_with_station.pvalue,
@@ -83,7 +76,6 @@ def save_test_results(results: dict, output_file: str) -> None:
             \\hline \\\[-1.8ex]
     """
 
-    # Adding each test's name, statistic, and p-value to the LaTeX table
     latex_table += f'            Normality Test (With Station) & {results["Normality Test (With Station) Statistic"]:.4f} & {results["Normality Test (With Station) P-value"]:.4f} \\\\\n'
     latex_table += f'            Normality Test (Without Station) & {results["Normality Test (Without Station) Statistic"]:.4f} & {results["Normality Test (Without Station) P-value"]:.4f} \\\\\n'
     latex_table += f'            Levene Test for Equal Variances & {results["Levene Test for Equal Variances Statistic"]:.4f} & {results["Levene Test for Equal Variances P-value"]:.4f} \\\\\n'
