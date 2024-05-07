@@ -44,7 +44,7 @@ def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
 
 output_path = os.path.join(dir_path, '../../output/tables/phase_1')
 
-def create_tables(df: pd.DataFrame) -> None:
+def create_main_tables(df: pd.DataFrame) -> None:
     """
     Create tables for the summary statistics of the main dataset.
 

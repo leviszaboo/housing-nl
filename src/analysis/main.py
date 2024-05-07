@@ -3,8 +3,9 @@ import pandas as pd
 import os
 
 from src.analysis.maps import create_maps
-from src.analysis.phase_1.plots import create_plots, plots_station_no_station
-from src.analysis.phase_1.tables import create_tables
+from src.analysis.phase_1.plots import create_plots
+from src.analysis.phase_1.regressions import run_phase_1_regressions
+from src.analysis.phase_1.tables import create_main_tables
 from src.analysis.phase_1.tests import run_and_save_tests
 from src.analysis.utils import dir_path
 
@@ -20,9 +21,6 @@ def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
     """
     print("Running Phase 1 analysis...")
 
-    # Create tables for the summary statistics of the main dataset
-    create_tables(df)
-
     # Create chloropleth maps
     create_maps(df, geojson_data)
 
@@ -31,6 +29,9 @@ def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
 
     # Run tests and save the results
     run_and_save_tests(df)
+
+    # Run phase 1 regressions
+    run_phase_1_regressions(df)
 
     print("Phase 1 analysis complete")
     return 
@@ -45,10 +46,16 @@ def run_analysis() -> None:
     print("Running analysis")
 
     # Load the main dataset
-    df = pd.read_csv(os.path.join(dir_path, '../../output/data/main.csv'))
-    
+    main = pd.read_csv(os.path.join(dir_path, '../../output/data/main.csv'))
+
+    # Load the phase 1 dataset
+    phase_1 = pd.read_csv(os.path.join(dir_path, '../../output/data/phase1.csv'))
+
     with open(os.path.join(dir_path, '../../unprocessed/gemeente.geojson'), 'r') as geojson_file:
         geojson_data = json.load(geojson_file)
+
+    # summary statistics
+    create_main_tables(main)
     
-    run_phase_1(df, geojson_data)
+    run_phase_1(phase_1, geojson_data)
 
