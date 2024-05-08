@@ -40,7 +40,7 @@ def simple(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    X = df[['has_station','avg_income', 'multy_family', 'homes_per_capita', 'distance_to_urban_center']]
+    X = df[['has_station','avg_income', 'multy_family']]
     X = sm.add_constant(X)
 
     y = df['m2_price']
@@ -48,6 +48,25 @@ def simple(df: pd.DataFrame) -> None:
     model, vif, cond_indices, bic = regression(X, y)
 
     residual_analysis(model, 'phase_1/simple_residuals.png')
+    
+    return model, vif, cond_indices, bic
+
+def controls(df: pd.DataFrame) -> None:
+    """
+    Perform a multiple linear regression with the control variables.
+
+    Parameters:
+        df (pd.DataFrame): The phase 1 dataset.
+    
+    Returns:
+        None
+    """
+    X = df[['has_station', 'avg_income', 'multy_family', 'homes_per_capita', 'distance_to_urban_center']]
+    X = sm.add_constant(X)
+
+    y = df['m2_price']
+
+    model, vif, cond_indices, bic = regression(X, y)
     
     return model, vif, cond_indices, bic
 
@@ -184,6 +203,7 @@ def create_score_summaries(df: pd.DataFrame) -> tuple[dict, dict]:
     log_results = {}
     models = {
         "simple": simple,
+        "controls": controls,
         "standardized": standardized,
         "log_transformed": log_transformed,
         "log_standardized": log_standardized,
@@ -221,10 +241,11 @@ def run_phase_1_regressions(df: pd.DataFrame) -> None:
 
     # extract only model from tuple
     simple_model, _, _, _= simple(df)
+    controls_model, _, _, _ = controls(df)
     controls_standardized_model, _, _, _ = standardized(df)
 
     logging.info("Creating summaries for Phase 1 simple models...")
-    create_reg_summaries(simple_model, controls_standardized_model, output_file=os.path.join(output_path, 'regression_summaries.tex'))
+    create_reg_summaries(simple_model, controls_model, controls_standardized_model, output_file=os.path.join(output_path, 'regression_summaries.tex'))
 
     controls_log_model, _, _, _ = log_transformed(df)
     controls_log_standardized_model, _, _, _= log_standardized(df)
