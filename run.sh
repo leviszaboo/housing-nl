@@ -1,5 +1,4 @@
 #!/bin/bash
-
 valid_args=("--analysis_only" "--dataset_only" "--skip_station_data")
 
 is_valid_arg() {
@@ -20,5 +19,19 @@ for arg in "$@"; do
     fi
 done
 
-source .venv/bin/activate
+if [ -z "$VIRTUAL_ENV" ]; then
+    if [ ! -d .venv ]; then
+        echo "Creating virtual environment..."
+        python3 -m venv .venv
+        echo "Activating virtual environment..."
+        source .venv/bin/activate
+    else
+        echo "Activating virtual environment..."
+        source .venv/bin/activate
+    fi
+fi
+
+echo "Checking dependencies..."
+pip3 install -r requirements.txt | grep -v 'already satisfied'
+
 python3 main.py "$@"
