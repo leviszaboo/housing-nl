@@ -20,8 +20,8 @@ def run_tests(df: pd.DataFrame) -> dict:
     """
     logging.info("Running tests...")
 
-    with_station = df[df['has_station']]['m2_price']
-    without_station = df[~df['has_station']]['m2_price']
+    with_station = df[df['has_station'] == 1]['m2_price']
+    without_station = df[df['has_station'] == 0]['m2_price']
 
     shapiro_with_station = shapiro(with_station)
     shapiro_without_station = shapiro(without_station)

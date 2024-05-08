@@ -5,7 +5,7 @@ import logging
 
 from src.analysis.maps import create_maps
 from src.analysis.phase_1.plots import create_plots
-from src.analysis.phase_1.regressions import run_phase_1_regressions
+from src.analysis.phase_1.models import run_phase_1_regressions
 from src.analysis.phase_1.tables import create_main_tables
 from src.analysis.phase_1.tests import run_and_save_tests
 from src.analysis.utils import dir_path
@@ -25,14 +25,14 @@ def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
     # Create chloropleth maps
     create_maps(df, geojson_data)
 
-    # Create figures 
-    create_plots(df)
-
     # Run tests and save the results
     run_and_save_tests(df)
 
     # Run phase 1 regressions
     run_phase_1_regressions(df)
+
+    # Create figures 
+    create_plots(df)
 
     logging.info("Phase 1 analysis complete.")
     return 

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import logging
-from src.analysis.phase_1.regressions import create_score_summaries
+from src.analysis.phase_1.models import create_score_summaries
 from src.analysis.utils import dir_path, phase_1_vars, phase_1_log
 
 output_path = os.path.join(dir_path, '../../output/figures/phase_1')
@@ -167,18 +167,23 @@ def visualize_model_scores(results: dict, title: str) -> None:
         sns.barplot(x='log_VIF', y='feature', hue='Model', data=full_vif_data, ax=axes[0])
         axes[0].set_title(f'Log-Scaled VIFs for {title}')
         axes[0].set_xlabel("Log10 (VIF)")
-    
+        axes[0].set_ylabel(" ")
+
+        axes[0].axvline(x=0.699, color='#404040', linewidth=2, linestyle='--')
+
     # Condition Indices
     cond_indices_list = [{
         "Model": name,
-        "Condition Index": idx
-    } for name, data in results.items() if 'cond_indices' in data for idx in np.log10(data['cond_indices'])]
+        "Condition Index": np.log10(data['cond_indices']).max()
+    } for name, data in results.items() if 'cond_indices' in data]
 
     if cond_indices_list:
         cond_indices_data = pd.DataFrame(cond_indices_list)
-        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1])
+        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1], width=0.6 if 'Non-Log' in title else 0.8)
         axes[1].set_title(f'Log-Scaled Condition Indices for {title}')
         axes[1].set_xlabel("Log10 (Condition Index)")
+        axes[1].set_ylabel(" ")
+        axes[1].axvline(x=1.477, color='gray', linewidth=2, linestyle='--')
 
     # BIC Scores
     bic_list = [{
@@ -188,13 +193,17 @@ def visualize_model_scores(results: dict, title: str) -> None:
 
     if bic_list:
         bic_data = pd.DataFrame(bic_list)
-        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2])
+        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2], width=0.6 if 'Non-Log' in title else 0.8)
         axes[2].set_title(f'BIC Scores for {title}')
         axes[2].set_xlabel("BIC Score")
+        axes[2].set_ylabel(" ")
+        axes[2].set_xlim(bic_data['BIC'].min() - 5, bic_data['BIC'].max() + 5)
     
     plt.tight_layout()
     
-    plt.savefig(os.path.join(output_path, f'{title.lower()}_scores.png'))
+    filename = title.lower().replace('-', '_').replace(' ', '_')
+    
+    plt.savefig(os.path.join(output_path, f'{filename}_scores.png'))
 
 def create_plots(df: pd.DataFrame) -> None:
     """
