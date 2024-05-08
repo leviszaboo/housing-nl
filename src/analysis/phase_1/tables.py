@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import statsmodels.api as sm
 from src.analysis.utils import dir_path
 
 def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
@@ -41,6 +42,76 @@ def create_summary_statistics(df: pd.DataFrame, output_file: str) -> None:
 
     with open(output_file, 'w') as file:
         file.write(latex_table)
+
+    return
+
+def create_reg_summaries(*models: sm.regression.linear_model.RegressionResultsWrapper, output_file: str) -> None:
+    """
+    Create a LaTeX table with regression models.
+
+    Parameters:
+        models (sm.regression.linear_model.RegressionResultsWrapper): The regression models.
+        output_file (str): The file path where the LaTeX table will be written.
+
+    Returns:
+        None
+    """
+
+    all_results = {}
+
+    # Extract results from each summary
+    for idx, summary in enumerate(models):
+        model_results = summary.summary2().tables[1]
+        for index, row in model_results.iterrows():
+            coef_name = index.replace('_', '\_')
+            coef_val = row['Coef.']
+            std_err = row['Std.Err.']
+            p_val = row['P>|t|']
+            stars = '***' if p_val < 0.01 else '**' if p_val < 0.05 else '*' if p_val < 0.1 else ''
+
+            if coef_name not in all_results:
+                all_results[coef_name] = {}
+            all_results[coef_name][idx] = f"{coef_val:.4f} ({std_err:.4f}){stars}"
+
+    for coef in all_results:
+        for i in range(len(models)):
+            if i not in all_results[coef]:
+                all_results[coef][i] = '-'
+
+    latex_table = """
+    \\begin{table}[H]
+        \\centering
+        \\caption{Regression models}
+        \\vspace{10pt}
+        \\label{tab:regression_models}
+        \\begin{tabular}{l%s}
+        \\hline
+        \\hline \\\\[-1.8ex]
+    """ % ("c" * len(models))
+
+    # Adding column headers
+    latex_table += " & " + " & ".join([f"\\textbf{{Model {i + 1}}}" for i in range(len(models))]) + " \\\\\n"
+    latex_table += "\\hline \\\\[-1.8ex] \n"
+
+    # Fill in rows for each coefficient
+    for coef, models in all_results.items():
+        row = coef
+        for i in range(len(models)):
+            row += " & " + models[i]
+        row += " \\\\\n"
+        latex_table += row
+
+    latex_table += """
+        \\hline
+        \\hline
+        \\end{tabular}
+    \\end{table}
+    """
+
+    with open(output_file, 'w') as file:
+        file.write(latex_table)
+
+    return 
 
 output_path = os.path.join(dir_path, '../../output/tables/phase_1')
 
