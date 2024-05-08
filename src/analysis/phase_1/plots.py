@@ -20,10 +20,9 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    # Categorize municipalities by presence of train stations
-    df['has_station'] = df['station_count'] > 0
-
     sns.set_palette('Set2')
+
+    df['has_station'] = df['has_station'].astype(int)
 
     # Create boxplot to visualize the difference in m² prices
     plt.figure(figsize=(10, 6))
@@ -32,6 +31,7 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     plt.ylabel('Average m² Price')
     plt.title('Comparison of m² Prices by Presence of Train Stations')
     plt.grid(True)
+    plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
 
     plt.savefig(os.path.join(output_path, 'boxplot.png'))
 
@@ -42,6 +42,7 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     plt.ylabel('Average m² Price')
     plt.title('Comparison of m² Prices by Presence of Train Stations')
     plt.grid(True)
+    plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
 
     plt.savefig(os.path.join(output_path, 'swarm.png'))
 
@@ -52,6 +53,7 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     plt.ylabel('Average m² Price')
     plt.title('Comparison of m² Prices by Presence of Train Stations')
     plt.grid(True)
+    plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
 
     plt.savefig(os.path.join(output_path, 'violin.png'))
 
@@ -65,9 +67,9 @@ def scatter_plots(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    variables = phase_1_vars
+    variables = ['avg_income', 'homes_per_capita', 'multy_family', 'distance_to_urban_center']
 
-    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 25))
+    fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 15))
     fig.suptitle("Scatter Plots of Variables Against m2_price", fontsize=16)
 
     axes = axes.flatten()
@@ -110,7 +112,7 @@ def correlation_heatmap(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    variables = phase_1_vars
+    variables = ['avg_income', 'homes_per_capita', 'multy_family', 'unemp_rate', 'pop_density', 'net_labor_participation', 'distance_to_urban_center']
 
     plt.figure(figsize=(14, 12))
     sns.heatmap(df[variables].corr(), annot=True, fmt='.2f', 
@@ -202,7 +204,7 @@ def visualize_model_scores(results: dict, title: str) -> None:
     plt.tight_layout()
     
     filename = title.lower().replace('-', '_').replace(' ', '_')
-    
+
     plt.savefig(os.path.join(output_path, f'{filename}_scores.png'))
 
 def create_plots(df: pd.DataFrame) -> None:

@@ -7,8 +7,7 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-phase_1_vars = ['avg_income', 'pop_density', 'unemp_rate', 'net_labor_participation',
-                'homes_per_capita', 'multy_family', 'distance_to_urban_center', 'station_count']
+phase_1_vars = ['avg_income', 'homes_per_capita', 'multy_family', 'distance_to_urban_center']
 
 phase_1_log = ['has_station', 'log_avg_income', 'log_homes_per_capita', 'log_multy_family', 'log_distance']
 

@@ -46,6 +46,9 @@ def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -
 
     merged_df['has_station'] = (merged_df['station_count'] > 0).astype(int)
 
+    # remove station count column as it is no longer needed for the analysis
+    merged_df.drop(columns='station_count', inplace=True)
+
     return merged_df
 
 def create_phase_1_dataset(df: pd.DataFrame, ) -> None:
@@ -65,7 +68,7 @@ def create_phase_1_dataset(df: pd.DataFrame, ) -> None:
     df['log_multy_family'] = np.log(df['multy_family'])
     df['log_m2_price'] = np.log(df['m2_price'])
 
-    df['station_x_count'] = df['has_station'] * df['station_count']
+    # df['station_x_count'] = df['has_station'] * df['station_count']
     df['station_x_multy_fam'] = df['has_station'] * df['log_multy_family']
     df['station_x_pop_den'] = df['has_station'] * df['pop_density']
     df['station_x_distance'] = df['has_station'] * df['log_distance']

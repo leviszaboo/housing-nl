@@ -40,39 +40,6 @@ def create_price_map(df: pd.DataFrame, geojson_data) -> None:
     logging.info("Price map created.")
     return
 
-def create_station_count_map(df: pd.DataFrame, geojson_data) -> None:
-    """
-    Create a map of the number of train stations by municipality.
-
-    Parameters:
-        df (pd.DataFrame): The DataFrame containing the data.
-
-    Returns:
-        None
-    """
-    logging.info("Creating station count map...")
-
-    fig = px.choropleth_mapbox(df,
-                           geojson=geojson_data,
-                           locations='municipality',
-                           color='station_count',
-                           featureidkey="properties.statnaam", 
-                           color_continuous_scale='cividis_r',  
-                           mapbox_style="carto-positron",  
-                           zoom=6.5, center = {"lat": 52.370216, "lon": 4.895168},
-                           opacity=0.8,
-                           labels={'station_count': 'Number of Stations'}
-                          )
-
-    fig.update_layout(mapbox_style="white-bg", mapbox_layers=[])
-
-    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-    fig.write_html(os.path.join(output_path, 'station_count_map.html'))
-
-    logging.info("Station count map created.")
-    return
-
 def create_distances_map(df: pd.DataFrame, geojson_data) -> None:
     """
     Create a map of the distances to the closest urban center by municipality.
@@ -257,7 +224,5 @@ def create_maps(df: pd.DataFrame, geojson_data) -> None:
     create_pop_density_map(df, geojson_data)
 
     create_income_map(df, geojson_data)
-
-    create_station_count_map(df, geojson_data)
 
     return
