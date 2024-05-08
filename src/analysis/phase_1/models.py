@@ -142,7 +142,7 @@ def log_standardized(df: pd.DataFrame) -> None:
     
     return model, vif, cond_indices, bic
 
-def log_interaction_terms(df: pd.DataFrame) -> None:
+def log_interaction(df: pd.DataFrame) -> None:
     """
     Perform a multiple linear regression with interaction terms.
 
@@ -160,7 +160,7 @@ def log_interaction_terms(df: pd.DataFrame) -> None:
     
     return model, vif, cond_indices, bic
 
-def log_interaction_terms_standardized(df: pd.DataFrame) -> None:
+def log_int_standardized(df: pd.DataFrame) -> None:
     """
     Perform a multiple linear regression with standardized interaction terms.
 
@@ -207,8 +207,8 @@ def create_score_summaries(df: pd.DataFrame) -> tuple[dict, dict]:
         "standardized": standardized,
         "log_transformed": log_transformed,
         "log_standardized": log_standardized,
-        "log_interaction_terms": log_interaction_terms,
-        "log_interaction_terms_standardized": log_interaction_terms_standardized
+        "log_interaction": log_interaction,
+        "log_int_standardized": log_int_standardized
     }
 
     logging.info("Summarizing VIFs, condition indices, and BIC scores for the models...")
@@ -249,11 +249,11 @@ def run_phase_1_regressions(df: pd.DataFrame) -> None:
 
     controls_log_model, _, _, _ = log_transformed(df)
     controls_log_standardized_model, _, _, _= log_standardized(df)
-    interaction_terms_model, _, _, _= log_interaction_terms(df)
-    interaction_terms_standardized_model, _, _, _ = log_interaction_terms_standardized(df)
+    interaction_model, _, _, _= log_interaction(df)
+    int_standardized_model, _, _, _ = log_int_standardized(df)
 
     logging.info("Creating summaries for Phase 1 log models...")
-    create_reg_summaries(controls_log_model, controls_log_standardized_model, interaction_terms_model, interaction_terms_standardized_model, output_file=os.path.join(output_path, 'regression_summaries_log.tex'))
+    create_reg_summaries(controls_log_model, controls_log_standardized_model, interaction_model, int_standardized_model, output_file=os.path.join(output_path, 'regression_summaries_log.tex'))
 
     logging.info("Phase 1 regressions complete.")
 
