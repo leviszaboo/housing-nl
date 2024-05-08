@@ -31,3 +31,6 @@ def setup_logging():
     logger = colorlog.getLogger()
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
+
+    mlogger = logging.getLogger('matplotlib')
+    mlogger.setLevel(logging.WARNING)
