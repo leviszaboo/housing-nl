@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import logging
+from src.analysis.phase_1.regressions import create_score_summaries
 from src.analysis.utils import dir_path, phase_1_vars, phase_1_log
 
 output_path = os.path.join(dir_path, '../../output/figures/phase_1')
@@ -139,6 +140,62 @@ def updated_log_corr_heatmap(df: pd.DataFrame) -> None:
 
     plt.savefig(os.path.join(output_path, 'log_corr_heatmap.png'))
 
+def visualize_model_scores(results: dict, title: str) -> None:
+    """
+    Visualize the VIFs, condition indices, and BIC scores for the models.
+
+    Parameters:
+        results: Dictionary with the results of the models.
+        title: Title for the plots
+    
+    Returns:
+        None
+    """
+    fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(10, 15), dpi=120)
+
+    # VIFs
+    vif_data_list = []
+    for name, data in results.items():
+        if 'vif' in data and not pd.DataFrame(data['vif']).empty:
+            vif_data = pd.DataFrame(data['vif'])
+            vif_data['log_VIF'] = np.log10(vif_data['VIF'])
+            vif_data['Model'] = name
+            vif_data_list.append(vif_data)
+
+    if vif_data_list:
+        full_vif_data = pd.concat(vif_data_list)
+        sns.barplot(x='log_VIF', y='feature', hue='Model', data=full_vif_data, ax=axes[0])
+        axes[0].set_title(f'Log-Scaled VIFs for {title}')
+        axes[0].set_xlabel("Log10 (VIF)")
+    
+    # Condition Indices
+    cond_indices_list = [{
+        "Model": name,
+        "Condition Index": idx
+    } for name, data in results.items() if 'cond_indices' in data for idx in np.log10(data['cond_indices'])]
+
+    if cond_indices_list:
+        cond_indices_data = pd.DataFrame(cond_indices_list)
+        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1])
+        axes[1].set_title(f'Log-Scaled Condition Indices for {title}')
+        axes[1].set_xlabel("Log10 (Condition Index)")
+
+    # BIC Scores
+    bic_list = [{
+        "Model": name,
+        "BIC": data['bic']
+    } for name, data in results.items() if 'bic' in data]
+
+    if bic_list:
+        bic_data = pd.DataFrame(bic_list)
+        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2])
+        axes[2].set_title(f'BIC Scores for {title}')
+        axes[2].set_xlabel("BIC Score")
+    
+    plt.tight_layout()
+    
+    plt.savefig(os.path.join(output_path, f'{title.lower()}_scores.png'))
+
 def create_plots(df: pd.DataFrame) -> None:
     """
     Create plots for the Phase 1 analysis.
@@ -155,3 +212,7 @@ def create_plots(df: pd.DataFrame) -> None:
     correlation_heatmap(df)
     updated_log_corr_heatmap(df)
     plot_distribution(df)
+
+    non_log_scores, log_scores = create_score_summaries(df)
+    visualize_model_scores(non_log_scores, 'Non-Log Models')
+    visualize_model_scores(log_scores, 'Log Models')

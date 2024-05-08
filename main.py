@@ -1,4 +1,6 @@
 from logging_config import setup_logging
+import pandas as pd
+pd.options.mode.chained_assignment = None
 
 # Setup colored logging
 setup_logging()
