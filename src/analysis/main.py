@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 import os
+import logging
 
 from src.analysis.maps import create_maps
 from src.analysis.phase_1.plots import create_plots
@@ -19,7 +20,7 @@ def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Running Phase 1 analysis...")
+    logging.info("Running Phase 1 analysis...")
 
     # Create chloropleth maps
     create_maps(df, geojson_data)
@@ -33,7 +34,7 @@ def run_phase_1(df: pd.DataFrame, geojson_data) -> None:
     # Run phase 1 regressions
     run_phase_1_regressions(df)
 
-    print("Phase 1 analysis complete")
+    logging.info("Phase 1 analysis complete.")
     return 
 
 def run_analysis() -> None:
@@ -43,7 +44,7 @@ def run_analysis() -> None:
     Returns:
         None
     """
-    print("Running analysis")
+    logging.info("Running analysis...")
 
     # Load the main dataset
     main = pd.read_csv(os.path.join(dir_path, '../../output/data/main.csv'))

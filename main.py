@@ -1,3 +1,9 @@
+from logging_config import setup_logging
+
+# Setup colored logging
+setup_logging()
+
+# Continue with your application logic
 import logging
 import time
 import argparse

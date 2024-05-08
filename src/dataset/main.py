@@ -1,3 +1,4 @@
+import logging
 import pandas as pd
 import numpy as np
 import os
@@ -151,10 +152,10 @@ def create_main_dataset() -> None:
     Returns:
         None
     """
-    print('Creating main dataset...')
+    logging.info('Creating main dataset...')
 
     # Process each dataset
-    print('Processing CBS datasets...')
+    logging.info('Processing CBS data...')
     data_prices = clean_price_data(prices_path)
     data_surface = clean_surface_data(surface_path)
     data_mun_size = clean_municipality_data(mun_size_path)
@@ -162,13 +163,13 @@ def create_main_dataset() -> None:
     data_labor = clean_labor_data(labor_path)
     data_house_types = clean_house_type_data(house_types_path)
 
-    print('Processing GeoJSON data...')
+    logging.info('Processing GeoJSON data...')
     data_cities = load_and_process_geojson(geojson_path)
 
     data_stations_count = process_stations_data(stations_path, data_prices[['municipality']])
 
     # Merge data
-    print('Merging final datasets...')
+    logging.info('Merging datasets...')
     final_data = merge_datasets(data_prices, data_surface, data_mun_size, 
                                 data_incomes, data_labor, data_house_types, 
                                 data_cities, data_stations_count)
@@ -186,4 +187,4 @@ def create_main_dataset() -> None:
     # Save the final data to a CSV file
     final_data.to_csv(main_output, index=False)
 
-    print('Data processing completed successfully.')
+    logging.info('Data processing completed successfully.')

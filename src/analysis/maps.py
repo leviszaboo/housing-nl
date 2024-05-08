@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import os
+import logging
 from src.analysis.utils import dir_path
 
 output_path = os.path.join(dir_path, '../../output/maps')
@@ -16,7 +17,7 @@ def create_price_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating price map...")
+    logging.info("Creating price map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -36,7 +37,7 @@ def create_price_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'price_map.html'))
 
-    print("Price map created.")
+    logging.info("Price map created.")
     return
 
 def create_station_count_map(df: pd.DataFrame, geojson_data) -> None:
@@ -49,7 +50,7 @@ def create_station_count_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating station count map...")
+    logging.info("Creating station count map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -69,7 +70,7 @@ def create_station_count_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'station_count_map.html'))
 
-    print("Station count map created.")
+    logging.info("Station count map created.")
     return
 
 def create_distances_map(df: pd.DataFrame, geojson_data) -> None:
@@ -82,7 +83,7 @@ def create_distances_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating distances map...")
+    logging.info("Creating distances map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -102,7 +103,7 @@ def create_distances_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'distances_map.html'))
 
-    print("Distances map created.")
+    logging.info("Distances map created.")
     return
 
 def create_traffic_map(df: pd.DataFrame, geojson_data) -> None:
@@ -115,7 +116,7 @@ def create_traffic_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating traffic map...")
+    logging.info("Creating traffic map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -135,7 +136,7 @@ def create_traffic_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'traffic_map.html'))
 
-    print("Traffic map created.")
+    logging.info("Traffic map created.")
     return
 
 def create_pop_density_map(df: pd.DataFrame, geojson_data) -> None:
@@ -148,7 +149,7 @@ def create_pop_density_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating population density map...")
+    logging.info("Creating population density map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -168,7 +169,7 @@ def create_pop_density_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'pop_density_map.html'))
 
-    print("Population density map created.")
+    logging.info("Population density map created.")
     return
 
 def create_income_map(df: pd.DataFrame, geojson_data) -> None:
@@ -181,7 +182,7 @@ def create_income_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating income map...")
+    logging.info("Creating income map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -201,7 +202,7 @@ def create_income_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'income_map.html'))
 
-    print("Income map created.")
+    logging.info("Income map created.")
     return
 
 def create_multy_family_map(df: pd.DataFrame, geojson_data) -> None:
@@ -214,7 +215,7 @@ def create_multy_family_map(df: pd.DataFrame, geojson_data) -> None:
     Returns:
         None
     """
-    print("Creating multi-family map...")
+    logging.info("Creating multi-family map...")
 
     fig = px.choropleth_mapbox(df,
                            geojson=geojson_data,
@@ -234,7 +235,7 @@ def create_multy_family_map(df: pd.DataFrame, geojson_data) -> None:
 
     fig.write_html(os.path.join(output_path, 'multy_family_map.html'))
 
-    print("Multi-family map created.")
+    logging.info("Multi-family map created.")
     return
 
 def create_maps(df: pd.DataFrame, geojson_data) -> None:

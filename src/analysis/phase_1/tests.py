@@ -1,5 +1,6 @@
 import pandas as pd
 import os 
+import logging
 from scipy.stats import shapiro, levene, ttest_ind, mannwhitneyu
 from src.analysis.utils import dir_path
 
@@ -17,7 +18,7 @@ def run_tests(df: pd.DataFrame) -> dict:
     Returns:
         dict: A dictionary with test names, statistics, and p-values.
     """
-    print("Running tests...")
+    logging.info("Running tests...")
 
     with_station = df[df['has_station']]['m2_price']
     without_station = df[~df['has_station']]['m2_price']
@@ -46,7 +47,7 @@ def run_tests(df: pd.DataFrame) -> dict:
         'P-value': test_result.pvalue
     }
 
-    print("Tests complete.")
+    logging.info("Tests complete.")
     return results
 
 
@@ -61,7 +62,7 @@ def save_test_results(results: dict, output_file: str) -> None:
     Returns:
         None
     """
-    print("Saving test results as LaTeX table...")
+    logging.info("Saving test results as LaTeX table...")
 
     latex_table = """
     \\begin{table}

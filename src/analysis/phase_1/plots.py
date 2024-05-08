@@ -3,6 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
+import logging
 from src.analysis.utils import dir_path, phase_1_vars, phase_1_log
 
 output_path = os.path.join(dir_path, '../../output/figures/phase_1')
@@ -18,8 +19,6 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    print("Creating plots...")
-
     # Categorize municipalities by presence of train stations
     df['has_station'] = df['station_count'] > 0
 
@@ -150,6 +149,7 @@ def create_plots(df: pd.DataFrame) -> None:
     Returns:
         None
     """
+    logging.info("Creating plots...")
     plots_station_no_station(df)
     scatter_plots(df)
     correlation_heatmap(df)
