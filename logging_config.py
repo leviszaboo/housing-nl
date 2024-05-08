@@ -26,10 +26,8 @@ def setup_logging():
         style='%'
     )
 
-    # Set the formatter to the handler
     handler.setFormatter(formatter)
 
-    # Set up the root logger
     logger = colorlog.getLogger()
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)

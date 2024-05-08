@@ -149,7 +149,7 @@ def create_plots(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    logging.info("Creating plots...")
+    logging.info("Creating and saving figures...")
     plots_station_no_station(df)
     scatter_plots(df)
     correlation_heatmap(df)

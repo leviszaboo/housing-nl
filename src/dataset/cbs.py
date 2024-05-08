@@ -1,4 +1,5 @@
 import pandas as pd
+import logging
 
 from src.dataset.utils import missing_incomes
 
@@ -12,6 +13,8 @@ def clean_price_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: A cleaned DataFrame with price data.
     """
+    logging.info("Cleaning house price data...")
+
     data = pd.read_csv(file_path, sep=';', header=2)
     data.columns = ['municipality', 'Subject', 'Currency', 'avg_price']
     data = data.drop(columns=['Subject', 'Currency'])
@@ -30,6 +33,8 @@ def clean_surface_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: A cleaned DataFrame with surface area data.
     """
+    logging.info("Cleaning surface area data...")
+
     data = pd.read_csv(file_path, delimiter=';', skiprows=4)
     corrected_columns = {'Unnamed: 0': 'municipality', 'Totaal.1': 'avg_surface'}
     data = data.rename(columns=corrected_columns)
@@ -50,6 +55,8 @@ def clean_municipality_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: A cleaned DataFrame with columns for municipality, size, population density, and total population.
     """
+    logging.info("Cleaning municipality data...")
+
     data = pd.read_csv(file_path, delimiter=';', skiprows=4)
 
     data.columns = ['municipality', 'year', 'population', 'pop_density', 'size']
@@ -79,6 +86,8 @@ def clean_income_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: A cleaned DataFrame with income data.
     """
+    logging.info("Cleaning income data...")
+
     data = pd.read_csv(file_path, delimiter=';', skiprows=6)
     data.columns = ['municipality', 'avg_income']
     data.reset_index(drop=True, inplace=True)
@@ -105,6 +114,8 @@ def clean_labor_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: A cleaned DataFrame with labor data.
     """
+    logging.info("Cleaning labor data...")
+
     data = pd.read_csv(file_path, delimiter=';', skiprows=5)
     data.columns = ['municipality', 'unemp_rate', 'net_labor_participation']
     data.reset_index(drop=True, inplace=True)
@@ -128,6 +139,8 @@ def clean_house_type_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: A cleaned DataFrame with house type data.
     """
+    logging.info("Cleaning house type data...")
+
     data = pd.read_csv(file_path, delimiter=';', skiprows=4)
     data.columns = ['municipality', 'period', 'total_homes', 'multy_family', 'single_family', 'detached']
     data.reset_index(drop=True, inplace=True)

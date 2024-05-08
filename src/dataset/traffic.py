@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import logging
 from src.dataset.utils import dir_path  
 
 # Base path and file template
@@ -39,7 +40,7 @@ def aggregate_traffic_data(months: iter) -> pd.DataFrame:
     total_traffic_counts = pd.Series(dtype=int)
 
     for month in months:
-        print(f'Processing month {month} of traffic data...')
+        logging.info(f'Processing month {month} of traffic data...')
 
         data = load_traffic_data(month)
 

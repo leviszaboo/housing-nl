@@ -59,9 +59,9 @@ def create_reg_summaries(*models: sm.regression.linear_model.RegressionResultsWr
 
     all_results = {}
 
-    # Extract results from each summary
-    for idx, summary in enumerate(models):
-        model_results = summary.summary2().tables[1]
+    # Extract results from each model
+    for idx, model in enumerate(models):
+        model_results = model.summary2().tables[1]
         for index, row in model_results.iterrows():
             coef_name = index.replace('_', '\_')
             coef_val = row['Coef.']
@@ -79,7 +79,7 @@ def create_reg_summaries(*models: sm.regression.linear_model.RegressionResultsWr
                 all_results[coef][i] = '-'
 
     latex_table = """
-    \\begin{table}[H]
+    \\begin{table}
         \\centering
         \\caption{Regression models}
         \\vspace{10pt}
