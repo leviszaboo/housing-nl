@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 import statsmodels.api as sm
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
@@ -34,34 +35,64 @@ def calculate_vif_and_condition_indices(X: pd.DataFrame) -> tuple[pd.DataFrame, 
     return vif_data, condition_indices
 
 def residual_analysis(model: sm.regression.linear_model.RegressionResultsWrapper, fig_name: str) -> None:
-    # Residuals vs. Fitted Values
+    """
+    Create a set of plots to analyze the residuals of a regression model.
+
+    Parameters:
+        model (sm.regression.linear_model.RegressionResultsWrapper): The regression model.
+        fig_name (str): The name of the output figure.
+    
+    Returns:
+        None
+    """
     fitted_vals = model.fittedvalues
     residuals = model.resid
+    mean_residuals = np.mean(residuals)
 
-    plt.figure(figsize=(8, 12))
+    plt.figure(figsize=(12, 14)) 
+    gs = plt.GridSpec(2, 2, height_ratios=[1, 1])
 
     # Residuals vs. Fitted Values
-    plt.subplot(3, 1, 1)
-    plt.scatter(fitted_vals, residuals, alpha=0.5)
-    plt.axhline(y=0, color='r', linestyle='--')
-    plt.xlabel('Fitted Values')
-    plt.ylabel('Residuals')
-    plt.title('Residuals vs Fitted Values')
+    ax1 = plt.subplot(gs[0, 0])
+    sns.scatterplot(x=fitted_vals, y=residuals, alpha=0.5, ax=ax1)
+    ax1.axhline(y=mean_residuals, color='#404040', linestyle='--')
+    ax1.set_xlabel('Fitted Values')
+    ax1.set_ylabel('Residuals')
+    ax1.set_title('Residuals vs Fitted Values')
 
-    # Q-Q Plot
-    plt.subplot(3, 1, 2)
-    sm.qqplot(residuals, line='45', ax=plt.gca())
-    plt.title('Q-Q Plot')
+    # Histogram of residuals
+    ax2 = plt.subplot(gs[0, 1], sharey=ax1)
+    sns.histplot(y=residuals, ax=ax2)
+    ax2.axhline(y=mean_residuals, color='#404040', linestyle='--')
+    ax2.set_title('Residuals Distribution')
+    ax2.set_xlabel('Frequency')
+    ax2.set_ylabel('')  
+    ax2.yaxis.set_label_position("right")
+    ax2.yaxis.tick_right()
 
     # Cook's Distance
+    ax3 = plt.subplot(gs[1, :])
     cooks = model.get_influence().cooks_distance[0]
-    plt.subplot(3, 1, 3)
-    plt.stem(np.arange(len(cooks)), cooks, markerfmt=",")
-    plt.xlabel('Observation')
-    plt.ylabel("Cook's Distance")
-    plt.title("Cook's Distance for Each Observation")
+    ax3.stem(np.arange(len(cooks)), cooks, markerfmt=",")
+    ax3.get_lines()[1].set_color("#404040")
+    ax3.set_xlabel('Observation')
+    ax3.set_ylabel("Cook's Distance")
+    ax3.set_title("Cook's Distance for Each Observation")
 
     plt.tight_layout()
 
     plt.savefig(os.path.join(dir_path, f'../../output/figures/{fig_name}'))
     
+def get_largest_cooks_indices(model: sm.regression.linear_model.RegressionResultsWrapper, x: float) -> list[int]:
+    """
+    Get the indices of the observations with the largest Cook's distance.
+
+    Parameters:
+        model (sm.regression.linear_model.RegressionResultsWrapper): The regression model.
+        x (float): The x largest cooks index to return.
+    
+    Returns:
+        list[int]: The indices of the observations with the largest Cook's distance.
+    """
+    cooks = model.get_influence().cooks_distance[0]
+    return np.argsort(cooks)[-(x):]

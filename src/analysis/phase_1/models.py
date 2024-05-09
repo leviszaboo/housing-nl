@@ -1,11 +1,12 @@
 import pandas as pd
 import statsmodels.api as sm
 from sklearn.preprocessing import StandardScaler
+from scipy import stats
 import numpy as np
 import os
 import logging
 from src.analysis.phase_1.tables import create_reg_summaries
-from src.analysis.utils import calculate_vif_and_condition_indices, residual_analysis, dir_path
+from src.analysis.utils import calculate_vif_and_condition_indices, get_largest_cooks_indices, residual_analysis, dir_path
 
 def regression(X: pd.DataFrame, y: pd.Series) -> tuple[sm.regression.linear_model.RegressionResultsWrapper, pd.DataFrame, np.ndarray, float]:
     """
@@ -24,6 +25,10 @@ def regression(X: pd.DataFrame, y: pd.Series) -> tuple[sm.regression.linear_mode
     X['has_station'] = X['has_station'].astype(int)
 
     X = sm.add_constant(X)
+
+    X = X.reset_index(drop=True)
+    y = y.reset_index(drop=True)
+
     model = sm.OLS(y, X).fit()
     bic = model.bic
     vif, cond_indices = calculate_vif_and_condition_indices(X)
@@ -106,7 +111,7 @@ def log_transformed(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'log_homes_per_capita', 'log_distance']]
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance']]
 
     y = df['log_m2_price']
 
@@ -126,7 +131,7 @@ def log_standardized(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'log_homes_per_capita', 'log_distance']]
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance']]
 
     scaler = StandardScaler()
 
@@ -152,7 +157,7 @@ def log_interaction(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'log_homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
 
     y = df['log_m2_price']
 
@@ -170,7 +175,105 @@ def log_int_standardized(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'log_homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
+
+    scaler = StandardScaler()
+
+    cols = X.columns
+
+    X = scaler.fit_transform(X)
+    X = pd.DataFrame(X, columns=cols)
+    X = sm.add_constant(X)
+
+    y = df['log_m2_price']
+
+    model, vif, cond_indices, bic = regression(X, y)
+    
+    return model, vif, cond_indices, bic
+
+def log_dropped_outliers(df: pd.DataFrame, cooks_indices: list[float]) -> None:
+    """
+    Perform a multiple linear regression with log-transformed predictors and dependent variable, dropping outliers.
+
+    Parameters:
+        df (pd.DataFrame): The phase 1 dataset.
+    
+    Returns:
+        None
+    """
+    df = df.drop(df.index[cooks_indices])
+
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance']]
+
+    y = df['log_m2_price']
+
+    model, vif, cond_indices, bic = regression(X, y)
+
+    residual_analysis(model, 'phase_1/log_dropped_outliers_residuals.png')
+    
+    return model, vif, cond_indices, bic
+
+def log_standardized_dropped_outliers(df: pd.DataFrame, cooks_indices) -> None:
+    """
+    Perform a multiple linear regression with standardized log-transformed predictors and dependent variable, dropping outliers.
+
+    Parameters:
+        df (pd.DataFrame): The phase 1 dataset.
+    
+    Returns:
+        None
+    """
+    df = df.drop(df.index[cooks_indices])
+
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance']]
+
+    scaler = StandardScaler()
+
+    cols = X.columns
+
+    X = scaler.fit_transform(X)
+    X = pd.DataFrame(X, columns=cols)
+    X = sm.add_constant(X)
+
+    y = df['log_m2_price']
+
+    model, vif, cond_indices, bic = regression(X, y)
+    
+    return model, vif, cond_indices, bic
+
+def log_int_dropped_outliers(df: pd.DataFrame, cooks_indices) -> None:
+    """
+    Perform a multiple linear regression with interaction terms, dropping outliers.
+
+    Parameters:
+        df (pd.DataFrame): The phase 1 dataset.
+    
+    Returns:
+        None
+    """
+    df = df.drop(df.index[cooks_indices])
+
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
+
+    y = df['log_m2_price']
+
+    model, vif, cond_indices, bic = regression(X, y)
+    
+    return model, vif, cond_indices, bic
+
+def log_int_standardized_dropped_outliers(df: pd.DataFrame, cooks_indices) -> None:
+    """
+    Perform a multiple linear regression with standardized interaction terms, dropping outliers.
+
+    Parameters:
+        df (pd.DataFrame): The phase 1 dataset.
+    
+    Returns:
+        None
+    """
+    df = df.drop(df.index[cooks_indices])
+
+    X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
 
     scaler = StandardScaler()
 
@@ -188,7 +291,7 @@ def log_int_standardized(df: pd.DataFrame) -> None:
 
 output_path = os.path.join(dir_path, '../../output/tables/phase_1')
 
-def create_score_summaries(df: pd.DataFrame) -> tuple[dict, dict]:
+def create_score_summaries(df: pd.DataFrame, cooks: list[float], cooks_int: list[float]) -> tuple[dict, dict, dict]:
     """
     Create summaries of VIFs, condition indices, and BIC scores for the models.
 
@@ -201,6 +304,7 @@ def create_score_summaries(df: pd.DataFrame) -> tuple[dict, dict]:
     """
     non_log_results = {}
     log_results = {}
+    dropped_outliers_results = {}
     models = {
         "simple": simple,
         "controls": controls,
@@ -208,23 +312,58 @@ def create_score_summaries(df: pd.DataFrame) -> tuple[dict, dict]:
         "log_transformed": log_transformed,
         "log_standardized": log_standardized,
         "log_interaction": log_interaction,
-        "log_int_standardized": log_int_standardized
+        "log_int_standardized": log_int_standardized,
+        "log_dropped_outliers": log_dropped_outliers,
+        "log_standardized_dropped_outliers": log_standardized_dropped_outliers,
+        "log_int_dropped_outliers": log_int_dropped_outliers,
+        "log_int_standardized_dropped_outliers": log_int_standardized_dropped_outliers
     }
 
     logging.info("Summarizing VIFs, condition indices, and BIC scores for the models...")
 
     for name, func in models.items():
-        model, vif, cond_indices, bic = func(df)
+        if "int" in name and "dropped_outliers" in name:
+            model, vif, cond_indices, bic = func(df, cooks_int)
+        elif "dropped_outliers" in name and "int" not in name:
+            model, vif, cond_indices, bic = func(df, cooks)
+        else:
+            model, vif, cond_indices, bic = func(df)
         # remove const from vif and cond_indices
         vif = vif[vif['feature'] != 'const']
         cond_indices = cond_indices[cond_indices != cond_indices[0]]
 
-        if "log" in name:
+        if "outliers" in name:
+            dropped_outliers_results[name] = {"model": model, "vif": vif, "cond_indices": cond_indices, "bic": bic}
+        elif "log" in name:
             log_results[name] = {"model": model, "vif": vif, "cond_indices": cond_indices, "bic": bic}
         else:
             non_log_results[name] = {"model": model, "vif": vif, "cond_indices": cond_indices, "bic": bic}
 
-    return non_log_results, log_results
+    return non_log_results, log_results, dropped_outliers_results
+
+def get_model_scores(df: pd.DataFrame) -> tuple[dict, dict, dict]:
+    """
+    Get the model scores for the Phase 1 analysis.
+
+    Parameters:
+        df (pd.DataFrame): The phase 1 dataset.
+
+    Returns:
+        dict: Dictionary with the results for the non-log models.
+        dict: Dictionary with the results for the log models.
+        dict: Dictionary with the results for the models with outliers removed.
+    """
+    logging.info("Getting model scores...")
+
+    controls_log_model, _, _, _ = log_transformed(df)
+    interaction_model, _, _, _ = log_interaction(df)
+
+    cooks_indices = get_largest_cooks_indices(controls_log_model, 10)
+    cooks_indices_int = get_largest_cooks_indices(interaction_model, 10)
+
+    non_log_results, log_results, dropped_outliers_results = create_score_summaries(df, cooks_indices, cooks_indices_int)
+
+    return non_log_results, log_results, dropped_outliers_results
 
 
 def run_phase_1_regressions(df: pd.DataFrame) -> None:
@@ -253,7 +392,21 @@ def run_phase_1_regressions(df: pd.DataFrame) -> None:
     int_standardized_model, _, _, _ = log_int_standardized(df)
 
     logging.info("Creating summaries for Phase 1 log models...")
-    create_reg_summaries(controls_log_model, controls_log_standardized_model, interaction_model, int_standardized_model, output_file=os.path.join(output_path, 'regression_summaries_log.tex'))
+    create_reg_summaries(controls_log_model, controls_log_standardized_model, interaction_model, 
+                         int_standardized_model, output_file=os.path.join(output_path, 'regression_summaries_log.tex'))
+
+    cooks_indices = get_largest_cooks_indices(controls_log_model, 10)
+    cooks_indices_int = get_largest_cooks_indices(interaction_model, 10)
+
+    log_dropped_outliers_model, _, _, _ = log_dropped_outliers(df, cooks_indices)
+    log_standardized_dropped_outliers_model, _, _, _ = log_standardized_dropped_outliers(df, cooks_indices)
+    log_int_dropped_outliers_model, _, _, _ = log_int_dropped_outliers(df, cooks_indices_int)
+    log_int_standardized_dropped_outliers_model, _, _, _ = log_int_standardized_dropped_outliers(df, cooks_indices_int)
+
+    logging.info("Creating summaries for Phase 1 log models with outliers removed...")
+    create_reg_summaries(log_dropped_outliers_model, log_standardized_dropped_outliers_model, 
+                         log_int_dropped_outliers_model, log_int_standardized_dropped_outliers_model, 
+                         output_file=os.path.join(output_path, 'regression_summaries_log_outliers.tex'))
 
     logging.info("Phase 1 regressions complete.")
 

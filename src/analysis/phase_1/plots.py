@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import logging
-from src.analysis.phase_1.models import create_score_summaries
+from src.analysis.phase_1.models import create_score_summaries, get_model_scores
 from src.analysis.utils import dir_path, phase_1_vars, phase_1_log
 
 output_path = os.path.join(dir_path, '../../output/figures/phase_1')
@@ -67,18 +67,23 @@ def scatter_plots(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    variables = ['avg_income', 'homes_per_capita', 'multy_family', 'distance_to_urban_center']
+    variables = ['log_avg_income', 'homes_per_capita', 'log_multy_family', 'distance_to_urban_center']
 
-    fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 15))
-    fig.suptitle("Scatter Plots of Variables Against m2_price", fontsize=16)
+    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 20))
 
     axes = axes.flatten()
 
     for i, var in enumerate(variables):
-        axes[i].scatter(df[var], df['m2_price'], alpha=0.7, edgecolor='k')
+        axes[i].scatter(df[var], df['log_m2_price'], alpha=0.7, edgecolor='k')
         axes[i].set_xlabel(var)
         axes[i].set_ylabel('m2_price')
         axes[i].set_title(f'{var} vs m2_price')
+    
+    for i in range(4, 8):
+        sns.histplot(df[variables[i-4]], kde=True, ax=axes[i])
+        axes[i].set_xlabel(variables[i-4])
+        axes[i].set_ylabel('Frequency')
+        axes[i].set_title(f'Distribution of {variables[i-4]}')
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
 
@@ -86,7 +91,7 @@ def scatter_plots(df: pd.DataFrame) -> None:
 
 def plot_distribution(df: pd.DataFrame) -> None:
     """
-    Create a distribution plot of the m2_price variable.
+    Create a distribution plot of the m2_price variable against the log_m2_price variable.
 
     Parameters:
         df: DataFrame with the main dataset
@@ -94,11 +99,17 @@ def plot_distribution(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    plt.figure(figsize=(10, 6))
-    sns.histplot(df['m2_price'], kde=True, bins=30)
-    plt.xlabel('m2_price')
-    plt.ylabel('Frequency')
-    plt.title('Distribution of m2_price')
+    _, axes = plt.subplots(nrows=1, ncols=2, figsize=(15, 6))
+
+    sns.histplot(df['m2_price'], kde=True, ax=axes[0], bins=30)
+    axes[0].set_title('Distribution of m2_price')
+    axes[0].set_xlabel('m2_price')
+    axes[0].set_ylabel('Frequency')
+
+    sns.histplot(df['log_m2_price'], kde=True, ax=axes[1], bins=30)
+    axes[1].set_title('Distribution of log_m2_price')
+    axes[1].set_xlabel('log_m2_price')
+    axes[1].set_ylabel('Frequency')
 
     plt.savefig(os.path.join(output_path, 'm2_price_distribution.png'))
 
@@ -112,13 +123,13 @@ def correlation_heatmap(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    variables = ['avg_income', 'homes_per_capita', 'multy_family', 'unemp_rate', 'pop_density', 'net_labor_participation', 'distance_to_urban_center']
+    variables = ['has_station','avg_income', 'homes_per_capita', 'multy_family', 'unemp_rate', 'pop_density', 'net_labor_participation', 'distance_to_urban_center']
 
     plt.figure(figsize=(14, 12))
     sns.heatmap(df[variables].corr(), annot=True, fmt='.2f', 
                 cmap='BrBG', linewidths=.5, vmin=-1, vmax=1)
     plt.xticks(rotation=45)
-    plt.title('Correlation Matrix of Variables')
+    # plt.title('Correlation Matrix of Variables')
 
     plt.savefig(os.path.join(output_path, 'corr_heatmap.png'))
 
@@ -138,7 +149,7 @@ def updated_log_corr_heatmap(df: pd.DataFrame) -> None:
     sns.heatmap(df[variables].corr(), annot=True, fmt='.2f', 
                 cmap='BrBG', linewidths=.5, vmin=-1, vmax=1)
     plt.xticks(rotation=45)
-    plt.title('Correlation Matrix of Log-Transformed Variables')
+    # plt.title('Correlation Matrix of Log-Transformed Variables')
 
     plt.savefig(os.path.join(output_path, 'log_corr_heatmap.png'))
 
@@ -154,6 +165,8 @@ def visualize_model_scores(results: dict, title: str) -> None:
         None
     """
     fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(10, 15), dpi=120)
+
+    logging.info(f"Visualizing scores for {title}...")
 
     # VIFs
     vif_data_list = []
@@ -224,6 +237,7 @@ def create_plots(df: pd.DataFrame) -> None:
     updated_log_corr_heatmap(df)
     plot_distribution(df)
 
-    non_log_scores, log_scores = create_score_summaries(df)
+    non_log_scores, log_scores, dropped_outliers_scores = get_model_scores(df)
     visualize_model_scores(non_log_scores, 'Non-Log Models')
     visualize_model_scores(log_scores, 'Log Models')
+    visualize_model_scores(dropped_outliers_scores, 'Log Models with Dropped Outliers')
