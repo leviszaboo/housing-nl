@@ -62,7 +62,7 @@ Click [here](output/data/main.csv) to view the main dataset.
    ```
    python main.py
    ```
-   * You can also specify the `--analysis_only`, `--dataset_only` or `--skip_station_data` command line arguments to run only a specific part of the main function. 
+   * You can also specify the `--analysis_only`, `--phase_1`, `--phase_2`, `--dataset_only` or `--skip_station_data` command line arguments to run only a specific part of the main function. 
 5. **Verify the Output**:
    * Check the generated files in the `data/output` folder for the main and stations dataset, and the `output` folder for the analysis results.
 
