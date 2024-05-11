@@ -20,8 +20,6 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    sns.set_palette('Set2')
-
     df['has_station'] = df['has_station'].astype(int)
 
     # Create boxplot to visualize the difference in m² prices
@@ -34,17 +32,6 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
     plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
 
     plt.savefig(os.path.join(output_path, 'boxplot.png'))
-
-    # Swarm Plot
-    plt.figure(figsize=(8, 6))
-    sns.swarmplot(data=df, x='has_station', y='m2_price', hue='has_station')
-    plt.xlabel('Has Train Station')
-    plt.ylabel('Average m² Price')
-    plt.title('Comparison of m² Prices by Presence of Train Stations')
-    plt.grid(True)
-    plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
-
-    plt.savefig(os.path.join(output_path, 'swarm.png'))
 
     # Violin Plot
     plt.figure(figsize=(10, 6))
@@ -218,7 +205,7 @@ def visualize_model_scores(results: dict, title: str) -> None:
     
     filename = title.lower().replace('-', '_').replace(' ', '_')
 
-    plt.savefig(os.path.join(output_path, f'{filename}_scores.png'))
+    plt.savefig(os.path.join(output_path, f'model_scores/{filename}_scores.png'))
 
 def create_plots(df: pd.DataFrame) -> None:
     """
@@ -230,14 +217,17 @@ def create_plots(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    logging.info("Creating and saving figures...")
+    logging.info("Creating and saving figures for Phase 1...")
     plots_station_no_station(df)
     scatter_plots(df)
     correlation_heatmap(df)
     updated_log_corr_heatmap(df)
     plot_distribution(df)
 
-    non_log_scores, log_scores, dropped_outliers_scores = get_model_scores(df)
+    non_log_scores, log_scores, dropped_outliers_scores, centered_log_scores = get_model_scores(df)
     visualize_model_scores(non_log_scores, 'Non-Log Models')
     visualize_model_scores(log_scores, 'Log Models')
-    visualize_model_scores(dropped_outliers_scores, 'Log Models with Dropped Outliers')
+    visualize_model_scores(dropped_outliers_scores, 'Log Models Dropped Outliers')
+    visualize_model_scores(centered_log_scores, 'Centered Log Models')
+
+    logging.info("Figures saved.")
