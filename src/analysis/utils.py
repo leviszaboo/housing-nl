@@ -12,6 +12,8 @@ phase_1_vars = ['avg_income', 'homes_per_capita', 'multy_family', 'distance_to_u
 
 phase_1_log = ['has_station', 'log_avg_income', 'log_homes_per_capita', 'log_multy_family', 'log_distance']
 
+phase_2_log = ['log_traffic', 'log_avg_income', 'log_homes_per_capita', 'log_multy_family', 'log_distance']
+
 def calculate_vif_and_condition_indices(X: pd.DataFrame) -> tuple[pd.DataFrame, np.ndarray]:
     """
     Calculate the Variance Inflation Factor (VIF) and condition indices for a set of predictors.

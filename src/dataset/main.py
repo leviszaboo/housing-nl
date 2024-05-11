@@ -47,7 +47,7 @@ def process_stations_data(stations_path: str, municipalities_df: pd.DataFrame) -
     merged_df['has_station'] = (merged_df['station_count'] > 0).astype(int)
 
     # remove station count column as it is no longer needed for the analysis
-    merged_df.drop(columns='station_count', inplace=True)
+    # merged_df.drop(columns='station_count', inplace=True)
 
     return merged_df
 
@@ -67,11 +67,14 @@ def create_phase_1_dataset(df: pd.DataFrame, ) -> None:
     df['log_homes_per_capita'] = np.log(df['homes_per_capita'])
     df['log_multy_family'] = np.log(df['multy_family'])
     df['log_m2_price'] = np.log(df['m2_price'])
+    df['c_log_multy_fam'] = df['log_multy_family'] - df['log_multy_family'].mean()
+    df['c_log_distance'] = df['log_distance'] - df['log_distance'].mean()
 
     # df['station_x_count'] = df['has_station'] * df['station_count']
     df['station_x_multy_fam'] = df['has_station'] * df['log_multy_family']
-    df['station_x_pop_den'] = df['has_station'] * df['pop_density']
     df['station_x_distance'] = df['has_station'] * df['log_distance']
+    df['station_x_c_multy_fam'] = df['has_station'] * df['c_log_multy_fam']
+    df['station_x_c_distance'] = df['has_station'] * df['c_log_distance']
 
     df.to_csv(os.path.join(dir_path, '../../output/data/phase1.csv'), index=False)
 
@@ -94,8 +97,15 @@ def create_phase_2_dataset(df: pd.DataFrame) -> None:
     df['log_homes_per_capita'] = np.log(df['homes_per_capita'])
     df['log_multy_family'] = np.log(df['multy_family'])
     df['log_m2_price'] = np.log(df['m2_price'])
+    df['c_log_multy_fam'] = df['log_multy_family'] - df['log_multy_family'].mean()
+    df['c_log_traffic'] = df['log_traffic'] - df['log_traffic'].mean()
+    df['c_log_distance'] = df['log_distance'] - df['log_distance'].mean()
 
-    df['traffic_x_multy_fam'] = df['log_traffic'] * df['log_multy_family']  
+    df['traffic_x_multy_fam'] = df['log_traffic'] * df['log_multy_family'] 
+    df['traffic_x_distance'] = df['log_traffic'] * df['log_distance']
+
+    df['traffic_x_c_multy_fam'] = df['c_log_traffic'] * df['c_log_multy_fam']
+    df['traffic_x_c_distance'] = df['c_log_traffic'] * df['c_log_distance']
 
     df.to_csv(os.path.join(dir_path, '../../output/data/phase2.csv'), index=False)
 
@@ -130,6 +140,7 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
     data.insert(8, 'homes_per_capita', data['total_homes'] / data['population'])
 
     data.drop(columns=['avg_price', 'avg_surface', 'total_homes'], inplace=True)
+    data['traffic'] = data['traffic'] / data['station_count']
 
     return data
 
