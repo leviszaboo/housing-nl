@@ -40,6 +40,16 @@ def main() -> None:
         action='store_true',
         help='Flag to skip the creation of the stations dataset.'
     )
+    parser.add_argument(
+        '--phase_1',
+        action='store_true',
+        help='Only run Phase 1 of the analysis.'
+    )
+    parser.add_argument(
+        '--phase_2',
+        action='store_true',
+        help='Only run Phase 2 of the analysis.'
+    )
 
     args = parser.parse_args()
 
@@ -70,7 +80,7 @@ def main() -> None:
         start_time = time.time()
 
         try:
-            run_analysis()
+            run_analysis(phase=[1, 2] if not (args.phase_1 or args.phase_2) else [1] if args.phase_1 else [2])
             logging.info(f'Analysis completed in {time.time() - start_time:.2f} seconds.')
         except Exception as e:
             logging.error(f'An error occurred during analysis: {e.with_traceback()}')

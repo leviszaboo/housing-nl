@@ -1,5 +1,5 @@
 #!/bin/bash
-valid_args=("--analysis_only" "--dataset_only" "--skip_station_data")
+valid_args=("--analysis_only" "--dataset_only" "--skip_station_data" "--phase_1" "--phase_2")
 
 is_valid_arg() {
     local arg=$1
@@ -35,3 +35,4 @@ echo "Checking dependencies..."
 pip3 install -r requirements.txt | grep -v 'already satisfied'
 
 python3 main.py "$@"
+
