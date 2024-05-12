@@ -67,7 +67,7 @@ def create_test_score_summary(test_scores: dict, output_file: str) -> None:
         \\hline \\\\[-1.8ex]
     """ % ("c" * len(test_scores.keys()))
 
-    headers = ["Omnibus", "Omnibus p-value", "Jarque-Bera", "Jarque-Bera p-value", "R2", "Adjusted R2"]
+    headers = ["Omnibus", "Omnibus p-value", "Jarque-Bera", "Jarque-Bera p-value", "Durbin Watson", "R2", "Adjusted R2"]
     model_headers = " & ".join([f"\\textbf{{Model {i + 1}}}" for i in range(len(test_scores.keys()))])
     latex_table += "Metric & " + model_headers + " \\\\\n\\hline \\\\[-1.8ex] \n"
 

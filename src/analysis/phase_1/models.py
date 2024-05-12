@@ -484,14 +484,15 @@ def extract_test_scores(*results) -> dict:
         omnibus_stat, omnibus_pvalue = stats.normaltest(residuals)
         jarque_bera_stat, jarque_bera_pvalue = stats.jarque_bera(residuals)
 
-        model_name = f'model_{i+1}'  # You can adjust naming based on your specific needs
+        model_name = f'model_{i+1}'  
         test_scores[model_name] = {
             'Omnibus': omnibus_stat,
             'Omnibus_p_value': omnibus_pvalue,
             'Jarque_Bera': jarque_bera_stat,
             'Jarque_Bera_p_value': jarque_bera_pvalue,
-            'R2': result.rsquared,  # R-squared
-            'Adjusted_R2': result.rsquared_adj  # Adjusted R-squared
+            'Durbin_Watson': sm.stats.stattools.durbin_watson(residuals),  
+            'R2': result.rsquared,  
+            'Adjusted_R2': result.rsquared_adj  
         }
 
     return test_scores
@@ -543,7 +544,7 @@ def run_phase_1_regressions(df: pd.DataFrame) -> None:
     logging.info("Creating summaries for Phase 1 log models with outliers removed...")
     create_reg_summaries(log_dropped_model, log_standardized_dropped_model, 
                          log_int_dropped_model, log_int_standardized_dropped_model, 
-                         output_file=os.path.join(output_path, 'reg_tables/regression_summaries_log.tex'))
+                         output_file=os.path.join(output_path, 'reg_tables/regression_summaries_dropped.tex'))
 
     log_scores = extract_test_scores(controls_log_model, interaction_model,
                                             log_dropped_model, log_int_dropped_model)
@@ -557,7 +558,6 @@ def run_phase_1_regressions(df: pd.DataFrame) -> None:
     log_std_dropped_cent_model, _, _, _ = log_int_std_dropped_cent(df, cooks_indices_int)
 
     logging.info("Creating summaries for Phase 1 log models with centered interaction terms...")
-
     create_reg_summaries(log_cent_model, log_std_cent_model, log_dropped_cent_model, 
                          log_std_dropped_cent_model, output_file=os.path.join(output_path, 'reg_tables/regression_summaries_cent_log.tex'))
 

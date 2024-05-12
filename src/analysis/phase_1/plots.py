@@ -230,4 +230,6 @@ def create_plots(df: pd.DataFrame) -> None:
     visualize_model_scores(dropped_outliers_scores, 'Log Models Dropped Outliers')
     visualize_model_scores(centered_log_scores, 'Centered Log Models')
 
+    plt.close('all')
+
     logging.info("Figures saved.")

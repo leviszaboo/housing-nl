@@ -1,3 +1,4 @@
+import logging
 import pandas as pd
 import geopandas as gpd
 import os
@@ -97,7 +98,7 @@ def create_stations_data() -> None:
     Returns:
         None
     """
-    print('Processing stations data...')
+    logging.info('Processing stations data...')
 
     data_stations = clean_station_data(stations_path)
     data_stations = find_municipalities_for_stations(data_stations, geojson_path)
@@ -105,4 +106,4 @@ def create_stations_data() -> None:
     data_stations = merge_traffic_data(data_stations)
     data_stations.to_csv(stations_output, index=False)
 
-    print('Stations data processing complete.')
+    logging.info('Stations data processing complete.')
