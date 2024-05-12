@@ -36,3 +36,9 @@ pip3 install -r requirements.txt | grep -v 'already satisfied'
 
 python3 main.py "$@"
 
+echo "Compressing files in output/maps..."
+find output/maps -type f -name '*.gz' -exec rm -f {} \;
+find output/maps -type f -name '*.html' -exec gzip {} \;
+
+echo "Done!"
+
