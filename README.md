@@ -36,7 +36,7 @@ Click [here](output/data/main.csv) to view the main dataset.
 3. **Dependencies**: The required Python libraries are listed in the `requirements.txt` file.
 
 ### Installation Steps
-- Note: on Unix/macOS systems step 2-4 can be skipped by executing the `run.sh` file located on the top level of the project directory. 
+- Note: on Unix/macOS systems step 2-4 can be skipped by executing the `run.sh` file located on the top level of the project directory. Optionally, you can also clean the output folder by running `clean.sh`.
 1. **Clone the Repository**:
    ```
    git clone https://github.com/leviszaboo/thesis.git
