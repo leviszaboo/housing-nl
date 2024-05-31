@@ -19,9 +19,7 @@ jobs:
         python-version: '3.10'
     - name: Clean output directory
       run: |
-        chmod +x ./clean.sh
         ./clean.sh
-    - name: Run script
+    - name: Run main script
       run: |
-        chmod +x ./run.sh
         ./run.sh
