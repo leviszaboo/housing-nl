@@ -444,7 +444,7 @@ def run_phase_2_regressions(df: pd.DataFrame) -> None:
     int_standardized_model, _, _, _ = log_int_standardized(df)
 
     logging.info("Creating summaries for Phase 2 log models...")
-    create_reg_summaries(controls_log_model, controls_log_standardized_model, interaction_model, 
+    create_reg_summaries(controls_log_model, interaction_model, 
                         int_standardized_model, output_file=os.path.join(output_path, 'reg_tables/regression_summaries_log.tex'))
 
     cooks_indices = get_largest_cooks_indices(controls_log_model, 10)
@@ -457,7 +457,7 @@ def run_phase_2_regressions(df: pd.DataFrame) -> None:
     log_int_standardized_dropped_model, _, _, _ = log_int_standardized_dropped(df, cooks_indices_int)
 
     logging.info("Creating summaries for Phase 2 log models with outliers removed...")
-    create_reg_summaries(log_dropped_model, log_standardized_dropped_model, 
+    create_reg_summaries(log_dropped_model, 
                          log_int_dropped_model, log_int_standardized_dropped_model, 
                          output_file=os.path.join(output_path, 'reg_tables/regression_summaries_dropped.tex'))
 
