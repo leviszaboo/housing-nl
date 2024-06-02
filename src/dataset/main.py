@@ -140,7 +140,6 @@ def process_merged_data(data: pd.DataFrame) -> pd.DataFrame:
     data.insert(8, 'homes_per_capita', data['total_homes'] / data['population'])
 
     data.drop(columns=['avg_price', 'avg_surface', 'total_homes'], inplace=True)
-    data['traffic'] = data['traffic'] / data['station_count']
 
     return data
 
