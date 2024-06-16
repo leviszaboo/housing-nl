@@ -54,7 +54,7 @@ def scatter_plots(df: pd.DataFrame) -> None:
     Returns:
         None
     """
-    variables = ['log_avg_income', 'homes_per_capita', 'log_multy_family', 'distance_to_urban_center']
+    variables = ['log_avg_income', 'homes_per_capita', 'log_multy_family', 'log_distance']
 
     fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 20))
 
