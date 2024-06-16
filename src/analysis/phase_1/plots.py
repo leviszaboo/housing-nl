@@ -63,8 +63,8 @@ def scatter_plots(df: pd.DataFrame) -> None:
     for i, var in enumerate(variables):
         axes[i].scatter(df[var], df['log_m2_price'], alpha=0.7, edgecolor='k')
         axes[i].set_xlabel(var)
-        axes[i].set_ylabel('m2_price')
-        axes[i].set_title(f'{var} vs m2_price')
+        axes[i].set_ylabel('log_m2_price')
+        axes[i].set_title(f'{var} vs log_m2_price')
     
     for i in range(4, 8):
         sns.histplot(df[variables[i-4]], kde=True, ax=axes[i])
