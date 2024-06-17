@@ -24,25 +24,17 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
 
     # Create boxplot to visualize the difference in m² prices
     plt.figure(figsize=(10, 6))
+    ax = sns.boxplot(data=df, x='has_station', y='m2_price', hue='has_station')
     sns.boxplot(data=df, x='has_station', y='m2_price', hue='has_station')
     plt.xlabel('Has Train Station')
     plt.ylabel('Average m² Price')
     plt.title('Comparison of m² Prices by Presence of Train Stations')
     plt.grid(True)
-    plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
+
+    handles, _ = ax.get_legend_handles_labels()
+    ax.legend(handles=handles, title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
 
     plt.savefig(os.path.join(output_path, 'boxplot.png'))
-
-    # Violin Plot
-    plt.figure(figsize=(10, 6))
-    sns.violinplot(data=df, x='has_station', y='m2_price', hue='has_station', inner='box')
-    plt.xlabel('Has Train Station')
-    plt.ylabel('Average m² Price')
-    plt.title('Comparison of m² Prices by Presence of Train Stations')
-    plt.grid(True)
-    plt.legend(title='Has Train Station', loc='upper right', labels=['No', 'Yes'])
-
-    plt.savefig(os.path.join(output_path, 'violin.png'))
 
 def scatter_plots(df: pd.DataFrame) -> None:
     """
