@@ -116,7 +116,7 @@ def create_reg_summaries(*models: sm.regression.linear_model.RegressionResultsWr
             coef_val = row['Coef.']
             std_err = row['Std.Err.']
             p_val = row['P>|t|']
-            stars = '***' if p_val < 0.01 else '**' if p_val < 0.05 else '*' if p_val < 0.1 else ''
+            stars = '***' if p_val < 0.001 else '**' if p_val < 0.01 else '*' if p_val < 0.05 else ''
 
             if coef_name not in all_results:
                 all_results[coef_name] = {}
