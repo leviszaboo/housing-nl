@@ -24,8 +24,7 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
 
     # Create boxplot to visualize the difference in m² prices
     plt.figure(figsize=(10, 6))
-    ax = sns.boxplot(data=df, x='has_station', y='m2_price', hue='has_station')
-    sns.boxplot(data=df, x='has_station', y='m2_price', hue='has_station')
+    ax = sns.boxplot(data=df, x='has_station', y='m2_price', hue='has_station', palette='Set2')
     plt.xlabel('Has Train Station')
     plt.ylabel('Average m² Price')
     plt.title('Comparison of m² Prices by Presence of Train Stations')
@@ -38,35 +37,57 @@ def plots_station_no_station(df: pd.DataFrame) -> None:
 
 def scatter_plots(df: pd.DataFrame) -> None:
     """
-    Create scatter plots of variables against m2_price.
+    Create scatter plots of variables along with distributions against m2_price and log variables against log_m2_price.
 
     Parameters:
         df: DataFrame with the main dataset
-    
+        output_path: Path to save the resulting plots
+
     Returns:
         None
     """
-    variables = ['log_avg_income', 'homes_per_capita', 'log_multy_family', 'log_distance']
+    variables = ['avg_income', 'homes_per_capita', 'multy_family', 'distance_to_urban_center']
+    log_variables = ['log_avg_income', 'homes_per_capita', 'log_multy_family', 'log_distance']
 
-    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 20))
+    # First figure for original variables
+    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 22))
 
-    axes = axes.flatten()
+    palette = sns.color_palette('Set2')
 
     for i, var in enumerate(variables):
-        axes[i].scatter(df[var], df['log_m2_price'], alpha=0.7, edgecolor='k')
-        axes[i].set_xlabel(var)
-        axes[i].set_ylabel('log_m2_price')
-        axes[i].set_title(f'{var} vs log_m2_price')
-    
-    for i in range(4, 8):
-        sns.histplot(df[variables[i-4]], kde=True, ax=axes[i])
-        axes[i].set_xlabel(variables[i-4])
-        axes[i].set_ylabel('Frequency')
-        axes[i].set_title(f'Distribution of {variables[i-4]}')
+        # Scatter plot
+        sns.scatterplot(x=df[var], y=df['m2_price'], ax=axes[i, 0], color=palette[1], edgecolor='k', alpha=0.7)
+        axes[i, 0].set_xlabel(var)
+        axes[i, 0].set_ylabel('m2_price')
+        axes[i, 0].set_title(f'{var} vs m2_price')
+        
+        # Distribution plot
+        sns.histplot(df[var], kde=True, ax=axes[i, 1], color=palette[0])
+        axes[i, 1].set_xlabel(var)
+        axes[i, 1].set_ylabel('Frequency')
+        axes[i, 1].set_title(f'Distribution of {var}')
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
+    plt.savefig(os.path.join(output_path, 'scatter_plots_original.png'))
 
-    plt.savefig(os.path.join(output_path, 'scatter_plots.png'))
+    # Second figure for log-transformed variables
+    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(15, 22))
+
+    for i, log_var in enumerate(log_variables):
+        # Scatter plot
+        sns.scatterplot(x=df[log_var], y=df['log_m2_price'], ax=axes[i, 0], color=palette[1], edgecolor='k', alpha=0.7)
+        axes[i, 0].set_xlabel(log_var)
+        axes[i, 0].set_ylabel('log_m2_price')
+        axes[i, 0].set_title(f'{log_var} vs log_m2_price')
+        
+        # Distribution plot
+        sns.histplot(df[log_var], kde=True, ax=axes[i, 1], color=palette[0])
+        axes[i, 1].set_xlabel(log_var)
+        axes[i, 1].set_ylabel('Frequency')
+        axes[i, 1].set_title(f'Distribution of {log_var}')
+
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
+    plt.savefig(os.path.join(output_path, 'scatter_plots_log.png'))
 
 def plot_distribution(df: pd.DataFrame) -> None:
     """
@@ -80,12 +101,14 @@ def plot_distribution(df: pd.DataFrame) -> None:
     """
     _, axes = plt.subplots(nrows=1, ncols=2, figsize=(15, 6))
 
-    sns.histplot(df['m2_price'], kde=True, ax=axes[0], bins=30)
+    palette = sns.color_palette('Set2')
+
+    sns.histplot(df['m2_price'], kde=True, ax=axes[0], bins=30, color=palette[0])
     axes[0].set_title('Distribution of m2_price')
     axes[0].set_xlabel('m2_price')
     axes[0].set_ylabel('Frequency')
 
-    sns.histplot(df['log_m2_price'], kde=True, ax=axes[1], bins=30)
+    sns.histplot(df['log_m2_price'], kde=True, ax=axes[1], bins=30, color=palette[0])
     axes[1].set_title('Distribution of log_m2_price')
     axes[1].set_xlabel('log_m2_price')
     axes[1].set_ylabel('Frequency')
@@ -163,7 +186,8 @@ def visualize_model_scores(results: dict, title: str) -> None:
         axes[0].set_xlabel("Log10 (VIF)")
         axes[0].set_ylabel(" ")
 
-        axes[0].axvline(x=0.699, color='#404040', linewidth=2, linestyle='--')
+        axes[0].axvline(x=0.699, color='#404040', linewidth=2, linestyle='--', label='VIF = 5')
+        axes[0].legend()
 
     # Condition Indices
     cond_indices_list = [{
@@ -173,11 +197,12 @@ def visualize_model_scores(results: dict, title: str) -> None:
 
     if cond_indices_list:
         cond_indices_data = pd.DataFrame(cond_indices_list)
-        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1], width=0.6 if 'Non-Log' in title else 0.8)
-        axes[1].set_title(f'Log-Scaled Condition Indices for {title}')
+        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1], width=0.6, hue='Model')
+        axes[1].set_title(f'Log-Scaled Largest Condition Indices for {title}')
         axes[1].set_xlabel("Log10 (Condition Index)")
         axes[1].set_ylabel(" ")
-        axes[1].axvline(x=1.477, color='gray', linewidth=2, linestyle='--')
+        axes[1].axvline(x=1.477, color='gray', linewidth=2, linestyle='--', label='Condition Index = 30')
+        axes[1].legend()
 
     # BIC Scores
     bic_list = [{
@@ -187,7 +212,7 @@ def visualize_model_scores(results: dict, title: str) -> None:
 
     if bic_list:
         bic_data = pd.DataFrame(bic_list)
-        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2], width=0.6 if 'Non-Log' in title else 0.8)
+        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2], width=0.6, hue='Model')
         axes[2].set_title(f'BIC Scores for {title}')
         axes[2].set_xlabel("BIC Score")
         axes[2].set_ylabel(" ")
@@ -219,7 +244,7 @@ def create_plots(df: pd.DataFrame) -> None:
     non_log_scores, log_scores, dropped_outliers_scores, centered_log_scores = get_model_scores(df)
     visualize_model_scores(non_log_scores, 'Non-Log Models')
     visualize_model_scores(log_scores, 'Log Models')
-    visualize_model_scores(dropped_outliers_scores, 'Log Models Dropped Outliers')
+    visualize_model_scores(dropped_outliers_scores, 'Log Models with Dropped Outliers')
     visualize_model_scores(centered_log_scores, 'Centered Log Models')
 
     plt.close('all')

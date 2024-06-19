@@ -91,7 +91,8 @@ def run_analysis(phase: list[int]) -> None:
     create_main_tables(main)
 
     # Set the color palette
-    sns.set_palette('Set2')
+    #sns.set_palette('Accent')
+    sns.set_theme(style="whitegrid", palette="Pastel1")
     
     if 1 in phase:
         run_phase_1(phase_1, geojson_data)

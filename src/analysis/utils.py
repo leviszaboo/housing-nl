@@ -51,12 +51,15 @@ def residual_analysis(model: sm.regression.linear_model.RegressionResultsWrapper
     residuals = model.resid
     mean_residuals = np.mean(residuals)
 
+    #matplotlib Pastel1
+    palette = sns.color_palette("Set2")
+
     plt.figure(figsize=(12, 14)) 
     gs = plt.GridSpec(2, 2, height_ratios=[1, 1])
 
     # Residuals vs. Fitted Values
     ax1 = plt.subplot(gs[0, 0])
-    sns.scatterplot(x=fitted_vals, y=residuals, alpha=0.5, ax=ax1)
+    sns.residplot(x=fitted_vals, y=residuals, ax=ax1, lowess=True, line_kws={'color': 'black', 'linewidth': 1}, scatter_kws={'color': palette[0]})
     ax1.axhline(y=mean_residuals, color='#404040', linestyle='--')
     ax1.set_xlabel('Fitted Values')
     ax1.set_ylabel('Residuals')
@@ -64,7 +67,7 @@ def residual_analysis(model: sm.regression.linear_model.RegressionResultsWrapper
 
     # Histogram of residuals
     ax2 = plt.subplot(gs[0, 1], sharey=ax1)
-    sns.histplot(y=residuals, ax=ax2)
+    sns.histplot(y=residuals, ax=ax2, color=palette[1])
     ax2.axhline(y=mean_residuals, color='#404040', linestyle='--')
     ax2.set_title('Residuals Distribution')
     ax2.set_xlabel('Frequency')
@@ -72,14 +75,19 @@ def residual_analysis(model: sm.regression.linear_model.RegressionResultsWrapper
     ax2.yaxis.set_label_position("right")
     ax2.yaxis.tick_right()
 
+    # Reset the color palette for the stem plot
+    sns.set_theme(style="whitegrid", palette="Accent")
+
     # Cook's Distance
     ax3 = plt.subplot(gs[1, :])
     cooks = model.get_influence().cooks_distance[0]
-    ax3.stem(np.arange(len(cooks)), cooks, markerfmt=",")
+    ax3.stem(np.arange(len(cooks)), cooks, markerfmt=",", linefmt='C7-')
     ax3.get_lines()[1].set_color("#404040")
     ax3.set_xlabel('Observation')
     ax3.set_ylabel("Cook's Distance")
     ax3.set_title("Cook's Distance for Each Observation")
+
+    sns.set_theme(style="whitegrid", palette="Pastel1")
 
     plt.tight_layout()
 

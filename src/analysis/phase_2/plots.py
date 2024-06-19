@@ -9,26 +9,6 @@ from src.analysis.utils import dir_path, phase_2_log
 
 output_path = os.path.join(dir_path, '../../output/figures/phase_2')
 
-def log_corr_heatmap(df: pd.DataFrame) -> None:
-    """
-    Create a heatmap of the correlation matrix of the log-transformed variables.
-
-    Parameters:
-        df: DataFrame with the Phase 2 dataset
-    
-    Returns:
-        None
-    """
-    variables = phase_2_log
-
-    plt.figure(figsize=(14, 12))
-    sns.heatmap(df[variables].corr(), annot=True, fmt='.2f', 
-                cmap='BrBG', linewidths=.5, vmin=-1, vmax=1)
-    plt.xticks(rotation=45)
-    # plt.title('Correlation Matrix of Log-Transformed Variables')
-
-    plt.savefig(os.path.join(output_path, 'log_corr_heatmap.png'))
-
 def visualize_model_scores(results: dict, title: str) -> None:
     """
     Visualize the VIFs, condition indices, and BIC scores for the models.
@@ -60,7 +40,8 @@ def visualize_model_scores(results: dict, title: str) -> None:
         axes[0].set_xlabel("Log10 (VIF)")
         axes[0].set_ylabel(" ")
 
-        axes[0].axvline(x=0.699, color='#404040', linewidth=2, linestyle='--')
+        axes[0].axvline(x=0.699, color='#404040', linewidth=2, linestyle='--', label='VIF = 5')
+        axes[0].legend()
 
     # Condition Indices
     cond_indices_list = [{
@@ -70,11 +51,12 @@ def visualize_model_scores(results: dict, title: str) -> None:
 
     if cond_indices_list:
         cond_indices_data = pd.DataFrame(cond_indices_list)
-        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1], width=0.6 if 'Non-Log' in title else 0.8)
+        sns.barplot(x='Condition Index', y='Model', data=cond_indices_data, ax=axes[1], width=0.6, hue='Model')
         axes[1].set_title(f'Log-Scaled Condition Indices for {title}')
         axes[1].set_xlabel("Log10 (Condition Index)")
         axes[1].set_ylabel(" ")
-        axes[1].axvline(x=1.477, color='gray', linewidth=2, linestyle='--')
+        axes[1].axvline(x=1.477, color='gray', linewidth=2, linestyle='--', label='Condition Index = 30')
+        axes[1].legend()
 
     # BIC Scores
     bic_list = [{
@@ -84,7 +66,7 @@ def visualize_model_scores(results: dict, title: str) -> None:
 
     if bic_list:
         bic_data = pd.DataFrame(bic_list)
-        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2], width=0.6 if 'Non-Log' in title else 0.8)
+        sns.barplot(x='BIC', y='Model', data=bic_data, ax=axes[2], width=0.6, hue='Model')
         axes[2].set_title(f'BIC Scores for {title}')
         axes[2].set_xlabel("BIC Score")
         axes[2].set_ylabel(" ")
@@ -95,6 +77,50 @@ def visualize_model_scores(results: dict, title: str) -> None:
     filename = title.lower().replace('-', '_').replace(' ', '_')
 
     plt.savefig(os.path.join(output_path, f'model_scores/{filename}_scores.png'))
+
+def traffic_plots(df: pd.DataFrame) -> None:
+    """
+    Create a plot with traffic vs m2_price and log_traffic vs log_m2_price along with their distributions.
+
+    Parameters:
+        df: DataFrame with the main dataset
+        output_path: Path to save the resulting plot
+
+    Returns:
+        None
+    """
+    fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 12))
+
+    palette = sns.color_palette('Set2')
+
+    # First row for traffic vs m2_price
+    # Scatter plot
+    sns.scatterplot(x=df['traffic'], y=df['m2_price'], ax=axes[0, 0], color=palette[1], edgecolor='k', alpha=0.7)
+    axes[0, 0].set_xlabel('traffic')
+    axes[0, 0].set_ylabel('m2_price')
+    axes[0, 0].set_title('traffic vs m2_price')
+    
+    # Distribution plot
+    sns.histplot(df['traffic'], kde=True, ax=axes[0, 1], color=palette[0])
+    axes[0, 1].set_xlabel('traffic')
+    axes[0, 1].set_ylabel('Frequency')
+    axes[0, 1].set_title('Distribution of traffic')
+
+    # Second row for log_traffic vs log_m2_price
+    # Scatter plot
+    sns.scatterplot(x=df['log_traffic'], y=df['log_m2_price'], ax=axes[1, 0], color=palette[1], edgecolor='k', alpha=0.7)
+    axes[1, 0].set_xlabel('log_traffic')
+    axes[1, 0].set_ylabel('log_m2_price')
+    axes[1, 0].set_title('log_traffic vs log_m2_price')
+    
+    # Distribution plot
+    sns.histplot(df['log_traffic'], kde=True, ax=axes[1, 1], color=palette[0])
+    axes[1, 1].set_xlabel('log_traffic')
+    axes[1, 1].set_ylabel('Frequency')
+    axes[1, 1].set_title('Distribution of log_traffic')
+
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
+    plt.savefig(os.path.join(output_path, 'traffic_plots.png'))
 
 def create_plots(df: pd.DataFrame) -> None:
     """
@@ -107,12 +133,12 @@ def create_plots(df: pd.DataFrame) -> None:
         None
     """
     logging.info("Creating and saving figures for Phase 2...")
-    log_corr_heatmap(df)
+    traffic_plots(df)
 
     log_results, dropped_results, centered_results = get_model_scores(df)
 
     visualize_model_scores(log_results, 'Log Models')
-    visualize_model_scores(dropped_results, 'Log Models Dropped Outliers')
+    visualize_model_scores(dropped_results, 'Log Models with Dropped Outliers')
     visualize_model_scores(centered_results, 'Centered Log Models')
 
     plt.close('all')
