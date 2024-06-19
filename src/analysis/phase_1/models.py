@@ -201,6 +201,7 @@ def log_dropped(df: pd.DataFrame, cooks_indices: list[float]) -> None:
     Returns:
         None
     """
+
     df = df.drop(df.index[cooks_indices])
 
     X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance']]
@@ -251,6 +252,9 @@ def log_int_dropped(df: pd.DataFrame, cooks_indices) -> None:
     Returns:
         None
     """
+ # save dropped observations
+    df.loc[cooks_indices].to_csv(os.path.join(dir_path, '../../output/data/dropped_observations_1.csv'), index=False)
+    
     df = df.drop(df.index[cooks_indices])
 
     X = df[['has_station', 'log_avg_income', 'log_multy_family', 'homes_per_capita', 'log_distance', 'station_x_multy_fam', 'station_x_distance']]
@@ -405,14 +409,12 @@ def create_score_summaries(df: pd.DataFrame, cooks: list[float], cooks_int: list
         "simple": simple,
         "controls": controls,
         "standardized": standardized,
-        "log_transformed": log_transformed,
-        "log_standardized": log_standardized,
+        "log_simple": log_transformed,
         "log_interaction": log_interaction,
-        "log_int_standardized": log_int_standardized,
+        "log_int_std": log_int_standardized,
         "log_dropped": log_dropped,
-        "log_standardized_dropped": log_standardized_dropped,
         "log_int_dropped": log_int_dropped,
-        "log_int_standardized_dropped": log_int_standardized_dropped,
+        "log_int_std_dropped": log_int_standardized_dropped,
         "log_int_cent": log_int_cent,
         "log_int_std_cent": log_int_std_cent,
         "log_int_dropped_cent": log_int_dropped_cent,
@@ -440,7 +442,6 @@ def create_score_summaries(df: pd.DataFrame, cooks: list[float], cooks_int: list
         results_dict[name] = {"model": model, "vif": vif, "cond_indices": cond_indices, "bic": bic}
 
     return non_log_results, log_results, dropped_results, centered_results
-
 
 def get_model_scores(df: pd.DataFrame) -> tuple[dict, dict, dict]:
     """
